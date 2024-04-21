@@ -1,6 +1,7 @@
 import 'package:aqari/app.dart';
 import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/bloc_observer.dart';
+import 'package:aqari/core/utils/countries_helper.dart';
 import 'package:aqari/core/utils/database_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,6 +18,7 @@ Future<void> main() async {
   await Future.wait([
     configureDependencies(),
     DatabaseManager.initHive(),
+    CountriesHelper.loadCountriesData(),
   ]);
 
   // Set the global Bloc observer for better debugging and logging.

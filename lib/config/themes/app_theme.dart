@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:aqari/core/utils/app_strings.dart';
 import 'package:aqari/core/utils/app_values.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
@@ -24,9 +22,7 @@ class AppTheme {
       // Select the font family based on the language setting.
       fontFamily: lang == AppStrings.arabicCode
           ? AppStrings.arabicFontFamily
-          : Platform.isAndroid
-              ? AppStrings.englishFontFamily
-              : '',
+          : AppStrings.englishFontFamily,
 
       cupertinoOverrideTheme: const CupertinoThemeData(
         primaryColor: Color(0XFF007AFF),
@@ -43,15 +39,15 @@ class AppTheme {
       brightness: Brightness.light,
 
       // Additional color configurations.
-      splashColor: ThemeHelper.appColors.fieldBackgroundColor,
-      hoverColor: ThemeHelper.appColors.babyBlue,
+      splashColor: ThemeHelper.appColors.white,
+      hoverColor: ThemeHelper.appColors.borderColor,
       cardColor: ThemeHelper.appColors.grey,
-      shadowColor: ThemeHelper.appColors.bodyTextColor,
+      shadowColor: ThemeHelper.appColors.secondaryColor,
       scaffoldBackgroundColor: ThemeHelper.appColors.white,
       colorScheme: ColorScheme.light(
         error: ThemeHelper.appColors.errorColor,
-        surfaceTint: ThemeHelper.appColors.oliveColor,
-        onSurface: ThemeHelper.appColors.titleTextColor,
+        surfaceTint: ThemeHelper.appColors.secondaryColor,
+        onSurface: ThemeHelper.appColors.secondaryColor,
         primary: const Color(0XFF007AFF),
       ),
 
@@ -61,7 +57,7 @@ class AppTheme {
           color: ThemeHelper.appColors.lightGrey,
         ),
         centerTitle: true,
-        color: ThemeHelper.appColors.bodyTextColor,
+        color: ThemeHelper.appColors.black,
       ),
 
       // Define text styles for different use-cases.
@@ -151,7 +147,7 @@ class AppTheme {
           fontWeight: FontWeight.w700,
         ),
 
-        /// Used for scrolling text effects like marquee.
+        /// Used for scrolling text effects like marquee.ƒ
         labelMedium: TextStyle(
           fontSize: 11.sp,
           fontWeight: FontWeight.w700,

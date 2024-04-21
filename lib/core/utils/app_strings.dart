@@ -3,7 +3,7 @@
 /// All the strings used in the app are defined here.
 class AppStrings {
   static const String appName = 'Aqari';
-  static const String englishFontFamily = '';
+  static const String englishFontFamily = 'Montserrat';
   static const String arabicFontFamily = '';
   static const String noRouteFound = 'No Route Found';
   static const String contentType = 'Content-Type';
