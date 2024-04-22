@@ -40,7 +40,8 @@ class _LoginScreenState extends State<LoginScreen> {
          ),
          child: Column(
            children: [
-             const SizedBox(height: 170,),
+
+             const SizedBox(height: 165,),
              Center(child: SvgPicture.asset(Assets.iconsLogoText),),
              Row(
                  mainAxisAlignment: MainAxisAlignment.center,
@@ -54,7 +55,7 @@ class _LoginScreenState extends State<LoginScreen> {
                  ]
              ),
              Padding(
-               padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 32),
+               padding: const EdgeInsets.symmetric(vertical: 4,horizontal: 32),
                child: CustomPhoneNumberTextField(
                  controller:phone ,
                  label: 'Phone number',
