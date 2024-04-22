@@ -17,6 +17,7 @@ dependencies:
   flutter_bloc: ^8.1.5
   flutter_localizations:
     sdk: flutter
+  flutter_svg: ^2.0.10+1
   get_it: ^7.7.0
   hive_flutter: ^1.1.0
   injectable: ^2.4.1
@@ -40,8 +41,11 @@ flutter:
     - assets/data/
     - assets/gen/images/
     - assets/gen/icons/
-    - assets/gen/illustrations/
     - assets/gen/lottie/
+    - assets/
+    - assets/gen/
+    - assets/fonts/
+    - assets/fonts/Montserrat/
 
   fonts:
     - family: Montserrat
