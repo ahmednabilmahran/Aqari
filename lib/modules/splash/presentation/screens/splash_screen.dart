@@ -1,40 +1,48 @@
-import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/assets.dart';
-import 'package:aqari/core/utils/sized_x.dart';
-import 'package:aqari/core/utils/theme_helper.dart';
-import 'package:aqari/core/widgets/custom_button.dart';
-import 'package:aqari/core/widgets/custom_padding.dart';
-import 'package:aqari/core/widgets/custom_phone_number_text_field.dart';
-import 'package:aqari/core/widgets/custom_text_field.dart';
+import 'package:aqari/modules/splash/presentation/controllers/splash/splash_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:sizer/sizer.dart';
 
-/// SplashScreen
+/// Splash Screen
 class SplashScreen extends StatefulWidget {
-  /// constructor
+  /// Constructor
   const SplashScreen({super.key});
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreen>
+    with TickerProviderStateMixin {
   @override
-  void initState() {
-    super.initState();
-    // Wait for 3 seconds
-    Future.delayed(Duration(seconds: 3), () {
-      // Navigate to LoginScreen
-      Navigator.pushReplacementNamed(context, Routes.loginRoute);
-    });
-  }
-  @override
-  Widget build(BuildContext context)  {
-
-    return Scaffold(
-      backgroundColor: ThemeHelper.appColors.primaryColor,
-      body: Center(
-        child: SvgPicture.asset(Assets.iconsLogoSplash)
+  Widget build(BuildContext context) {
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.leanBack);
+    return BlocProvider(
+      create: (context) =>
+          SplashCubit()..startAnimation(context: context, vsync: this),
+      child: BlocBuilder<SplashCubit, SplashState>(
+        builder: (context, state) {
+          final cubit = SplashCubit.get(context);
+          return Scaffold(
+            backgroundColor: cubit.colorsAnimation.value,
+            body: ScaleTransition(
+              scale: cubit.secondAnimation,
+              child: ScaleTransition(
+                scale: cubit.firstAnimation,
+                child: Center(
+                  child: SvgPicture.asset(
+                    Assets.iconsLogoSplash,
+                    height: 18.h,
+                    width: 18.w,
+                  ),
+                ),
+              ),
+            ),
+          );
+        },
       ),
     );
   }

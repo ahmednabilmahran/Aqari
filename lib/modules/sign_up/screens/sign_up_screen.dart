@@ -3,8 +3,6 @@ import 'package:aqari/core/widgets/custom_phone_number_text_field.dart';
 import 'package:aqari/core/widgets/custom_text_field.dart';
 import 'package:flutter/material.dart';
 
-
-
 /// SignUpScreen
 class SignUpScreen extends StatefulWidget {
   /// constructor
@@ -15,22 +13,24 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
-  final TextEditingController firstName=TextEditingController();
-  final TextEditingController  lastName=TextEditingController();
-  final TextEditingController  email=TextEditingController();
-  final TextEditingController  password=TextEditingController();
-  final TextEditingController  phone=TextEditingController();
+  final TextEditingController firstName = TextEditingController();
+  final TextEditingController lastName = TextEditingController();
+  final TextEditingController email = TextEditingController();
+  final TextEditingController password = TextEditingController();
+  final TextEditingController phone = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal:40 ,vertical:8 ),
+          padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 8),
           child: Column(
             children: [
-              const SizedBox(height:100 ,),
+              const SizedBox(
+                height: 100,
+              ),
               const Center(
                 child: Text(
                   'Account Information',
@@ -45,9 +45,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 children: [
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(right:10 ,top:16,bottom:16 ),
+                      padding:
+                          const EdgeInsets.only(right: 10, top: 16, bottom: 16),
                       child: CustomTextField(
-                          controller: firstName,
+                        controller: firstName,
                         label: 'First name',
                         hintText: 'Enter Your First Name',
                         hintStyle: const TextStyle(fontSize: 10),
@@ -56,7 +57,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.only(left:10,top:16,bottom:16 ),
+                      padding:
+                          const EdgeInsets.only(left: 10, top: 16, bottom: 16),
                       child: CustomTextField(
                         controller: firstName,
                         label: 'Last name',
@@ -67,15 +69,22 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                 ],
               ),
-              CustomPhoneNumberTextField(controller: phone,label: 'Phone number',),
-              const SizedBox(height: 20,),
+              CustomPhoneNumberTextField(
+                controller: phone,
+                label: 'Phone number',
+              ),
+              const SizedBox(
+                height: 20,
+              ),
               CustomTextField(
                 controller: email,
                 label: 'Email',
                 hintText: 'Enter Your Email',
                 hintStyle: const TextStyle(fontSize: 10),
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               CustomTextField(
                 controller: password,
                 label: 'password',
@@ -83,7 +92,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 hintStyle: const TextStyle(fontSize: 10),
                 obscureText: true,
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               CustomTextField(
                 controller: password,
                 label: 'confirm password',
@@ -91,10 +102,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 hintStyle: const TextStyle(fontSize: 10),
                 obscureText: true,
               ),
-              const SizedBox(height: 20,),
-              CustomButton(onPressed: () {
-
-              }, buttonText: 'Register',)
+              const SizedBox(
+                height: 20,
+              ),
+              CustomButton(
+                onPressed: () {},
+                buttonText: 'Register',
+              ),
             ],
           ),
         ),
