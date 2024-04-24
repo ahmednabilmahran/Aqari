@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen>
                 scale: cubit.firstAnimation,
                 child: Center(
                   child: SvgPicture.asset(
-                    Assets.iconsLogoSplash,
+                    Assets.genIconsLogoSplash,
                     height: 18.h,
                     width: 18.w,
                   ),

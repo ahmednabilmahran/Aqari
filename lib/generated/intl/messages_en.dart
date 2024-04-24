@@ -23,6 +23,18 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "copiedToClipboard":
-            MessageLookupByLibrary.simpleMessage("Copied to clipboard")
+            MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
+        "dontHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "enterYourPassword":
+            MessageLookupByLibrary.simpleMessage("Enter Your Password"),
+        "forgotPassword":
+            MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "joinNow": MessageLookupByLibrary.simpleMessage("Join Now"),
+        "login": MessageLookupByLibrary.simpleMessage("Login"),
+        "loginToAccessYourAccount": MessageLookupByLibrary.simpleMessage(
+            "Login to access your account"),
+        "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number")
       };
 }

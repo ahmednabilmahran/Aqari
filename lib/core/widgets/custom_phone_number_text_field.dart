@@ -1,12 +1,15 @@
 // ignore_for_file: public_member_api_docs
 
+import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/widgets/countries_dropdown.dart';
+import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/models/aqari_country_model.dart';
 import 'package:aqari/modules/sign_up/controllers/countries_dropdown/countries_dropdown_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
 /// this class is the custom phone number text field
@@ -49,10 +52,9 @@ class CustomPhoneNumberTextField extends StatelessWidget {
                   textAlign: TextAlign.left,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
                         fontSize: 11.sp,
-                        fontWeight: FontWeight.w400,
+                        fontWeight: FontWeight.w500,
                         color: Theme.of(context).shadowColor,
                         letterSpacing: 0,
-
                       ),
                 ),
               if (label != null) SizedX.h1,
@@ -76,6 +78,23 @@ class CustomPhoneNumberTextField extends StatelessWidget {
                   fillColor: Theme.of(context).splashColor,
                   counterStyle: const TextStyle(
                     height: double.minPositive,
+                  ),
+                  suffixIcon: Tooltip(
+                    message: S.of(context).phoneNumber,
+                    preferBelow: false,
+                    triggerMode: TooltipTriggerMode.tap,
+                    child: Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 4.w),
+                      child: SvgPicture.asset(
+                        Assets.genIconsHelpCircle,
+                        height: 2.2.h,
+                        width: 2.2.w,
+                      ),
+                    ),
+                  ),
+                  suffixIconConstraints: BoxConstraints(
+                    maxHeight: 15.h,
+                    maxWidth: 15.w,
                   ),
                   counterText: '',
                   errorMaxLines: 2,

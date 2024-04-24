@@ -1,9 +1,13 @@
 import 'package:aqari/config/routes/app_routes.dart';
+import 'package:aqari/core/utils/assets.dart';
+import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
+import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/core/widgets/custom_phone_number_text_field.dart';
 import 'package:aqari/core/widgets/custom_text_field.dart';
-import 'package:aqari/generated/assets.dart';
+import 'package:aqari/generated/l10n.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
@@ -21,111 +25,123 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController phone = TextEditingController();
   final TextEditingController password = TextEditingController();
 
+  bool _isPasswordFieldVisible = false;
+
+  void _onLoginPressed() {
+    setState(() {
+      _isPasswordFieldVisible = !_isPasswordFieldVisible;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Container(
-          height: 100.h,
-          width: 100.w,
-          decoration: const BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage('assets/gen/icons/background_image.jpg'),
-              fit: BoxFit.cover,
-            ),
+      body: Container(
+        height: 100.h,
+        width: 100.w,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(Assets.genImagesLoginBackground),
+            fit: BoxFit.cover,
           ),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 165,
-              ),
-              Center(
-                child: SvgPicture.asset(Assets.iconsLogoText),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 16),
-                    child: Text(
-                      'Login to access your account',
-                      style: TextStyle(
+        ),
+        child: SafeArea(
+          child: CustomPadding(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SvgPicture.asset(
+                  Assets.genIconsLogoText,
+                  height: 7.5.h,
+                  width: 7.5.w,
+                ),
+                SizedX.h2,
+                Text(
+                  S.of(context).loginToAccessYourAccount,
+                  style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                        fontWeight: FontWeight.w300,
+                        fontSize: 12.sp,
                         color: ThemeHelper.appColors.black,
                       ),
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 4, horizontal: 32),
-                child: CustomPhoneNumberTextField(
+                ),
+                SizedX.h2p5,
+                CustomPhoneNumberTextField(
                   controller: phone,
-                  label: 'Phone number',
+                  label: S.of(context).phoneNumber,
                 ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 8, horizontal: 32),
-                child: CustomTextField(
-                  controller: password,
-                  label: 'Password',
-                  obscureText: true,
-                  hintText: 'Enter Your Password',
+                AnimatedSize(
+                  duration: const Duration(milliseconds: 1200),
+                  curve: Curves.elasticInOut,
+                  child: _isPasswordFieldVisible
+                      ? Column(
+                          children: [
+                            SizedX.h1p5,
+                            CustomTextField(
+                              controller: password,
+                              label: S.of(context).password,
+                              obscureText: true,
+                              hintText: S.of(context).enterYourPassword,
+                            ),
+                            SizedX.h1,
+                            Align(
+                              alignment: Alignment.centerRight,
+                              child: Text(
+                                S.of(context).forgotPassword,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .copyWith(
+                                      fontSize: 10.sp,
+                                      fontWeight: FontWeight.w500,
+                                      color: ThemeHelper.appColors.black,
+                                    ),
+                              ),
+                            ),
+                          ],
+                        )
+                      : const SizedBox.shrink(),
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.only(right: 32),
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        color: ThemeHelper.appColors.black,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 32, vertical: 16),
-                child: CustomButton(
-                  buttonText: 'Login',
-                  onPressed: () {},
+                SizedX.h2,
+                CustomButton(
+                  buttonText: S.of(context).login,
+                  onPressed: _onLoginPressed,
                   fillBackgroundColor: ThemeHelper.appColors.secondaryColor,
                 ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Don't have an account?   ",
-                    style: TextStyle(
-                      fontSize: 10.sp,
-                      color: ThemeHelper.appColors.black,
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushReplacementNamed(
-                        context,
-                        Routes.signUpRoute,
-                      );
-                    },
-                    child: Text(
-                      'Join Now ',
-                      style: TextStyle(
-                        fontSize: 10.sp,
-                        color: ThemeHelper.appColors.primaryColor,
-                        fontWeight: FontWeight.bold,
+                SizedX.h2p5,
+                RichText(
+                  text: TextSpan(
+                    children: [
+                      TextSpan(
+                        text: S.of(context).dontHaveAnAccount,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w500,
+                              color: ThemeHelper.appColors.black,
+                            ),
                       ),
-                    ),
+                      const TextSpan(
+                        text: '  ',
+                      ),
+                      TextSpan(
+                        text: S.of(context).joinNow,
+                        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w600,
+                              color: ThemeHelper.appColors.primaryColor,
+                            ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pushReplacementNamed(
+                              context,
+                              Routes.signUpRoute,
+                            );
+                          },
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

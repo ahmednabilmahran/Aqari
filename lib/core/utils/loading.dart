@@ -31,7 +31,7 @@ class DefaultLoading extends StatelessWidget {
           filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
           child: Center(
             child: Lottie.asset(
-              Assets.lottieLoading,
+              Assets.genLottieLoading,
               width: 15.h,
               height: 15.h,
             ),

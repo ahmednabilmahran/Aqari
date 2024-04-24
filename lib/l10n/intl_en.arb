@@ -1,3 +1,11 @@
 {
-  "copiedToClipboard": "Copied to clipboard"
+  "copiedToClipboard": "Copied to clipboard",
+  "loginToAccessYourAccount": "Login to access your account",
+  "phoneNumber": "Phone number",
+  "password": "Password",
+  "enterYourPassword": "Enter Your Password",
+  "forgotPassword": "Forgot Password?",
+  "login": "Login",
+  "joinNow": "Join Now",
+  "dontHaveAnAccount": "Don't have an account?"
 }

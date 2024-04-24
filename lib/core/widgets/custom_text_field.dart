@@ -75,7 +75,7 @@ class CustomTextField extends StatelessWidget {
             style: labelTextStyle ??
                 Theme.of(context).textTheme.labelSmall!.copyWith(
                       fontSize: 11.sp,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w500,
                       color: Theme.of(context).shadowColor,
                       letterSpacing: 0,
                     ),
@@ -123,7 +123,7 @@ class CustomTextField extends StatelessWidget {
             hintFadeDuration: Durations.medium1,
             hintStyle: hintStyle ??
                 Theme.of(context).textTheme.labelSmall!.copyWith(
-                      fontSize: 9.sp,
+                      fontSize: 10.sp,
                       fontWeight: FontWeight.w300,
                       color: Theme.of(context).hintColor,
                       letterSpacing: 0,
