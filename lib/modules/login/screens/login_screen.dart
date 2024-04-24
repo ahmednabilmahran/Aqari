@@ -50,10 +50,13 @@ class _LoginScreenState extends State<LoginScreen> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SvgPicture.asset(
-                  Assets.genIconsLogoText,
-                  height: 7.5.h,
-                  width: 7.5.w,
+                Hero(
+                  tag: 'logo',
+                  child: SvgPicture.asset(
+                    Assets.genIconsLogoText,
+                    height: 7.5.h,
+                    width: 7.5.w,
+                  ),
                 ),
                 SizedX.h2,
                 Text(
@@ -102,10 +105,13 @@ class _LoginScreenState extends State<LoginScreen> {
                       : const SizedBox.shrink(),
                 ),
                 SizedX.h2,
-                CustomButton(
-                  buttonText: S.of(context).login,
-                  onPressed: _onLoginPressed,
-                  fillBackgroundColor: ThemeHelper.appColors.secondaryColor,
+                Hero(
+                  tag: 'button',
+                  child: CustomButton(
+                    buttonText: S.of(context).login,
+                    onPressed: _onLoginPressed,
+                    fillBackgroundColor: ThemeHelper.appColors.secondaryColor,
+                  ),
                 ),
                 SizedX.h2p5,
                 RichText(

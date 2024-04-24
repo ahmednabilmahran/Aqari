@@ -22,19 +22,38 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "accountInformation":
+            MessageLookupByLibrary.simpleMessage("Account Information"),
+        "alreadyHaveAnAccount":
+            MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "confirmPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Password"),
+        "confirmYourPassword":
+            MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
         "copiedToClipboard":
             MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
+        "enterYourEmail":
+            MessageLookupByLibrary.simpleMessage("Enter Your Email"),
+        "enterYourFirstName":
+            MessageLookupByLibrary.simpleMessage("Enter Your First Name"),
+        "enterYourLastName":
+            MessageLookupByLibrary.simpleMessage("Enter Your Last Name"),
         "enterYourPassword":
             MessageLookupByLibrary.simpleMessage("Enter Your Password"),
+        "firstName": MessageLookupByLibrary.simpleMessage("First name"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "joinNow": MessageLookupByLibrary.simpleMessage("Join Now"),
+        "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginToAccessYourAccount": MessageLookupByLibrary.simpleMessage(
             "Login to access your account"),
+        "optional": MessageLookupByLibrary.simpleMessage("Optional"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
-        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number")
+        "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign Up")
       };
 }
