@@ -7,6 +7,7 @@ import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/core/widgets/custom_phone_number_text_field.dart';
 import 'package:aqari/core/widgets/custom_text_field.dart';
 import 'package:aqari/generated/l10n.dart';
+import 'package:aqari/modules/app_layout/screens/notification_page.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -109,11 +110,9 @@ class SignUpScreen extends StatelessWidget {
                     tag: 'button',
                     child: CustomButton(
                       onPressed: () {
-                        Navigator.pushNamedAndRemoveUntil(
-                          context,
-                          Routes.appLayoutRoute,
-                          (route) => false,
-                        );
+                        Navigator.push(context, MaterialPageRoute(builder: (context){
+                          return  NotificationScreen();
+                        }));
                       },
                       buttonText: S.of(context).signUp,
                     ),
