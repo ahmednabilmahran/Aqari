@@ -43,17 +43,27 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter Your Last Name"),
         "enterYourPassword":
             MessageLookupByLibrary.simpleMessage("Enter Your Password"),
+        "explore": MessageLookupByLibrary.simpleMessage("Explore"),
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "home": MessageLookupByLibrary.simpleMessage("Home"),
         "joinNow": MessageLookupByLibrary.simpleMessage("Join Now"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
+        "listMyPropertyForSale":
+            MessageLookupByLibrary.simpleMessage("List my property for sale"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginToAccessYourAccount": MessageLookupByLibrary.simpleMessage(
             "Login to access your account"),
         "optional": MessageLookupByLibrary.simpleMessage("Optional"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
+        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "searchByAddressCityOrZip": MessageLookupByLibrary.simpleMessage(
+            "Search by Address, City or ZIP"),
+        "sellMyProperty":
+            MessageLookupByLibrary.simpleMessage("Sell my property"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up")
       };
 }

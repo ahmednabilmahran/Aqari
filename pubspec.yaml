@@ -23,6 +23,7 @@ dependencies:
   injectable: ^2.4.1
   intl: ^0.18.1
   lottie: ^3.1.0
+  persistent_bottom_nav_bar: ^5.0.2
   shimmer: ^3.0.0
   sizer: ^2.0.15
   supabase_flutter: ^2.5.1
@@ -95,7 +96,6 @@ flutter:
         - asset: assets/fonts/Montserrat/Montserrat-BlackItalic.ttf
           weight: 900
           style: italic
-
 
 flutter_intl:
   enabled: true

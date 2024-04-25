@@ -45,14 +45,17 @@ class AppColors {
   /// The 'light grey' color.
   Color lightGrey = const Color(0xFF7E98A9);
 
+  /// The 'light background' color.
+  Color lightBackground = const Color(0xFFF1F1F1);
+
+  /// The 'darkGrey' color.
+  Color darkGrey = const Color(0xFF737373);
+
   /// The 'hint' color.
   Color hintColor = const Color(0xFF000000).withOpacity(0.5);
 
   /// The 'semi black' color.
   Color semiBlack = const Color(0xFF4D6066);
-
-  /// Dark grey color.
-  Color darkGrey = const Color(0xFF5A5F61);
 
   /// The 'borderColor' color.
   Color borderColor = const Color(0XFFD0D5DD);

@@ -19,5 +19,12 @@
   "confirmPassword": "Confirm Password",
   "confirmYourPassword": "Confirm Your Password",
   "signUp": "Sign Up",
-  "alreadyHaveAnAccount": "Already have an account?"
+  "alreadyHaveAnAccount": "Already have an account?",
+  "home": "Home",
+  "search": "Search",
+  "explore": "Explore",
+  "profile": "Profile",
+  "searchByAddressCityOrZip": "Search by Address, City or ZIP",
+  "sellMyProperty": "Sell my property",
+  "listMyPropertyForSale": "List my property for sale"
 }

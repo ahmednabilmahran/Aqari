@@ -259,6 +259,76 @@ class S {
       args: [],
     );
   }
+
+  /// `Home`
+  String get home {
+    return Intl.message(
+      'Home',
+      name: 'home',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search`
+  String get search {
+    return Intl.message(
+      'Search',
+      name: 'search',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Explore`
+  String get explore {
+    return Intl.message(
+      'Explore',
+      name: 'explore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Profile`
+  String get profile {
+    return Intl.message(
+      'Profile',
+      name: 'profile',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search by Address, City or ZIP`
+  String get searchByAddressCityOrZip {
+    return Intl.message(
+      'Search by Address, City or ZIP',
+      name: 'searchByAddressCityOrZip',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sell my property`
+  String get sellMyProperty {
+    return Intl.message(
+      'Sell my property',
+      name: 'sellMyProperty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `List my property for sale`
+  String get listMyPropertyForSale {
+    return Intl.message(
+      'List my property for sale',
+      name: 'listMyPropertyForSale',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

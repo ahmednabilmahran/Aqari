@@ -100,6 +100,9 @@ class SizedX {
   /// Represents a [SizedBox] with a width of 2% of the screen width.
   static Widget get w2 => SizedBox(width: 2.w);
 
+  /// Represents a [SizedBox] with a width of 2.5% of the screen width.
+  static Widget get w2p5 => SizedBox(width: 2.5.w);
+
   /// Represents a [SizedBox] with a width of 3% of the screen width.
   static Widget get w3 => SizedBox(width: 3.w);
 

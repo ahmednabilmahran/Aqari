@@ -108,7 +108,13 @@ class SignUpScreen extends StatelessWidget {
                   Hero(
                     tag: 'button',
                     child: CustomButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamedAndRemoveUntil(
+                          context,
+                          Routes.appLayoutRoute,
+                          (route) => false,
+                        );
+                      },
                       buttonText: S.of(context).signUp,
                     ),
                   ),

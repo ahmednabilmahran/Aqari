@@ -43,7 +43,7 @@ class AppTheme {
       hoverColor: ThemeHelper.appColors.borderColor,
       cardColor: ThemeHelper.appColors.grey,
       shadowColor: ThemeHelper.appColors.secondaryColor,
-      scaffoldBackgroundColor: ThemeHelper.appColors.white,
+      scaffoldBackgroundColor: ThemeHelper.appColors.lightBackground,
       colorScheme: ColorScheme.light(
         error: ThemeHelper.appColors.errorColor,
         surfaceTint: ThemeHelper.appColors.secondaryColor,
