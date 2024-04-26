@@ -1,4 +1,3 @@
-import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -25,6 +24,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// titleText
   final String titleText;
 
+  /// color
   final Color? color;
 
   /// onBackButtonPressed
@@ -50,7 +50,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             () {
               Navigator.pop(context);
             },
-        child:  Align(
+        child: Align(
           child: Icon(
             Icons.chevron_left_rounded,
             color: color ?? Colors.black,

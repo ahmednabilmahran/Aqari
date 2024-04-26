@@ -110,9 +110,14 @@ class SignUpScreen extends StatelessWidget {
                     tag: 'button',
                     child: CustomButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context){
-                          return  NotificationScreen();
-                        }));
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const NotificationScreen();
+                            },
+                          ),
+                        );
                       },
                       buttonText: S.of(context).signUp,
                     ),
