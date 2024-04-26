@@ -1,6 +1,7 @@
 import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/app_strings.dart';
 import 'package:aqari/modules/app_layout/screens/app_layout_screen.dart';
+import 'package:aqari/modules/app_layout/screens/notification_page.dart';
 import 'package:aqari/modules/login/screens/login_screen.dart';
 import 'package:aqari/modules/sign_up/screens/sign_up_screen.dart';
 import 'package:aqari/modules/splash/presentation/screens/splash_screen.dart';
@@ -41,6 +42,14 @@ class AppRoutes {
             return const AppLayoutScreen();
           },
           settings: const RouteSettings(name: Routes.appLayoutRoute),
+        );
+
+      case Routes.notificationsRoute:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const NotificationsScreen();
+          },
+          settings: const RouteSettings(name: Routes.notificationsRoute),
         );
 
       default:

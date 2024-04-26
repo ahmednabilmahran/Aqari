@@ -4,14 +4,16 @@ import 'package:aqari/core/widgets/list_notification.dart';
 import 'package:aqari/models/notification_model.dart';
 import 'package:flutter/material.dart';
 
-class NotificationScreen extends StatefulWidget {
-  const NotificationScreen({super.key});
+/// NotificationsScreen is used to manage the notifications screen
+class NotificationsScreen extends StatefulWidget {
+  /// NotificationsScreen constructor
+  const NotificationsScreen({super.key});
 
   @override
-  State<NotificationScreen> createState() => _NotificationScreenState();
+  State<NotificationsScreen> createState() => _NotificationScreenState();
 }
 
-class _NotificationScreenState extends State<NotificationScreen> {
+class _NotificationScreenState extends State<NotificationsScreen> {
   List<NotificationModel> notifications = [];
 
   @override

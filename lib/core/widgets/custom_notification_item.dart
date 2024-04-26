@@ -2,7 +2,9 @@ import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+/// NotificationItem is used to manage the notification item
 class NotificationItem extends StatelessWidget {
+  /// NotificationItem constructor
   const NotificationItem({
     super.key,
   });
@@ -19,6 +21,7 @@ class NotificationItem extends StatelessWidget {
         ),
       ),
       subtitle: const Text(
+        // ignore: lines_longer_than_80_chars
         'Lorem Ipsum is simply dummy text of the printing and typesetting industry...',
         style: TextStyle(
           fontSize: 12,

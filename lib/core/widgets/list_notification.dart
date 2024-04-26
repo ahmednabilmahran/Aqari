@@ -2,12 +2,15 @@ import 'package:aqari/core/widgets/custom_notification_item.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+/// ListNotification is used to manage the list of notifications
 class ListNotification extends StatelessWidget {
+  /// ListNotification constructor
   const ListNotification({
     this.day,
     super.key,
   });
 
+  /// day
   final String? day;
 
   @override
@@ -16,10 +19,10 @@ class ListNotification extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+          padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
           child: Text(
             day ?? 'Today',
-            style:  TextStyle(
+            style: TextStyle(
               fontSize: 15.sp,
               fontWeight: FontWeight.bold,
               color: Colors.black,

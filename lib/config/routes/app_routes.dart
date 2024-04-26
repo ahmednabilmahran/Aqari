@@ -5,4 +5,5 @@ class Routes {
   static const String loginRoute = '/loginRoute';
   static const String signUpRoute = '/signUpRoute';
   static const String appLayoutRoute = '/appLayoutRoute';
+  static const String notificationsRoute = '/notificationsRoute';
 }

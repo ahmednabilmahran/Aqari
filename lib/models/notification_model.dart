@@ -1,12 +1,19 @@
 import 'package:flutter/widgets.dart';
 
+/// NotificationModel is used to manage the notification model
 class NotificationModel {
-  // Optional: Notification type for icon
-
+  /// NotificationModel constructor
   NotificationModel(this.title, this.body, this.date, {this.icon});
 
+  /// title
   final String title;
+
+  /// body
   final String body;
+
+  /// date
   final DateTime date;
-  Icon? icon;
+
+  /// icon
+  final Icon? icon;
 }
