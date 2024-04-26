@@ -1,5 +1,6 @@
 import 'package:aqari/core/widgets/custom_notification_item.dart';
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class ListNotification extends StatelessWidget {
   const ListNotification({
@@ -15,11 +16,11 @@ class ListNotification extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+          padding:  EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
           child: Text(
             day ?? 'Today',
-            style: const TextStyle(
-              fontSize: 18,
+            style:  TextStyle(
+              fontSize: 15.sp,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),

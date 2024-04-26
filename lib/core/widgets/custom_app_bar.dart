@@ -46,6 +46,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       scrolledUnderElevation: 0,
       automaticallyImplyLeading: false,
       leading: InkWell(
+        hoverColor: Colors.transparent,
+        highlightColor: Colors.transparent,
+        splashColor: Colors.transparent,
         onTap: onBackButtonPressed ??
             () {
               Navigator.pop(context);

@@ -5,6 +5,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../modules/app_layout/screens/notification_page.dart';
+
 /// AqariAppBar is used to manage the app bar for the app
 class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// AqariAppBar constructor
@@ -48,7 +50,16 @@ class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) {
+                  return const NotificationScreen();
+                },
+              ),
+            );
+          },
           icon: SvgPicture.asset(
             Assets.genIconsNotifications,
             height: 3.5.h,
