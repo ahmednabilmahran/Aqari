@@ -1,3 +1,4 @@
+import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -12,6 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.appBarHeight = kToolbarHeight,
     this.actionIcon,
     this.onBackButtonPressed,
+    this.color,
   });
 
   /// appBarHeight is used to manage the app bar height
@@ -22,6 +24,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   /// titleText
   final String titleText;
+
+  final Color? color;
 
   /// onBackButtonPressed
   final void Function()? onBackButtonPressed;
@@ -46,9 +50,11 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             () {
               Navigator.pop(context);
             },
-        child: const Align(
+        child:  Align(
           child: Icon(
             Icons.chevron_left_rounded,
+            color: color ?? Colors.black,
+            size: 40,
           ),
         ),
       ),
