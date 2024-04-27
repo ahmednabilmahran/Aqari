@@ -13,6 +13,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.actionIcon,
     this.onBackButtonPressed,
     this.color,
+    this.style,
   });
 
   /// appBarHeight is used to manage the app bar height
@@ -29,6 +30,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   /// onBackButtonPressed
   final void Function()? onBackButtonPressed;
+/// style text
+  final TextStyle? style;
 
   @override
   Size get preferredSize => Size.fromHeight(appBarHeight);
@@ -63,7 +66,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       title: Text(
         titleText,
-        style: Theme.of(context).textTheme.titleMedium,
+        style: style??Theme.of(context).textTheme.titleMedium,
       ),
       backgroundColor: Colors.transparent,
       actions: actionIcon == null
