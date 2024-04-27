@@ -26,6 +26,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Account Information"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "checkOutSomeOfOurTopListings": MessageLookupByLibrary.simpleMessage(
+            "Check out some of our top listings"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmYourPassword":
@@ -44,6 +46,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterYourPassword":
             MessageLookupByLibrary.simpleMessage("Enter Your Password"),
         "explore": MessageLookupByLibrary.simpleMessage("Explore"),
+        "featuredProperties":
+            MessageLookupByLibrary.simpleMessage("Featured Properties"),
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
@@ -55,6 +59,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginToAccessYourAccount": MessageLookupByLibrary.simpleMessage(
             "Login to access your account"),
+        "nearYou": MessageLookupByLibrary.simpleMessage("Near You"),
+        "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "optional": MessageLookupByLibrary.simpleMessage("Optional"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
@@ -64,6 +70,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Search by Address, City or ZIP"),
         "sellMyProperty":
             MessageLookupByLibrary.simpleMessage("Sell my property"),
-        "signUp": MessageLookupByLibrary.simpleMessage("Sign Up")
+        "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
+        "viewMore": MessageLookupByLibrary.simpleMessage("View more")
       };
 }

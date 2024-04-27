@@ -26,5 +26,11 @@
   "profile": "Profile",
   "searchByAddressCityOrZip": "Search by Address, City or ZIP",
   "sellMyProperty": "Sell my property",
-  "listMyPropertyForSale": "List my property for sale"
+  "listMyPropertyForSale": "List my property for sale",
+  "notifications": "Notifications",
+  "featuredProperties": "Featured Properties",
+  "checkOutSomeOfOurTopListings": "Check out some of our top listings",
+  "viewAll": "View All",
+  "nearYou": "Near You",
+  "viewMore": "View more"
 }

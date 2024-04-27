@@ -1,6 +1,6 @@
+import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 /// CustomAppBar is used to manage the Inside Screens app bar
@@ -10,22 +10,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     required this.titleText,
     super.key,
     this.appBarHeight = kToolbarHeight,
-    this.actionIcon,
     this.onBackButtonPressed,
-    this.color,
   });
 
   /// appBarHeight is used to manage the app bar height
   final double appBarHeight;
 
-  /// action icon button
-  final String? actionIcon;
-
   /// titleText
   final String titleText;
-
-  /// color
-  final Color? color;
 
   /// onBackButtonPressed
   final void Function()? onBackButtonPressed;
@@ -38,6 +30,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       toolbarHeight: appBarHeight,
+      leadingWidth: 17.5.w,
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
@@ -54,31 +47,29 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               Navigator.pop(context);
             },
         child: Align(
-          child: Icon(
-            Icons.chevron_left_rounded,
-            color: color ?? Colors.black,
-            size: 40,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(6.sp),
+              color: const Color(0XFF1B1B1B).withOpacity(0.05),
+            ),
+            child: Icon(
+              Icons.chevron_left_rounded,
+              color: Theme.of(context).primaryColor,
+              size: 26.sp,
+            ),
           ),
         ),
       ),
       title: Text(
         titleText,
-        style: Theme.of(context).textTheme.titleMedium,
+        style: Theme.of(context).textTheme.titleSmall!.copyWith(
+              fontSize: 16.sp,
+              fontWeight: FontWeight.w500,
+              color: ThemeHelper.appColors.black,
+              letterSpacing: 0.05.sp,
+            ),
       ),
-      backgroundColor: Colors.transparent,
-      actions: actionIcon == null
-          ? []
-          : [
-              IconButton(
-                padding: EdgeInsets.symmetric(horizontal: 4.w),
-                onPressed: () {},
-                icon: Align(
-                  child: SvgPicture.asset(
-                    actionIcon!,
-                  ),
-                ),
-              ),
-            ],
+      backgroundColor: Theme.of(context).splashColor,
     );
   }
 }

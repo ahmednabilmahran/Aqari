@@ -1,6 +1,6 @@
-import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/list_notification.dart';
+import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/models/notification_model.dart';
 import 'package:flutter/material.dart';
 
@@ -20,8 +20,7 @@ class _NotificationScreenState extends State<NotificationsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        titleText: 'Notification',
-        color: ThemeHelper.appColors.primaryColor,
+        titleText: S.of(context).notifications,
       ),
       body: const SingleChildScrollView(
         child: Column(

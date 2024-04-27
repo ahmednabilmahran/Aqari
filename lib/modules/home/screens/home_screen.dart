@@ -215,7 +215,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          'Featured Properties',
+                          S.of(context).featuredProperties,
                           style:
                               Theme.of(context).textTheme.titleSmall!.copyWith(
                                     fontSize: 16.sp,
@@ -224,7 +224,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedX.h0p5,
                         Text(
-                          'Check out some of our top listings',
+                          S.of(context).checkOutSomeOfOurTopListings,
                           style:
                               Theme.of(context).textTheme.labelSmall!.copyWith(
                                     fontSize: 10.sp,
@@ -238,7 +238,7 @@ class HomeScreen extends StatelessWidget {
                     CustomButton(
                       buttonSize: Size(22.w, 4.1.h),
                       onPressed: () {},
-                      buttonText: 'View All',
+                      buttonText: S.of(context).viewAll,
                       borderRadius: 6.sp,
                       labelText:
                           Theme.of(context).textTheme.labelSmall!.copyWith(
@@ -257,9 +257,9 @@ class HomeScreen extends StatelessWidget {
                     children: houses
                         .map(
                           (house) => Padding(
-                            padding: const EdgeInsets.only(
-                              right: 16.0,
-                            ), // Adjust the spacing as needed
+                            padding: EdgeInsets.only(
+                              right: 4.w,
+                            ),
                             child: HouseCard(
                               imagePath: house.image,
                               title: house.location,
@@ -274,7 +274,7 @@ class HomeScreen extends StatelessWidget {
                 Row(
                   children: [
                     Text(
-                      'Near You',
+                      S.of(context).nearYou,
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 16.sp,
                             color: ThemeHelper.appColors.black,
@@ -284,7 +284,7 @@ class HomeScreen extends StatelessWidget {
                     CustomButton(
                       buttonSize: Size(22.w, 4.1.h),
                       onPressed: () {},
-                      buttonText: 'View more',
+                      buttonText: S.of(context).viewMore,
                       borderRadius: 6.sp,
                       labelText:
                           Theme.of(context).textTheme.labelSmall!.copyWith(
@@ -411,7 +411,7 @@ class PropertyCard extends StatelessWidget {
       padding: EdgeInsets.symmetric(vertical: 1.25.h, horizontal: 2.75.w),
       decoration: BoxDecoration(
         color: Theme.of(context).splashColor,
-        borderRadius: BorderRadius.circular(10.sp), // Rounded corners
+        borderRadius: BorderRadius.circular(10.sp),
         boxShadow: [
           BoxShadow(
             color: Colors.grey.withOpacity(0.2),
