@@ -1,12 +1,11 @@
-import 'package:flutter/cupertino.dart';
+import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:sizer/sizer.dart';
 
-import '../utils/theme_helper.dart';
-
-class CustomeCardApartment extends StatelessWidget {
-  const CustomeCardApartment({
+/// CustomCardApartment
+class CustomCardApartment extends StatelessWidget {
+  /// CustomCardApartment constructor
+  const CustomCardApartment({
     super.key,
   });
 
@@ -33,68 +32,79 @@ class CustomeCardApartment extends StatelessWidget {
           ),
         ),
         Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: Container(
-              clipBehavior: Clip.antiAlias,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(8.sp),
-                  bottomRight: Radius.circular(8.sp),
-                ),
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Container(
+            clipBehavior: Clip.antiAlias,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                bottomLeft: Radius.circular(8.sp),
+                bottomRight: Radius.circular(8.sp),
               ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 8, top: 2),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    SizedBox(
-                      height: 1.h,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 8, top: 2),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(
+                    height: 1.h,
+                  ),
+                  const Text(
+                    'Lorem House',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Montserrat',
                     ),
-                    Text(
-                      'Lorem House',
-                      style: TextStyle(
-                          color: Colors.black, fontSize: 10, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                  ),
+                  SizedBox(
+                    height: 1.h,
+                  ),
+                  Text(
+                    r'$xxx.xxx',
+                    style: TextStyle(
+                      color: ThemeHelper.appColors.primaryColor,
+                      fontSize: 12,
+                      fontFamily: 'Montserrat',
+                      fontWeight: FontWeight.w500,
                     ),
-                    SizedBox(
-                      height: 1.h,
-                    ),
-                    Text(
-                      '\$xxx.xxx',
-                      style: TextStyle(
-                          color: ThemeHelper.appColors.primaryColor,
-                          fontSize: 12,
-                          fontFamily: 'Montserrat',
-                          fontWeight: FontWeight.w500),
-                    ),
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.location_on_outlined,
-                          color: Colors.grey,
-                          size: 15,
+                  ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.location_on_outlined,
+                        color: Colors.grey,
+                        size: 15,
+                      ),
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(maxWidth: 80),
+                        child: const Text(
+                          'AvenueSsssssssssssss, West Side',
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 8,
+                            overflow: TextOverflow.ellipsis,
+                          ),
                         ),
-                        ConstrainedBox(
-                            constraints: BoxConstraints(maxWidth: 80),
-                            child: Text(
-                              'AvenueSsssssssssssss, West Side',
-                              style: TextStyle(color: Colors.grey, fontSize: 8, overflow: TextOverflow.ellipsis),
-                            )),
-                        SizedBox(
-                          width: 8.w,
-                        ),
-                        Icon(
-                          Icons.ac_unit,
-                          color: ThemeHelper.appColors.primaryColor,
-                          size: 20,
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 12)
-                  ],
-                ),
+                      ),
+                      SizedBox(
+                        width: 8.w,
+                      ),
+                      Icon(
+                        Icons.ac_unit,
+                        color: ThemeHelper.appColors.primaryColor,
+                        size: 20,
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 12),
+                ],
               ),
-            )),
+            ),
+          ),
+        ),
       ],
     );
   }
