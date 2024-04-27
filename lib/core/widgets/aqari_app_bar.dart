@@ -1,6 +1,7 @@
 import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/app_values.dart';
 import 'package:aqari/core/utils/assets.dart';
+import 'package:aqari/main.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -43,6 +44,10 @@ class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
           visualDensity: const VisualDensity(horizontal: -4),
           icon: SvgPicture.asset(
             Assets.genIconsFavorites,
+            colorFilter: ColorFilter.mode(
+              Theme.of(context).primaryColor,
+              BlendMode.srcIn,
+            ),
             height: 2.5.h,
             width: 2.5.w,
           ),
@@ -51,7 +56,7 @@ class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
           padding: EdgeInsets.zero,
           onPressed: () {
             Navigator.pushNamed(
-              context,
+              navigatorKey.currentContext!,
               Routes.notificationsRoute,
             );
           },

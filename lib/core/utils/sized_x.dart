@@ -14,6 +14,9 @@ class SizedX {
   /// Represents an empty [SizedBox].
   static Widget get zero => const SizedBox();
 
+  /// Represents a [SizedBox] with a height of 0.25% of the screen height.
+  static Widget get h0p25 => SizedBox(height: 0.25.h);
+
   /// Represents a [SizedBox] with a height of 0.5% of the screen height.
   static Widget get h0p5 => SizedBox(height: 0.5.h);
 

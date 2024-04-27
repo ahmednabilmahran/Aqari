@@ -21,6 +21,9 @@ class CustomButton extends StatelessWidget {
     this.notFillBackgroundColor,
     this.borderColor,
     this.icon,
+    this.buttonSize,
+    this.labelText,
+    this.borderRadius,
   });
   final VoidCallback onPressed;
   final String buttonText;
@@ -34,6 +37,9 @@ class CustomButton extends StatelessWidget {
   final bool hasBorder;
   final bool enabled;
   final Widget? icon;
+  final Size? buttonSize;
+  final TextStyle? labelText;
+  final double? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +58,9 @@ class CustomButton extends StatelessWidget {
                   : null
           : null,
       style: ButtonStyle(
-        minimumSize:
-            MaterialStateProperty.all<Size>(Size(double.infinity, 5.9.h)),
+        minimumSize: MaterialStateProperty.all<Size>(
+          buttonSize ?? Size(double.infinity, 5.9.h),
+        ),
         backgroundColor: MaterialStateProperty.all<Color>(
           enabled
               ? isFilled
@@ -78,7 +85,7 @@ class CustomButton extends StatelessWidget {
         shadowColor: MaterialStateProperty.all<Color>(Colors.black45),
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8.sp),
+            borderRadius: BorderRadius.circular(borderRadius ?? 8.sp),
             side: BorderSide(
               color: hasBorder
                   ? borderColor ??
@@ -101,18 +108,23 @@ class CustomButton extends StatelessWidget {
           },
         ),
       ),
-      label: Text(
-        buttonText,
-        textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.labelMedium?.copyWith(
-              fontWeight: FontWeight.w500,
-              fontSize: 13.sp,
-              color: enabled
-                  ? isFilled
-                      ? fillTextColor ?? Theme.of(context).dividerColor
-                      : notFillTextColor ?? Theme.of(context).dividerColor
-                  : Theme.of(context).scaffoldBackgroundColor.withOpacity(0.6),
-            ),
+      label: FittedBox(
+        child: Text(
+          buttonText,
+          textAlign: TextAlign.center,
+          style: labelText ??
+              Theme.of(context).textTheme.labelMedium?.copyWith(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 13.sp,
+                    color: enabled
+                        ? isFilled
+                            ? fillTextColor ?? Theme.of(context).dividerColor
+                            : notFillTextColor ?? Theme.of(context).dividerColor
+                        : Theme.of(context)
+                            .scaffoldBackgroundColor
+                            .withOpacity(0.6),
+                  ),
+        ),
       ),
     );
   }
