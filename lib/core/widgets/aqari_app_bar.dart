@@ -7,6 +7,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../modules/views/favorit.dart';
+
 /// AqariAppBar is used to manage the app bar for the app
 class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// AqariAppBar constructor
@@ -40,7 +42,9 @@ class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: [
         IconButton(
           padding: EdgeInsets.zero,
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => const FavoritesScreen()));
+          },
           visualDensity: const VisualDensity(horizontal: -4),
           icon: SvgPicture.asset(
             Assets.genIconsFavorites,

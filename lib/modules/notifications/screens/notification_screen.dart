@@ -27,7 +27,7 @@ class _NotificationScreenState extends State<NotificationsScreen> {
           children: [
             SizedBox(height: 16),
             ListNotification(day: 'Tomorrow'),
-            ListNotification(),
+            ListNotification(day: 'Today',),
             ListNotification(day: 'Yesterday '),
           ],
         ),
