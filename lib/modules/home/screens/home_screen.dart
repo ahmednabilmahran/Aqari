@@ -3,6 +3,7 @@ import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/aqari_app_bar.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
+import 'package:aqari/core/widgets/custom_filter.dart';
 import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/core/widgets/custom_search_field.dart';
 import 'package:aqari/generated/l10n.dart';
@@ -107,38 +108,7 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     SizedX.w3,
-                    IntrinsicHeight(
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 13.w,
-                            padding: EdgeInsets.symmetric(vertical: 1.8.h),
-                            decoration: BoxDecoration(
-                              color: Theme.of(context).primaryColor,
-                              borderRadius: BorderRadius.circular(10),
-                              boxShadow: [
-                                BoxShadow(
-                                  color: Colors.grey.withOpacity(0.2),
-                                  spreadRadius: 1,
-                                  blurRadius: 5,
-                                  offset: const Offset(
-                                    0,
-                                    3,
-                                  ),
-                                ),
-                              ],
-                            ),
-                            child: Center(
-                              child: SvgPicture.asset(
-                                Assets.genIconsFilter,
-                                height: 2.7.h,
-                                width: 2.7.w,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    const CustomFilter(),
                   ],
                 ),//CustomSearchField(),CustomFilter(),
                 SizedX.h3,

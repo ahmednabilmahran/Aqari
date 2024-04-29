@@ -9,13 +9,19 @@ import 'package:sizer/sizer.dart';
 import '../../core/utils/assets.dart';
 import '../../core/utils/sized_x.dart';
 import '../../core/widgets/custom_card_property.dart';
+import '../../core/widgets/custom_filter.dart';
 import '../../core/widgets/custom_search_field.dart';
 
 ///Favorites screen
-class FavoritesScreen extends StatelessWidget {
+class FavoritesScreen extends StatefulWidget {
   /// Constructor
   const FavoritesScreen({super.key});
 
+  @override
+  State<FavoritesScreen> createState() => _FavoritesScreenState();
+}
+
+class _FavoritesScreenState extends State<FavoritesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,37 +75,8 @@ class FavoritesScreen extends StatelessWidget {
                   ),
                 ),
                 SizedX.w3,
-                IntrinsicHeight(
-                  child: Row(
-                    children: [
-                      Container(
-                        width: 13.w,
-                        padding: EdgeInsets.symmetric(vertical: 1.8.h),
-                        decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.2),
-                              spreadRadius: 1,
-                              blurRadius: 5,
-                              offset: const Offset(
-                                0,
-                                3,
-                              ),
-                            ),
-                          ],
-                        ),
-                        child: Center(
-                          child: SvgPicture.asset(
-                            Assets.genIconsFilter,
-                            height: 2.7.h,
-                            width: 2.7.w,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                const IntrinsicHeight(
+                  child: CustomFilter(),
                 ),
               ],
             ), //CustomSearchField(),CustomFilter(),
@@ -117,3 +94,4 @@ class FavoritesScreen extends StatelessWidget {
     );
   }
 }
+
