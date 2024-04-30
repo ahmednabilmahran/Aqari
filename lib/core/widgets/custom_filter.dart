@@ -1,24 +1,23 @@
+import 'package:aqari/core/utils/assets.dart';
+import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
 import 'package:aqari/core/widgets/custom_text_field.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
-import '../utils/assets.dart';
-import '../utils/theme_helper.dart';
-
+/// CustomFilter
 class CustomFilter extends StatefulWidget {
-  const CustomFilter();
+  /// Constructor
+  const CustomFilter({super.key});
 
   @override
   State<CustomFilter> createState() => _CustomFilterState();
 }
 
 class _CustomFilterState extends State<CustomFilter> {
-  _CustomFilterState({this.groupValue});
+  _CustomFilterState();
 
   String? groupValue;
   RangeValues values = const RangeValues(1000, 5000);
@@ -28,7 +27,7 @@ class _CustomFilterState extends State<CustomFilter> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        showModalBottomSheet(
+        showModalBottomSheet<void>(
           showDragHandle: true,
           scrollControlDisabledMaxHeightRatio: 0.7,
           shape: RoundedRectangleBorder(
@@ -37,20 +36,21 @@ class _CustomFilterState extends State<CustomFilter> {
           context: context,
           builder: (context) {
             return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
+              padding: const EdgeInsets.symmetric(horizontal: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Center(
-                      child: Text(
-                    'Filter',
-                    style: TextStyle(
-                      color: ThemeHelper.appColors.primaryColor,
-                      fontSize: 18.sp,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Montserrat',
+                    child: Text(
+                      'Filter',
+                      style: TextStyle(
+                        color: ThemeHelper.appColors.primaryColor,
+                        fontSize: 18.sp,
+                        fontWeight: FontWeight.bold,
+                        fontFamily: 'Montserrat',
+                      ),
                     ),
-                  )), //text filter
+                  ), //text filter
                   Flexible(
                     child: Text(
                       'Property type',
@@ -78,10 +78,17 @@ class _CustomFilterState extends State<CustomFilter> {
                             child: RadioListTile(
                               contentPadding: EdgeInsets.zero,
                               activeColor: ThemeHelper.appColors.primaryColor,
-                              title: const Text('House', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                              title: const Text(
+                                'House',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                               value: 'House',
                               groupValue: groupValue,
-                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
                               visualDensity: const VisualDensity(
                                 horizontal: VisualDensity.minimumDensity,
                                 vertical: VisualDensity.minimumDensity,
@@ -104,17 +111,19 @@ class _CustomFilterState extends State<CustomFilter> {
                               ),
                             ),
                             child: RadioListTile(
-
                               contentPadding: EdgeInsets.zero,
-
                               activeColor: ThemeHelper.appColors.primaryColor,
                               title: const Text(
                                 'Apartment',
-                                style: TextStyle(fontSize: 9, fontWeight: FontWeight.bold),
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
                               value: 'Apartment',
                               groupValue: groupValue,
-                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
                               visualDensity: const VisualDensity(
                                 horizontal: VisualDensity.minimumDensity,
                                 vertical: VisualDensity.minimumDensity,
@@ -139,13 +148,20 @@ class _CustomFilterState extends State<CustomFilter> {
                             child: RadioListTile(
                               contentPadding: EdgeInsets.zero,
                               activeColor: ThemeHelper.appColors.primaryColor,
-                              title: const Text('Flat', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                              title: const Text(
+                                'Flat',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                               value: 'Flat',
                               visualDensity: const VisualDensity(
                                 horizontal: VisualDensity.minimumDensity,
                                 vertical: VisualDensity.minimumDensity,
                               ),
-                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
                               groupValue: groupValue,
                               onChanged: (value) {
                                 setState(
@@ -167,10 +183,17 @@ class _CustomFilterState extends State<CustomFilter> {
                             child: RadioListTile(
                               contentPadding: EdgeInsets.zero,
                               activeColor: ThemeHelper.appColors.primaryColor,
-                              title: const Text('Villa', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
+                              title: const Text(
+                                'Villa',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
                               value: 'Villa',
                               groupValue: groupValue,
-                              materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                              materialTapTargetSize:
+                                  MaterialTapTargetSize.shrinkWrap,
                               visualDensity: const VisualDensity(
                                 horizontal: VisualDensity.minimumDensity,
                                 vertical: VisualDensity.minimumDensity,
@@ -277,24 +300,27 @@ class _CustomFilterState extends State<CustomFilter> {
                       mainAxisSize: MainAxisSize.min,
                       children: [
                         Expanded(
-                            child: CustomButton(
-                          borderColor: ThemeHelper.appColors.black,
-                          fillBackgroundColor: ThemeHelper.appColors.white,
-                          labelText: TextStyle(
+                          child: CustomButton(
+                            borderColor: ThemeHelper.appColors.black,
+                            fillBackgroundColor: ThemeHelper.appColors.white,
+                            labelText: TextStyle(
                               color: ThemeHelper.appColors.black,
                               fontFamily: 'Montserrat',
-                              fontWeight: FontWeight.w400),
-                          buttonText: 'Reset',
-                          onPressed: () {},
-                        )),
+                              fontWeight: FontWeight.w400,
+                            ),
+                            buttonText: 'Reset',
+                            onPressed: () {},
+                          ),
+                        ),
                         SizedBox(
                           width: 5.w,
                         ),
                         Expanded(
-                            child: CustomButton(
-                          buttonText: 'Apply',
-                          onPressed: () {},
-                        )),
+                          child: CustomButton(
+                            buttonText: 'Apply',
+                            onPressed: () {},
+                          ),
+                        ),
                       ],
                     ), //RadioListTiles
                   ), //Buttons apply and reset

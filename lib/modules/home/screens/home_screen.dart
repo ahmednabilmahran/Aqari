@@ -3,6 +3,7 @@ import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/aqari_app_bar.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
+import 'package:aqari/core/widgets/custom_card_property.dart';
 import 'package:aqari/core/widgets/custom_filter.dart';
 import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/core/widgets/custom_search_field.dart';
@@ -11,8 +12,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../../core/widgets/custom_card_property.dart';
 
 /// HomeScreen
 class HomeScreen extends StatelessWidget {
@@ -110,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                     SizedX.w3,
                     const CustomFilter(),
                   ],
-                ),//CustomSearchField(),CustomFilter(),
+                ), //CustomSearchField(),CustomFilter(),
                 SizedX.h3,
                 Container(
                   padding: EdgeInsets.only(
@@ -274,7 +273,7 @@ class HomeScreen extends StatelessWidget {
                   itemBuilder: (context, index) => const PropertyCard(),
                   separatorBuilder: (context, index) => SizedX.h2p5,
                   itemCount: 5,
-                ),//Listview of  PropertyCard(),
+                ), //Listview of  PropertyCard(),
               ],
             ),
           ),

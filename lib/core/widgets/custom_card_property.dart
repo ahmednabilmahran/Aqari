@@ -1,11 +1,11 @@
+import 'package:aqari/core/utils/assets.dart';
+import 'package:aqari/core/utils/sized_x.dart';
+import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
-import '../utils/assets.dart';
-import '../utils/sized_x.dart';
-import '../utils/theme_helper.dart';
-
+/// PropertyCard is used to manage the property card
 class PropertyCard extends StatelessWidget {
   /// Constructor
   const PropertyCard({super.key});
@@ -49,10 +49,10 @@ class PropertyCard extends StatelessWidget {
                   Text(
                     'Woodland Apartment',
                     style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                      fontSize: 13.sp,
-                      fontWeight: FontWeight.w600,
-                      color: ThemeHelper.appColors.black,
-                    ),
+                          fontSize: 13.sp,
+                          fontWeight: FontWeight.w600,
+                          color: ThemeHelper.appColors.black,
+                        ),
                   ),
                   SizedX.h0p5,
                   Row(
@@ -66,10 +66,10 @@ class PropertyCard extends StatelessWidget {
                       Text(
                         'New Cairo',
                         style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          fontSize: 10.sp,
-                          fontWeight: FontWeight.w300,
-                          color: ThemeHelper.appColors.darkGrey,
-                        ),
+                              fontSize: 10.sp,
+                              fontWeight: FontWeight.w300,
+                              color: ThemeHelper.appColors.darkGrey,
+                            ),
                       ),
                     ],
                   ),
@@ -85,10 +85,10 @@ class PropertyCard extends StatelessWidget {
                       Text(
                         '1,225',
                         style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          fontSize: 8.5.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ThemeHelper.appColors.darkGrey,
-                        ),
+                              fontSize: 8.5.sp,
+                              fontWeight: FontWeight.w500,
+                              color: ThemeHelper.appColors.darkGrey,
+                            ),
                       ),
                       SizedX.w4,
                       SvgPicture.asset(
@@ -100,10 +100,10 @@ class PropertyCard extends StatelessWidget {
                       Text(
                         '3.0',
                         style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                          fontSize: 8.5.sp,
-                          fontWeight: FontWeight.w500,
-                          color: ThemeHelper.appColors.darkGrey,
-                        ),
+                              fontSize: 8.5.sp,
+                              fontWeight: FontWeight.w500,
+                              color: ThemeHelper.appColors.darkGrey,
+                            ),
                       ),
                     ],
                   ),
