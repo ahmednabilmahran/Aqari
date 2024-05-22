@@ -58,10 +58,10 @@ class CustomButton extends StatelessWidget {
                   : null
           : null,
       style: ButtonStyle(
-        minimumSize: MaterialStateProperty.all<Size>(
+        minimumSize: WidgetStateProperty.all<Size>(
           buttonSize ?? Size(double.infinity, 5.9.h),
         ),
-        backgroundColor: MaterialStateProperty.all<Color>(
+        backgroundColor: WidgetStateProperty.all<Color>(
           enabled
               ? isFilled
                   ? fillBackgroundColor ?? Theme.of(context).primaryColor
@@ -71,9 +71,9 @@ class CustomButton extends StatelessWidget {
         ),
         elevation: enabled
             ? isFilled
-                ? MaterialStateProperty.resolveWith<double>(
-                    (Set<MaterialState> states) {
-                      if (states.contains(MaterialState.pressed)) {
+                ? WidgetStateProperty.resolveWith<double>(
+                    (Set<WidgetState> states) {
+                      if (states.contains(WidgetState.pressed)) {
                         return 10;
                       }
                       return 5;
@@ -82,8 +82,8 @@ class CustomButton extends StatelessWidget {
                 : null
             : null,
         enableFeedback: true,
-        shadowColor: MaterialStateProperty.all<Color>(Colors.black45),
-        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+        shadowColor: WidgetStateProperty.all<Color>(Colors.black45),
+        shape: WidgetStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(borderRadius ?? 8.sp),
             side: BorderSide(
@@ -98,9 +98,9 @@ class CustomButton extends StatelessWidget {
           ),
         ),
         // This is the part where we add the shadow to the button
-        overlayColor: MaterialStateProperty.resolveWith<Color>(
-          (Set<MaterialState> states) {
-            if (states.contains(MaterialState.pressed)) {
+        overlayColor: WidgetStateProperty.resolveWith<Color>(
+          (Set<WidgetState> states) {
+            if (states.contains(WidgetState.pressed)) {
               return fillBackgroundColor?.withOpacity(0.5) ??
                   Colors.grey.withOpacity(0.5);
             }

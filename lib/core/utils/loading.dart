@@ -12,7 +12,6 @@ Future<dynamic> loading(BuildContext dialogContext) {
     builder: (context) => const DefaultLoading(),
     barrierDismissible: false,
     useSafeArea: false,
-    useRootNavigator: true,
   );
 }
 
