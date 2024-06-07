@@ -49,11 +49,15 @@ class MessageLookup extends MessageLookupByLibrary {
         "featuredProperties":
             MessageLookupByLibrary.simpleMessage("Featured Properties"),
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),
+        "firstNameCantBeEmpty":
+            MessageLookupByLibrary.simpleMessage("First Name can\'t be empty"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
         "joinNow": MessageLookupByLibrary.simpleMessage("Join Now"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
+        "lastNameCantBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Last Name can\'t be empty"),
         "listMyPropertyForSale":
             MessageLookupByLibrary.simpleMessage("List my property for sale"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
@@ -63,7 +67,29 @@ class MessageLookup extends MessageLookupByLibrary {
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "optional": MessageLookupByLibrary.simpleMessage("Optional"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
+        "passwordCantBeEmpty":
+            MessageLookupByLibrary.simpleMessage("Password can\'t be empty"),
+        "passwordContainsAtLeast1Number": MessageLookupByLibrary.simpleMessage(
+            "Password contains at least 1 number"),
+        "passwordContainsAtLeast1SpecialCharacter":
+            MessageLookupByLibrary.simpleMessage(
+                "Password contains at least 1 special character (!#@\\\$%*)"),
+        "passwordContainsAtLeast8Characters":
+            MessageLookupByLibrary.simpleMessage(
+                "Password contains at least 8 characters"),
+        "passwordsAreMatched":
+            MessageLookupByLibrary.simpleMessage("Passwords are matched"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
+        "phoneNumberCantBeEmpty": MessageLookupByLibrary.simpleMessage(
+            "Phone number can\'t be empty"),
+        "pleaseEnterAValidPhoneNumber": MessageLookupByLibrary.simpleMessage(
+            "Please enter a valid phone number"),
+        "pleaseEnterValidEmail":
+            MessageLookupByLibrary.simpleMessage("Please enter valid email"),
+        "pleaseEnterValidName":
+            MessageLookupByLibrary.simpleMessage("Please enter valid name"),
+        "pleaseEnterValidPassword":
+            MessageLookupByLibrary.simpleMessage("Please enter valid password"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchByAddressCityOrZip": MessageLookupByLibrary.simpleMessage(

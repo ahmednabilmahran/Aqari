@@ -1,6 +1,14 @@
 class Assets {
   Assets._();
   
+  /// Assets for genIconsDarkUnvalidatedTextIcon
+  /// assets/gen/icons/dark_unvalidated_text_icon.svg
+  static const String genIconsDarkUnvalidatedTextIcon = "assets/gen/icons/dark_unvalidated_text_icon.svg";
+
+  /// Assets for genIconsDarkValidatedTextIcon
+  /// assets/gen/icons/dark_validated_text_icon.svg
+  static const String genIconsDarkValidatedTextIcon = "assets/gen/icons/dark_validated_text_icon.svg";
+
   /// Assets for genIconsExplore
   /// assets/gen/icons/explore.svg
   static const String genIconsExplore = "assets/gen/icons/explore.svg";
@@ -57,9 +65,25 @@ class Assets {
   /// assets/gen/icons/search_address.svg
   static const String genIconsSearchAddress = "assets/gen/icons/search_address.svg";
 
+  /// Assets for genIconsShowPasswordIcon
+  /// assets/gen/icons/show_password_icon.svg
+  static const String genIconsShowPasswordIcon = "assets/gen/icons/show_password_icon.svg";
+
   /// Assets for genIconsSquareFt
   /// assets/gen/icons/square_ft.svg
   static const String genIconsSquareFt = "assets/gen/icons/square_ft.svg";
+
+  /// Assets for genIconsUnshowPasswordIcon
+  /// assets/gen/icons/unshow_password_icon.svg
+  static const String genIconsUnshowPasswordIcon = "assets/gen/icons/unshow_password_icon.svg";
+
+  /// Assets for genIconsUnvalidatedTextIcon
+  /// assets/gen/icons/unvalidated_text_icon.svg
+  static const String genIconsUnvalidatedTextIcon = "assets/gen/icons/unvalidated_text_icon.svg";
+
+  /// Assets for genIconsValidatedTextIcon
+  /// assets/gen/icons/validated_text_icon.svg
+  static const String genIconsValidatedTextIcon = "assets/gen/icons/validated_text_icon.svg";
 
   /// Assets for genImagesLoginBackground
   /// assets/gen/images/login_background.jpg

@@ -1,22 +1,23 @@
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
-import 'package:aqari/core/widgets/aqari_app_bar.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/modules/home/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-// profile data
+/// profile data
 final profile = Profile(
-    firstName: 'User',
-    lastName: 'Name',
-    email: '123',
-    phone: '01023456789',
-    image: Assets.genImagesTest1,
-    sold: '1 Sold');
-// house data
-final house = HouseCard(
+  firstName: 'User',
+  lastName: 'Name',
+  email: '123',
+  phone: '01023456789',
+  image: Assets.genImagesTest1,
+  sold: '1 Sold',
+);
+
+/// house data
+const house = HouseCard(
   imagePath: Assets.genImagesTest1,
   title: 'Lorem House',
   details: '4 Beds | 4 Baths',
@@ -46,35 +47,45 @@ class ProfileScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Stack(children: [
-                    CircleAvatar(
-                      radius: 50.sp,
-                      backgroundImage: AssetImage(profile.image),
-                    ),
-                    Positioned(
-                      bottom: 0,
-                      right: 0,
-                      child: CircleAvatar(
-                        radius: 15.sp,
-                        backgroundColor: Theme.of(context).primaryColor,
-                        child:
-                            Icon(Icons.edit, color: Colors.white, size: 15.sp),
+                  Stack(
+                    children: [
+                      CircleAvatar(
+                        radius: 50.sp,
+                        backgroundImage: AssetImage(profile.image),
                       ),
-                    ),
-                  ]),
+                      Positioned(
+                        bottom: 0,
+                        right: 0,
+                        child: CircleAvatar(
+                          radius: 15.sp,
+                          backgroundColor: Theme.of(context).primaryColor,
+                          child: Icon(
+                            Icons.edit,
+                            color: Colors.white,
+                            size: 15.sp,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                   SizedX.h2,
-                  Text('${profile.firstName} ${profile.lastName}',
-                      style: TextStyle(
-                          fontSize: 12.sp, fontWeight: FontWeight.bold)),
+                  Text(
+                    '${profile.firstName} ${profile.lastName}',
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                   SizedX.zero,
-                  Text(profile.phone,
-                      style:
-                          TextStyle(fontSize: 10.sp, color: Colors.grey[600])),
+                  Text(
+                    profile.phone,
+                    style: TextStyle(fontSize: 10.sp, color: Colors.grey[600]),
+                  ),
                 ],
               ),
             ),
             SizedX.h3,
-            CustomPadding(
+            const CustomPadding(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
@@ -86,13 +97,17 @@ class ProfileScreen extends StatelessWidget {
             CustomPadding(
               child: Row(
                 children: [
-                  Text(profile.sold,
-                      style: TextStyle(
-                          fontSize: 12.sp, fontWeight: FontWeight.bold)),
+                  Text(
+                    profile.sold,
+                    style: TextStyle(
+                      fontSize: 12.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             ),
-            SingleChildScrollView(
+            const SingleChildScrollView(
               child: CustomPadding(
                 child: Row(
                   children: [
@@ -100,7 +115,7 @@ class ProfileScreen extends StatelessWidget {
                   ],
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -108,15 +123,10 @@ class ProfileScreen extends StatelessWidget {
   }
 }
 
-//housecard =
+///housecard =
 
 class Profile {
-  final String firstName;
-  final String lastName;
-  final String email;
-  final String phone;
-  final String image;
-  final String sold;
+  /// constructor
   Profile({
     required this.firstName,
     required this.lastName,
@@ -125,14 +135,36 @@ class Profile {
     required this.image,
     required this.sold,
   });
+
+  /// first name
+  final String firstName;
+
+  /// last name
+  final String lastName;
+
+  /// email
+  final String email;
+
+  /// phone
+  final String phone;
+
+  /// image
+  final String image;
+
+  /// sold
+  final String sold;
 }
 
-// customer container for listing and sold data
+/// customer container for listing and sold data
 class CustomContainer extends StatelessWidget {
-  final String number;
-  final String text;
+  /// constructor
+  const CustomContainer({required this.number, required this.text, super.key});
 
-  CustomContainer({required this.number, required this.text});
+  /// number
+  final String number;
+
+  /// text
+  final String text;
 
   @override
   Widget build(BuildContext context) {
@@ -140,7 +172,7 @@ class CustomContainer extends StatelessWidget {
       width: 120.sp,
       height: 55.sp,
       decoration: BoxDecoration(
-        border: Border.all(color: Theme.of(context).primaryColor, width: 1),
+        border: Border.all(color: Theme.of(context).primaryColor),
         borderRadius: BorderRadius.circular(10),
       ),
       child: Column(

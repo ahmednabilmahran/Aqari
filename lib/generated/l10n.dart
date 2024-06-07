@@ -389,6 +389,126 @@ class S {
       args: [],
     );
   }
+
+  /// `First Name can't be empty`
+  String get firstNameCantBeEmpty {
+    return Intl.message(
+      'First Name can\'t be empty',
+      name: 'firstNameCantBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter valid name`
+  String get pleaseEnterValidName {
+    return Intl.message(
+      'Please enter valid name',
+      name: 'pleaseEnterValidName',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Last Name can't be empty`
+  String get lastNameCantBeEmpty {
+    return Intl.message(
+      'Last Name can\'t be empty',
+      name: 'lastNameCantBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone number can't be empty`
+  String get phoneNumberCantBeEmpty {
+    return Intl.message(
+      'Phone number can\'t be empty',
+      name: 'phoneNumberCantBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter a valid phone number`
+  String get pleaseEnterAValidPhoneNumber {
+    return Intl.message(
+      'Please enter a valid phone number',
+      name: 'pleaseEnterAValidPhoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter valid email`
+  String get pleaseEnterValidEmail {
+    return Intl.message(
+      'Please enter valid email',
+      name: 'pleaseEnterValidEmail',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password can't be empty`
+  String get passwordCantBeEmpty {
+    return Intl.message(
+      'Password can\'t be empty',
+      name: 'passwordCantBeEmpty',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please enter valid password`
+  String get pleaseEnterValidPassword {
+    return Intl.message(
+      'Please enter valid password',
+      name: 'pleaseEnterValidPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password contains at least 8 characters`
+  String get passwordContainsAtLeast8Characters {
+    return Intl.message(
+      'Password contains at least 8 characters',
+      name: 'passwordContainsAtLeast8Characters',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password contains at least 1 number`
+  String get passwordContainsAtLeast1Number {
+    return Intl.message(
+      'Password contains at least 1 number',
+      name: 'passwordContainsAtLeast1Number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password contains at least 1 special character (!#@\$%*)`
+  String get passwordContainsAtLeast1SpecialCharacter {
+    return Intl.message(
+      'Password contains at least 1 special character (!#@\\\$%*)',
+      name: 'passwordContainsAtLeast1SpecialCharacter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Passwords are matched`
+  String get passwordsAreMatched {
+    return Intl.message(
+      'Passwords are matched',
+      name: 'passwordsAreMatched',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

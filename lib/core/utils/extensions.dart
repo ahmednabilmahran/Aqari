@@ -56,7 +56,7 @@ extension CapExtension on String {
   /// Checks if string is password.
   bool get isValidPassword {
     final regExp = RegExp(
-      r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~.,:;^%(){}[\]<>?/\\|\-_=+]).{8,}$',
+      r'^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~.,:;^%(){}[\]<>?/\\|\-_=+]).{8,}$',
     );
     return regExp.hasMatch(this);
   }

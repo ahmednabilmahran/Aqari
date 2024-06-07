@@ -32,5 +32,17 @@
   "checkOutSomeOfOurTopListings": "Check out some of our top listings",
   "viewAll": "View All",
   "nearYou": "Near You",
-  "viewMore": "View more"
+  "viewMore": "View more",
+  "firstNameCantBeEmpty": "First Name can't be empty",
+  "pleaseEnterValidName": "Please enter valid name",
+  "lastNameCantBeEmpty": "Last Name can't be empty",
+  "phoneNumberCantBeEmpty": "Phone number can't be empty",
+  "pleaseEnterAValidPhoneNumber": "Please enter a valid phone number",
+  "pleaseEnterValidEmail": "Please enter valid email",
+  "passwordCantBeEmpty": "Password can't be empty",
+  "pleaseEnterValidPassword": "Please enter valid password",
+  "passwordContainsAtLeast8Characters": "Password contains at least 8 characters",
+  "passwordContainsAtLeast1Number": "Password contains at least 1 number",
+  "passwordContainsAtLeast1SpecialCharacter": "Password contains at least 1 special character (!#@\\$%*)",
+  "passwordsAreMatched": "Passwords are matched"
 }
