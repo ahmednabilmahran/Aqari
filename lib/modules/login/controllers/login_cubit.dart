@@ -6,6 +6,7 @@ import 'package:aqari/main.dart';
 import 'package:aqari/models/aqari_country_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 part 'login_state.dart';
 
@@ -61,7 +62,7 @@ class LoginCubit extends Cubit<LoginState> {
 
       try {
         final result = await _loginService.loginWithPhone(
-          phone: phoneController.text,
+          phone: selectedCountry.dialCode + phoneController.text,
           password: passwordController.text,
         );
         if (result.user != null) {
@@ -69,7 +70,11 @@ class LoginCubit extends Cubit<LoginState> {
           emit(LoginSuccessState());
         }
       } catch (e) {
-        emit(LoginErrorState(e.toString()));
+        if (e is AuthApiException) {
+          emit(LoginErrorState(e.message));
+        } else {
+          emit(LoginErrorState(e.toString()));
+        }
       }
     }
   }

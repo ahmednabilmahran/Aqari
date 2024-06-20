@@ -9,6 +9,10 @@ class Assets {
   /// assets/gen/icons/dark_validated_text_icon.svg
   static const String genIconsDarkValidatedTextIcon = "assets/gen/icons/dark_validated_text_icon.svg";
 
+  /// Assets for genIconsDone
+  /// assets/gen/icons/done.svg
+  static const String genIconsDone = "assets/gen/icons/done.svg";
+
   /// Assets for genIconsExplore
   /// assets/gen/icons/explore.svg
   static const String genIconsExplore = "assets/gen/icons/explore.svg";
@@ -84,6 +88,10 @@ class Assets {
   /// Assets for genIconsValidatedTextIcon
   /// assets/gen/icons/validated_text_icon.svg
   static const String genIconsValidatedTextIcon = "assets/gen/icons/validated_text_icon.svg";
+
+  /// Assets for genIconsVerifySignUp
+  /// assets/gen/icons/verify_sign_up.svg
+  static const String genIconsVerifySignUp = "assets/gen/icons/verify_sign_up.svg";
 
   /// Assets for genImagesLoginBackground
   /// assets/gen/images/login_background.jpg

@@ -3,6 +3,7 @@
 import 'dart:async';
 
 import 'package:aqari/config/routes/app_routes.dart';
+import 'package:aqari/core/controllers/shared_authentication/shared_authentication_cubit.dart';
 import 'package:aqari/core/utils/database_manager.dart';
 import 'package:aqari/main.dart';
 import 'package:flutter/material.dart';
@@ -114,38 +115,30 @@ class SplashCubit extends Cubit<SplashState> {
   Future<void> _goNext(BuildContext context) async {
     // Check if the onboarding has already been shown to the user.
     // final onboardingShowed = await databaseManager.getOnBoarding;
+    // await Navigator.pushReplacementNamed(context, Routes.loginRoute);
 
     if (!context.mounted) return;
 
-    await Navigator.pushReplacementNamed(context, Routes.loginRoute);
-
-    // // Access the AuthenticationCubit to check the current authentication state.
-    // final authState = context.read<SharedAuthenticationCubit>().state;
-    // unawaited(supabaseClient.auth.refreshSession());
-
-    // // Decide the next screen based on the authentication state and whether the onboarding was shown.
-    // if (authState is SharedAuthenticationAuthenticatedState) {
-    //   // User is authenticated, navigate to the Home screen.
-    //   await appRouter.pushAndPopUntil(
-    //     const AppLayoutRoute(), // Assuming you have a AppLayoutRoute defined in your AutoRoute setup
-    //     predicate: (_) => false,
-    //   );
-    // } else {
-    //   // User is not authenticated or the authentication state is not determined.
-    //   if (onboardingShowed) {
-    //     // If the onboarding has already been shown, navigate to the Get Started screen.
-    //     await appRouter.pushAndPopUntil(
-    //       const GetStartedRoute(), // This assumes you have a GetStartedRoute defined
-    //       predicate: (_) => false,
-    //     );
-    //   } else {
-    //     // If the onboarding hasn't been shown yet, navigate to the Onboarding screen.
-    //     await appRouter.pushAndPopUntil(
-    //       const MainOnboardingRoute(), // Assuming you have a MainOnboardingRoute defined
-    //       predicate: (_) => false,
-    //     );
-    //   }
-    // }
+    // Access the AuthenticationCubit to check the current authentication state.
+    final authState = context.read<SharedAuthenticationCubit>().state;
+    
+    // Decide the next screen based on the authentication state and whether the onboarding was shown.
+    if (authState is SharedAuthenticationAuthenticatedState) {
+      unawaited(supabaseClient.auth.refreshSession());
+      // User is authenticated, navigate to the Home screen.
+      await Navigator.pushNamedAndRemoveUntil(
+        context,
+        Routes.appLayoutRoute,
+        (route) => false,
+      );
+    } else {
+      // User is not authenticated, navigate to the Login screen.
+      await Navigator.pushNamedAndRemoveUntil(
+        context,
+        Routes.loginRoute,
+        (route) => false,
+      );
+    }
   }
 
   @override

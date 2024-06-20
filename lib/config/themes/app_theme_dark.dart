@@ -17,6 +17,7 @@ class AppThemeDark {
   static ThemeData theme(String lang) {
     return ThemeData(
       // Define the primary color swatch.
+      // Define the primary color swatch.
       primarySwatch: ThemeHelper.appColors.primarySwatchColor,
 
       // Select the font family based on the language setting.
@@ -39,11 +40,11 @@ class AppThemeDark {
       brightness: Brightness.light,
 
       // Additional color configurations.
-      splashColor: ThemeHelper.appColors.secondaryColor,
-      hoverColor: ThemeHelper.appColors.secondaryColor,
+      splashColor: ThemeHelper.appColors.white,
+      hoverColor: ThemeHelper.appColors.borderColor,
       cardColor: ThemeHelper.appColors.grey,
       shadowColor: ThemeHelper.appColors.secondaryColor,
-      scaffoldBackgroundColor: ThemeHelper.appColors.white,
+      scaffoldBackgroundColor: ThemeHelper.appColors.lightBackground,
       colorScheme: ColorScheme.light(
         error: ThemeHelper.appColors.errorColor,
         surfaceTint: ThemeHelper.appColors.secondaryColor,
@@ -147,7 +148,7 @@ class AppThemeDark {
           fontWeight: FontWeight.w700,
         ),
 
-        /// Used for scrolling text effects like marquee.
+        /// Used for scrolling text effects like marquee.ƒ
         labelMedium: TextStyle(
           fontSize: 11.sp,
           fontWeight: FontWeight.w700,

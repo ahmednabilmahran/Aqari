@@ -1,6 +1,7 @@
 import 'package:aqari/config/routes/app_pages.dart';
 import 'package:aqari/config/themes/app_theme.dart';
 import 'package:aqari/config/themes/app_theme_dark.dart';
+import 'package:aqari/core/controllers/shared_authentication/shared_authentication_cubit.dart';
 import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/app_strings.dart';
 import 'package:aqari/core/utils/no_glow.dart';
@@ -24,15 +25,23 @@ class AqariApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => MainCubit(
-        getIt<GetSavedLangUseCase>(),
-        getIt<ChangeLangUseCase>(),
-        getIt<GetSavedThemeModeUseCase>(),
-        getIt<ChangeThemeModeUseCase>(),
-      )
-        ..getSavedLang()
-        ..getSavedThemeMode(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => MainCubit(
+            getIt<GetSavedLangUseCase>(),
+            getIt<ChangeLangUseCase>(),
+            getIt<GetSavedThemeModeUseCase>(),
+            getIt<ChangeThemeModeUseCase>(),
+          )
+            ..getSavedLang()
+            ..getSavedThemeMode(),
+        ),
+        BlocProvider(
+          create: (context) =>
+              getIt<SharedAuthenticationCubit>()..checkAuthenticationStatus(),
+        ),
+      ],
       child: Sizer(
         builder: (context, orientation, deviceType) => NoGlowScroll(
           child: MaterialApp(

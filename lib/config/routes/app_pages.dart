@@ -5,6 +5,7 @@ import 'package:aqari/modules/login/screens/login_screen.dart';
 import 'package:aqari/modules/notifications/screens/notification_screen.dart';
 import 'package:aqari/modules/sign_up/screens/sign_up_screen.dart';
 import 'package:aqari/modules/splash/presentation/screens/splash_screen.dart';
+import 'package:aqari/modules/verify_sign_up/screens/verify_sign_up_screen.dart';
 import 'package:flutter/material.dart';
 
 /// Application routes
@@ -34,6 +35,16 @@ class AppRoutes {
             return const SignUpScreen();
           },
           settings: const RouteSettings(name: Routes.signUpRoute),
+        );
+
+      case Routes.verifySignUpRoute:
+        return MaterialPageRoute(
+          builder: (context) {
+            return VerifySignUpScreen(
+              usingEmail: routeSettings.arguments! as bool,
+            );
+          },
+          settings: const RouteSettings(name: Routes.verifySignUpRoute),
         );
 
       case Routes.appLayoutRoute:

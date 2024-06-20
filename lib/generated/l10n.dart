@@ -509,6 +509,56 @@ class S {
       args: [],
     );
   }
+
+  /// `You're almost in! Final step...`
+  String get youreAlmostInFinalStep {
+    return Intl.message(
+      'You\'re almost in! Final step...',
+      name: 'youreAlmostInFinalStep',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We need to confirm your account.`
+  String get weNeedToConfirmYourAccount {
+    return Intl.message(
+      'We need to confirm your account.',
+      name: 'weNeedToConfirmYourAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `you will receive an email once accepted.`
+  String get youWillReceiveAnEmailOnceAccepted {
+    return Intl.message(
+      'you will receive an email once accepted.',
+      name: 'youWillReceiveAnEmailOnceAccepted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You're all set!`
+  String get youreAllSet {
+    return Intl.message(
+      'You\'re all set!',
+      name: 'youreAllSet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You can start using the app right away.`
+  String get youCanStartUsingTheAppRightAway {
+    return Intl.message(
+      'You can start using the app right away.',
+      name: 'youCanStartUsingTheAppRightAway',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

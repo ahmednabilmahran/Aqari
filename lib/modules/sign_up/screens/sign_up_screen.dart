@@ -40,8 +40,10 @@ class SignUpScreen extends StatelessWidget {
             Navigator.pop(dialogContext);
             Navigator.pushNamedAndRemoveUntil(
               context,
-              Routes.appLayoutRoute,
+              Routes.verifySignUpRoute,
               (route) => false,
+              arguments:
+                  context.read<SignUpCubit>().emailController.text.isNotEmpty,
             );
           }
           if (state is SignUpErrorState) {

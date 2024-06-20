@@ -1,7 +1,9 @@
+import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_padding.dart';
+import 'package:aqari/main.dart';
 import 'package:aqari/modules/home/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -33,90 +35,100 @@ class ProfileScreen extends StatelessWidget {
     return Scaffold(
       appBar: CustomAppBar(
         titleText: 'Profile',
-        onBackButtonPressed: () {
-          Navigator.pop(context);
+        onBackButtonPressed: () async {
+          await supabaseClient.auth.signOut();
+          if (context.mounted) {
+            await Navigator.pushNamedAndRemoveUntil(
+              context,
+              Routes.loginRoute,
+              (route) => false,
+            );
+          }
         },
       ),
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              color: Colors.grey[200],
-              height: 35.h,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Stack(
-                    children: [
-                      CircleAvatar(
-                        radius: 50.sp,
-                        backgroundImage: AssetImage(profile.image),
-                      ),
-                      Positioned(
-                        bottom: 0,
-                        right: 0,
-                        child: CircleAvatar(
-                          radius: 15.sp,
-                          backgroundColor: Theme.of(context).primaryColor,
-                          child: Icon(
-                            Icons.edit,
-                            color: Colors.white,
-                            size: 15.sp,
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                color: Colors.grey[200],
+                height: 35.h,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Stack(
+                      children: [
+                        CircleAvatar(
+                          radius: 50.sp,
+                          backgroundImage: AssetImage(profile.image),
+                        ),
+                        Positioned(
+                          bottom: 0,
+                          right: 0,
+                          child: CircleAvatar(
+                            radius: 15.sp,
+                            backgroundColor: Theme.of(context).primaryColor,
+                            child: Icon(
+                              Icons.edit,
+                              color: Colors.white,
+                              size: 15.sp,
+                            ),
                           ),
                         ),
+                      ],
+                    ),
+                    SizedX.h2,
+                    Text(
+                      '${profile.firstName} ${profile.lastName}',
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold,
                       ),
-                    ],
-                  ),
-                  SizedX.h2,
-                  Text(
-                    '${profile.firstName} ${profile.lastName}',
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
                     ),
-                  ),
-                  SizedX.zero,
-                  Text(
-                    profile.phone,
-                    style: TextStyle(fontSize: 10.sp, color: Colors.grey[600]),
-                  ),
-                ],
-              ),
-            ),
-            SizedX.h3,
-            const CustomPadding(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  CustomContainer(number: '3', text: 'Listing'),
-                  CustomContainer(number: '1', text: 'Sold'),
-                ],
-              ),
-            ),
-            CustomPadding(
-              child: Row(
-                children: [
-                  Text(
-                    profile.sold,
-                    style: TextStyle(
-                      fontSize: 12.sp,
-                      fontWeight: FontWeight.bold,
+                    SizedX.zero,
+                    Text(
+                      profile.phone,
+                      style:
+                          TextStyle(fontSize: 10.sp, color: Colors.grey[600]),
                     ),
-                  ),
-                ],
-              ),
-            ),
-            const SingleChildScrollView(
-              child: CustomPadding(
-                child: Row(
-                  children: [
-                    house,
                   ],
                 ),
               ),
-            ),
-          ],
+              SizedX.h3,
+              const CustomPadding(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    CustomContainer(number: '3', text: 'Listing'),
+                    CustomContainer(number: '1', text: 'Sold'),
+                  ],
+                ),
+              ),
+              CustomPadding(
+                child: Row(
+                  children: [
+                    Text(
+                      profile.sold,
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              const SingleChildScrollView(
+                child: CustomPadding(
+                  child: Row(
+                    children: [
+                      house,
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

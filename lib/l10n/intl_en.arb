@@ -44,5 +44,10 @@
   "passwordContainsAtLeast8Characters": "Password contains at least 8 characters",
   "passwordContainsAtLeast1Number": "Password contains at least 1 number",
   "passwordContainsAtLeast1SpecialCharacter": "Password contains at least 1 special character (!#@\\$%*)",
-  "passwordsAreMatched": "Passwords are matched"
+  "passwordsAreMatched": "Passwords are matched",
+  "youreAlmostInFinalStep": "You're almost in! Final step...",
+  "weNeedToConfirmYourAccount": "We need to confirm your account.",
+  "youWillReceiveAnEmailOnceAccepted": "you will receive an email once accepted.",
+  "youreAllSet": "You're all set!",
+  "youCanStartUsingTheAppRightAway": "You can start using the app right away."
 }

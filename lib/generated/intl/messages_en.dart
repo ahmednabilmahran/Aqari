@@ -98,6 +98,16 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Sell my property"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
-        "viewMore": MessageLookupByLibrary.simpleMessage("View more")
+        "viewMore": MessageLookupByLibrary.simpleMessage("View more"),
+        "weNeedToConfirmYourAccount": MessageLookupByLibrary.simpleMessage(
+            "We need to confirm your account."),
+        "youCanStartUsingTheAppRightAway": MessageLookupByLibrary.simpleMessage(
+            "You can start using the app right away."),
+        "youWillReceiveAnEmailOnceAccepted":
+            MessageLookupByLibrary.simpleMessage(
+                "you will receive an email once accepted."),
+        "youreAllSet": MessageLookupByLibrary.simpleMessage("You\'re all set!"),
+        "youreAlmostInFinalStep": MessageLookupByLibrary.simpleMessage(
+            "You\'re almost in! Final step...")
       };
 }
