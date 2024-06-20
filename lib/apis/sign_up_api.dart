@@ -11,11 +11,12 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 class SignUpApi {
   /// Initiates the sign-up process for a customer using their phone number and password.
   ///
-  /// This method creates a new user account in the Supabase authentication system.
-  ///
   /// Parameters:
   ///   - [phone]: The phone number of the customer signing up.
   ///   - [password]: The password chosen by the customer for their account.
+  ///   - [firstName]: The user's first name.
+  ///   - [lastName]: The user's last name.
+  ///   - [dialCode]: The dial code for the user's phone number (optional).
   ///
   /// Returns:
   ///   A [Future] that resolves to an [AuthResponse] object containing the result
@@ -24,54 +25,43 @@ class SignUpApi {
   Future<AuthResponse> signUpWithPhone({
     required String phone,
     required String password,
+    required String firstName,
+    required String lastName,
   }) async {
-    final result = await supabaseClient.auth.signUp(
+    final signUpResponse = await supabaseClient.auth.signUp(
       phone: phone,
       password: password,
+      data: {
+        'first_name': firstName,
+        'last_name': lastName,
+      },
     );
-    return result;
+
+    return signUpResponse;
   }
 
   /// Updates the user profile information in the 'profiles' table.
   ///
-  /// This method updates the user's profile details including their first name,
-  /// last name, and email. It assumes a 'profiles' table exists with
-  /// columns for these details and an 'id' column that matches the user's ID in
-  /// the Supabase authentication system.
-  ///
   /// Parameters:
-  ///   - [userId]: The unique identifier of the user in the Supabase authentication system.
-  ///   - [firstName]: The user's first name.
-  ///   - [lastName]: The user's last name.
   ///   - [email]: The user's email address.
-  ///   - [profileType]: The type of profile to be updated (e.g., customer, merchant, etc.).
-  ///   - [dialCode]: The dial code for the user's phone number (optional).
   ///
   /// Returns:
-  ///   A [Future] that resolves to a boolean value indicating the success (`true`)
-  ///   or failure (`false`) of the update operation.
-  Future<bool> updateProfile({
-    required String userId,
-    required String firstName,
-    required String lastName,
+  ///   A [Future] that resolves to a [UserResponse] object containing the result
+  ///   of the update operation.
+  Future<UserResponse> updateUserProfile({
     required String email,
-    String? dialCode,
   }) async {
-    final profileData = {
-      'id': userId,
-      'first_name': firstName,
-      'last_name': lastName,
-      'email': email,
-    };
-    if (dialCode != null) {
-      profileData['dial_code'] = dialCode;
-    }
+    final updateResponse = await supabaseClient.auth.updateUser(
+      UserAttributes(
+        email: email,
+      ),
+    );
 
-    final result =
-        await supabaseClient.from('profiles').upsert(profileData).then(
-              (value) => true,
-              onError: (error, stackTrace) => false,
-            );
-    return result;
+    return updateResponse;
+  }
+
+  /// Deletes a user by their ID using the service_role key.
+  Future<void> deleteUser(String userId) async {
+    await supabaseClient.auth.admin.deleteUser(userId);
   }
 }

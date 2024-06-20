@@ -2,10 +2,10 @@
 
 import 'package:aqari/apis/sign_up_api.dart';
 import 'package:aqari/core/utils/countries_helper.dart';
-import 'package:aqari/main.dart';
 import 'package:aqari/models/aqari_country_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 part 'sign_up_state.dart';
 
@@ -80,31 +80,49 @@ class SignUpCubit extends Cubit<SignUpState> {
       emit(SignUpLoadingState());
 
       try {
-        final result = await signUpApi.signUpWithPhone(
-          phone: phoneNumberController.text,
+        final signUpResult = await signUpApi.signUpWithPhone(
+          phone: selectedCountry.dialCode + phoneNumberController.text,
           password: passwordController.text,
+          firstName: firstNameController.text,
+          lastName: lastNameController.text,
         );
 
-        if (result.user != null) {
-          final profileUpdateResult = await signUpApi.updateProfile(
-            userId: supabaseClient.auth.currentUser!.id,
-            firstName: firstNameController.text,
-            lastName: lastNameController.text,
-            email: emailController.text,
-            dialCode: selectedCountry.dialCode,
-          );
+        if (signUpResult.user != null) {
+          if (emailController.text.isNotEmpty) {
+            try {
+              final updateResult = await signUpApi.updateUserProfile(
+                email: emailController.text,
+              );
 
-          if (profileUpdateResult) {
-            await supabaseClient.auth.refreshSession();
-            emit(SignUpSuccessState());
+              if (updateResult.user != null) {
+                emit(SignUpSuccessState());
+              } else {
+                // If update fails, delete the user created during sign-up
+                await signUpApi.deleteUser(signUpResult.user!.id);
+                emit(const SignUpErrorState('User profile update failed'));
+              }
+            } catch (e) {
+              // If update fails, delete the user created during sign-up
+              await signUpApi.deleteUser(signUpResult.user!.id);
+
+              if (e is AuthApiException) {
+                emit(SignUpErrorState(e.message));
+              } else {
+                emit(SignUpErrorState(e.toString()));
+              }
+            }
           } else {
-            emit(const SignUpErrorState('Profile update failed'));
+            emit(SignUpSuccessState());
           }
         } else {
           emit(const SignUpErrorState('Sign up failed'));
         }
       } catch (e) {
-        emit(SignUpErrorState(e.toString()));
+        if (e is AuthApiException) {
+          emit(SignUpErrorState(e.message));
+        } else {
+          emit(SignUpErrorState(e.toString()));
+        }
       }
     }
   }

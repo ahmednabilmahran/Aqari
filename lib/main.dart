@@ -19,14 +19,14 @@ Future<void> main() async {
   // This is required because plugins might be called before runApp.
   WidgetsFlutterBinding.ensureInitialized();
 
-    // Initialize Supabase.
+  // Initialize Supabase.
   await Supabase.initialize(
     // TODO(Nabil): Remote Config
     url: 'https://bcnpuratdoebreqvwioc.supabase.co',
     anonKey:
         // TODO(Nabil): Remote Config
         // ignore: lines_longer_than_80_chars
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjbnB1cmF0ZG9lYnJlcXZ3aW9jIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTc3Mzc0NDgsImV4cCI6MjAzMzMxMzQ0OH0.BDhJjK86c1CdPEUS5QjD_f77xVvMS9dDCCABp8UPKs8',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJjbnB1cmF0ZG9lYnJlcXZ3aW9jIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTcxNzczNzQ0OCwiZXhwIjoyMDMzMzEzNDQ4fQ.on3bb4-yVjIjc2eKmny6ELD5z7BQfnZjZiC8Zuyo2WA',
   );
 
   // Asynchronously initialize dependencies and the Hive database.
