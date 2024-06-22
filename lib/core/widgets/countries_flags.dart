@@ -17,9 +17,7 @@ class CountriesFlags extends StatelessWidget {
     return BlocBuilder<CountriesDropDownCubit, CountriesDropDownState>(
       builder: (context, state) {
         return Text(
-          Platform.isIOS
-              ? context.read<CountriesDropDownCubit>().selectedCountry.flag
-              : context.read<CountriesDropDownCubit>().selectedCountry.code,
+          context.read<CountriesDropDownCubit>().selectedCountry.flag,
           style: Theme.of(context).textTheme.displayMedium!.copyWith(
                 fontSize: Platform.isIOS ? 28.sp : 14.sp,
                 fontWeight: FontWeight.w400,

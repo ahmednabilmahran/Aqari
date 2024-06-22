@@ -62,6 +62,7 @@ class CountriesDropDown extends StatelessWidget {
               ),
             ),
             underline: SizedX.zero,
+            borderRadius: BorderRadius.circular(15.sp),
             isExpanded: true,
             isDense: SizerUtil.deviceType == DeviceType.tablet,
             padding: EdgeInsets.zero,
@@ -74,7 +75,7 @@ class CountriesDropDown extends StatelessWidget {
                 value: item,
                 alignment: Alignment.center,
                 child: Text(
-                  item.name,
+                  item.flag,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.center,
@@ -84,6 +85,7 @@ class CountriesDropDown extends StatelessWidget {
                             : Theme.of(context).shadowColor,
                         fontWeight:
                             isSelected ? FontWeight.w600 : FontWeight.w400,
+                        fontSize: 28.sp,
                       ),
                 ),
               );

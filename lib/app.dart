@@ -1,6 +1,6 @@
 import 'package:aqari/config/routes/app_pages.dart';
 import 'package:aqari/config/themes/app_theme.dart';
-import 'package:aqari/config/themes/app_theme_dark.dart';
+// import 'package:aqari/config/themes/app_theme_dark.dart';
 import 'package:aqari/core/controllers/shared_authentication/shared_authentication_cubit.dart';
 import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/app_strings.dart';
@@ -53,7 +53,7 @@ class AqariApp extends StatelessWidget {
             theme: AppTheme.theme(
               MainCubit.get(context).currentLangCode,
             ),
-            darkTheme: AppThemeDark.theme(
+            darkTheme: AppTheme.theme(
               MainCubit.get(context).currentLangCode,
             ),
             themeMode: MainCubit.get(context).currentThemeMode,
