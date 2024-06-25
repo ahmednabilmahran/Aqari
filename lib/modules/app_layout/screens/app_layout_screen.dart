@@ -1,8 +1,8 @@
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/generated/l10n.dart';
+import 'package:aqari/modules/ai_center/screens/main_ai_center/ai_center_screen.dart';
 import 'package:aqari/modules/app_layout/controllers/app_layout_cubit.dart';
-import 'package:aqari/modules/explore/screens/explore_screen.dart';
 import 'package:aqari/modules/home/screens/home_screen.dart';
 import 'package:aqari/modules/profile/screens/profile_screen.dart';
 import 'package:aqari/modules/search/screens/search_screen.dart';
@@ -23,7 +23,7 @@ class AppLayoutScreen extends StatelessWidget {
     final screens = <Widget>[
       HomeScreen(),
       const SearchScreen(),
-      const ExploreScreen(),
+      const MainAiCenterScreen(),
       const ProfileScreen(),
     ];
 
@@ -85,15 +85,19 @@ class AppLayoutScreen extends StatelessWidget {
                   icon: Padding(
                     padding: EdgeInsets.symmetric(vertical: 0.6.h),
                     child: SvgPicture.asset(
-                      Assets.genIconsExplore,
+                      Assets.genIconsAiCenter,
                       height: 3.2.h,
                       width: 3.2.w,
+                      colorFilter: ColorFilter.mode(
+                        Theme.of(context).shadowColor,
+                        BlendMode.srcIn,
+                      ),
                     ),
                   ),
                   activeIcon: Padding(
                     padding: EdgeInsets.symmetric(vertical: 0.6.h),
                     child: SvgPicture.asset(
-                      Assets.genIconsExplore,
+                      Assets.genIconsAiCenter,
                       height: 3.2.h,
                       width: 3.2.w,
                       colorFilter: ColorFilter.mode(
@@ -102,7 +106,7 @@ class AppLayoutScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  label: S.of(context).explore,
+                  label: S.of(context).aiCenter,
                 ),
                 BottomNavigationBarItem(
                   icon: Padding(

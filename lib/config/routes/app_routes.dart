@@ -7,4 +7,5 @@ class Routes {
   static const String verifySignUpRoute = '/verifySignUpRoute';
   static const String appLayoutRoute = '/appLayoutRoute';
   static const String notificationsRoute = '/notificationsRoute';
+  static const String chatRoute = '/chatRoute';
 }

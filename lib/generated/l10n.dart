@@ -559,6 +559,76 @@ class S {
       args: [],
     );
   }
+
+  /// `AI Center`
+  String get aiCenter {
+    return Intl.message(
+      'AI Center',
+      name: 'aiCenter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AI Chats`
+  String get aiChats {
+    return Intl.message(
+      'AI Chats',
+      name: 'aiChats',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Retry`
+  String get retry {
+    return Intl.message(
+      'Retry',
+      name: 'retry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Yesterday`
+  String get yesterday {
+    return Intl.message(
+      'Yesterday',
+      name: 'yesterday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Search again...`
+  String get searchAgain {
+    return Intl.message(
+      'Search again...',
+      name: 'searchAgain',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start typing...`
+  String get startTyping {
+    return Intl.message(
+      'Start typing...',
+      name: 'startTyping',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New Chat`
+  String get newChat {
+    return Intl.message(
+      'New Chat',
+      name: 'newChat',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

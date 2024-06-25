@@ -49,5 +49,12 @@
   "weNeedToConfirmYourAccount": "We need to confirm your account.",
   "youWillReceiveAnEmailOnceAccepted": "you will receive an email once accepted.",
   "youreAllSet": "You're all set!",
-  "youCanStartUsingTheAppRightAway": "You can start using the app right away."
+  "youCanStartUsingTheAppRightAway": "You can start using the app right away.",
+  "aiCenter": "AI Center",
+  "aiChats": "AI Chats",
+  "retry": "Retry",
+  "yesterday": "Yesterday",
+  "searchAgain": "Search again...",
+  "startTyping": "Start typing...",
+  "newChat": "New Chat"
 }

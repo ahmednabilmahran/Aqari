@@ -1,6 +1,10 @@
 class Assets {
   Assets._();
   
+  /// Assets for genIconsAiCenter
+  /// assets/gen/icons/ai_center.svg
+  static const String genIconsAiCenter = "assets/gen/icons/ai_center.svg";
+
   /// Assets for genIconsDarkUnvalidatedTextIcon
   /// assets/gen/icons/dark_unvalidated_text_icon.svg
   static const String genIconsDarkUnvalidatedTextIcon = "assets/gen/icons/dark_unvalidated_text_icon.svg";
@@ -49,6 +53,10 @@ class Assets {
   /// assets/gen/icons/logo_text.svg
   static const String genIconsLogoText = "assets/gen/icons/logo_text.svg";
 
+  /// Assets for genIconsNoChats
+  /// assets/gen/icons/no_chats.svg
+  static const String genIconsNoChats = "assets/gen/icons/no_chats.svg";
+
   /// Assets for genIconsNotifications
   /// assets/gen/icons/notifications.svg
   static const String genIconsNotifications = "assets/gen/icons/notifications.svg";
@@ -68,6 +76,10 @@ class Assets {
   /// Assets for genIconsSearchAddress
   /// assets/gen/icons/search_address.svg
   static const String genIconsSearchAddress = "assets/gen/icons/search_address.svg";
+
+  /// Assets for genIconsSendMessage
+  /// assets/gen/icons/send_message.svg
+  static const String genIconsSendMessage = "assets/gen/icons/send_message.svg";
 
   /// Assets for genIconsShowPasswordIcon
   /// assets/gen/icons/show_password_icon.svg

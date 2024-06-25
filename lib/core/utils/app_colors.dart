@@ -59,4 +59,10 @@ class AppColors {
 
   /// The 'borderColor' color.
   Color borderColor = const Color(0XFFD0D5DD);
+
+  /// The 'receiverContainer' color.
+  Color receiverContainer = const Color(0XFFC5CAD2).withOpacity(0.3);
+
+  /// The 'senderContainer' color.
+  Color senderContainer = const Color(0XFFB5854B).withOpacity(0.2);
 }

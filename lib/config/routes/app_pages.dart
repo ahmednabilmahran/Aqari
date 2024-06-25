@@ -1,5 +1,7 @@
 import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/app_strings.dart';
+import 'package:aqari/models/chat_session_model.dart';
+import 'package:aqari/modules/ai_center/screens/main_ai_chat/main_ai_chat_screen.dart';
 import 'package:aqari/modules/app_layout/screens/app_layout_screen.dart';
 import 'package:aqari/modules/login/screens/login_screen.dart';
 import 'package:aqari/modules/notifications/screens/notification_screen.dart';
@@ -61,6 +63,19 @@ class AppRoutes {
             return const NotificationsScreen();
           },
           settings: const RouteSettings(name: Routes.notificationsRoute),
+        );
+
+      case Routes.chatRoute:
+        return MaterialPageRoute(
+          builder: (context) {
+            final args = routeSettings.arguments! as List;
+
+            return MainAiChatScreen(
+              chatSession: args[0] as ChatSession?,
+              isNewChat: args[1] as bool,
+            );
+          },
+          settings: const RouteSettings(name: Routes.chatRoute),
         );
 
       default:

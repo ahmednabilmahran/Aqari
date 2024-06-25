@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "accountInformation":
             MessageLookupByLibrary.simpleMessage("Account Information"),
+        "aiCenter": MessageLookupByLibrary.simpleMessage("AI Center"),
+        "aiChats": MessageLookupByLibrary.simpleMessage("AI Chats"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "checkOutSomeOfOurTopListings": MessageLookupByLibrary.simpleMessage(
@@ -64,6 +66,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "loginToAccessYourAccount": MessageLookupByLibrary.simpleMessage(
             "Login to access your account"),
         "nearYou": MessageLookupByLibrary.simpleMessage("Near You"),
+        "newChat": MessageLookupByLibrary.simpleMessage("New Chat"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "optional": MessageLookupByLibrary.simpleMessage("Optional"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
@@ -91,16 +94,20 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnterValidPassword":
             MessageLookupByLibrary.simpleMessage("Please enter valid password"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "searchAgain": MessageLookupByLibrary.simpleMessage("Search again..."),
         "searchByAddressCityOrZip": MessageLookupByLibrary.simpleMessage(
             "Search by Address, City or ZIP"),
         "sellMyProperty":
             MessageLookupByLibrary.simpleMessage("Sell my property"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
+        "startTyping": MessageLookupByLibrary.simpleMessage("Start typing..."),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
         "viewMore": MessageLookupByLibrary.simpleMessage("View more"),
         "weNeedToConfirmYourAccount": MessageLookupByLibrary.simpleMessage(
             "We need to confirm your account."),
+        "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
         "youCanStartUsingTheAppRightAway": MessageLookupByLibrary.simpleMessage(
             "You can start using the app right away."),
         "youWillReceiveAnEmailOnceAccepted":

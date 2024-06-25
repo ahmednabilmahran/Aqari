@@ -2,6 +2,9 @@
 
 import 'dart:convert';
 
+import 'package:aqari/generated/l10n.dart';
+import 'package:intl/intl.dart';
+
 /// Extensions for [String] class.
 extension CapExtension on String {
   /// Capitalizes the first letter of the string.
@@ -97,6 +100,48 @@ extension FormatDate on DateTime {
   /// Formate the date to day/month/year.
   /// Example: 1/1/2023
   String get toDayMonthYear => '$day/$month/$year';
+
+  String get toCustomMainMessagesDate {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final yesterday = DateTime(now.year, now.month, now.day - 1);
+    final lastWeek = now.subtract(const Duration(days: 7));
+
+    if (isSameDay(this, today)) {
+      return DateFormat('hh:mm a').format(this); // Only time for today
+    } else if (isSameDay(this, yesterday)) {
+      return S.current.yesterday; // Only 'Yesterday' for yesterday
+    } else if (isAfter(lastWeek) && !isSameDay(this, today)) {
+      return DateFormat('EEEE').format(this); // Day of the week for last week
+    } else {
+      return DateFormat('M/d/yyyy').format(this); // Date for older dates
+    }
+  }
+
+  String get toCustomChatAndNotificationsDate {
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    final yesterday = DateTime(now.year, now.month, now.day - 1);
+    final lastWeek = now.subtract(const Duration(days: 7));
+    final timeString = DateFormat('hh:mm a').format(this);
+
+    if (isSameDay(this, today)) {
+      return DateFormat('hh:mm a').format(this); // Only time for today
+    } else if (isSameDay(this, yesterday)) {
+      return '${S.current.yesterday}, $timeString'; // Only 'Yesterday'
+    } else if (isAfter(lastWeek) && !isSameDay(this, today)) {
+      return '${DateFormat('EEEE').format(this)}, $timeString'; // for last week
+    } else {
+      // Date and time for older dates
+      return DateFormat('d/M/yyyy hh:mm a').format(this);
+    }
+  }
+
+  bool isSameDay(DateTime other, DateTime reference) {
+    return year == reference.year &&
+        month == reference.month &&
+        day == reference.day;
+  }
 }
 
 /// Months enum.
