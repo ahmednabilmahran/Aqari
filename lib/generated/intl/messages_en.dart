@@ -100,8 +100,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchAgain": MessageLookupByLibrary.simpleMessage("Search again..."),
-        "searchByAddressCityOrZip": MessageLookupByLibrary.simpleMessage(
-            "Search by Address, City or ZIP"),
+        "searchByAddressCity":
+            MessageLookupByLibrary.simpleMessage("Search by Address or City"),
         "sellMyProperty":
             MessageLookupByLibrary.simpleMessage("Sell my property"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),

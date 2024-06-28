@@ -22,7 +22,7 @@ class AppLayoutScreen extends StatelessWidget {
 
     final screens = <Widget>[
       HomeScreen(),
-      const SearchScreen(),
+      SearchScreen(),
       const MainAiCenterScreen(),
       const ProfileScreen(),
     ];

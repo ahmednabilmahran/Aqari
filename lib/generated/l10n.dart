@@ -300,11 +300,11 @@ class S {
     );
   }
 
-  /// `Search by Address, City or ZIP`
-  String get searchByAddressCityOrZip {
+  /// `Search by Address or City`
+  String get searchByAddressCity {
     return Intl.message(
-      'Search by Address, City or ZIP',
-      name: 'searchByAddressCityOrZip',
+      'Search by Address or City',
+      name: 'searchByAddressCity',
       desc: '',
       args: [],
     );

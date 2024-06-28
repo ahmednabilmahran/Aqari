@@ -73,7 +73,10 @@ class CustomSearchField extends StatelessWidget {
           keyboardType: TextInputType.text,
           controller: controller,
           onChanged: onChanged,
-          style: style ?? Theme.of(context).textTheme.headlineMedium,
+          style: style ??
+              Theme.of(context).textTheme.headlineMedium!.copyWith(
+                    fontSize: 11.5.sp,
+                  ),
           inputFormatters: inputFormatters,
           decoration: InputDecoration(
             isDense: true,
@@ -102,7 +105,7 @@ class CustomSearchField extends StatelessWidget {
             prefixIconConstraints: BoxConstraints(
               maxWidth: 30.w,
             ),
-            hintText: S.of(context).searchByAddressCityOrZip,
+            hintText: S.of(context).searchByAddressCity,
             hintFadeDuration: Durations.medium1,
             hintStyle: hintStyle ??
                 Theme.of(context).textTheme.labelSmall!.copyWith(

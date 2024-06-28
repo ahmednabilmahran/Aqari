@@ -61,6 +61,10 @@ class Assets {
   /// assets/gen/icons/notifications.svg
   static const String genIconsNotifications = "assets/gen/icons/notifications.svg";
 
+  /// Assets for genIconsOutlinedLocationPin
+  /// assets/gen/icons/outlined_location_pin.svg
+  static const String genIconsOutlinedLocationPin = "assets/gen/icons/outlined_location_pin.svg";
+
   /// Assets for genIconsProfile
   /// assets/gen/icons/profile.svg
   static const String genIconsProfile = "assets/gen/icons/profile.svg";
