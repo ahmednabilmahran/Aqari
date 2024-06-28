@@ -2,8 +2,6 @@ import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_card_property.dart';
-import 'package:aqari/core/widgets/custom_filter.dart';
-import 'package:aqari/core/widgets/custom_search_field.dart';
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -65,19 +63,7 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               SizedBox(
                 height: 1.h,
               ),
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomSearchField(
-                      controller: TextEditingController(),
-                    ),
-                  ),
-                  SizedX.w3,
-                  const IntrinsicHeight(
-                    child: CustomFilter(),
-                  ),
-                ],
-              ), //CustomSearchField(),CustomFilter(),
+
               SizedX.h1,
               ListView.separated(
                 physics: const NeverScrollableScrollPhysics(),

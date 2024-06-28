@@ -649,6 +649,86 @@ class S {
       args: [],
     );
   }
+
+  /// `Filter`
+  String get filter {
+    return Intl.message(
+      'Filter',
+      name: 'filter',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Property type`
+  String get propertyType {
+    return Intl.message(
+      'Property type',
+      name: 'propertyType',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Floor`
+  String get selectFloor {
+    return Intl.message(
+      'Select Floor',
+      name: 'selectFloor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Floor`
+  String get floor {
+    return Intl.message(
+      'Floor',
+      name: 'floor',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Minimum`
+  String get minimum {
+    return Intl.message(
+      'Minimum',
+      name: 'minimum',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Maximum`
+  String get maximum {
+    return Intl.message(
+      'Maximum',
+      name: 'maximum',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Apply`
+  String get apply {
+    return Intl.message(
+      'Apply',
+      name: 'apply',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset`
+  String get reset {
+    return Intl.message(
+      'Reset',
+      name: 'reset',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

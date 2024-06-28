@@ -4,13 +4,13 @@ import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/aqari_app_bar.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
 import 'package:aqari/core/widgets/custom_card_property.dart';
-import 'package:aqari/core/widgets/custom_filter.dart';
 import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/core/widgets/custom_search_field.dart';
 import 'package:aqari/core/widgets/unit_card.dart';
 import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/modules/app_layout/controllers/app_layout_cubit.dart';
 import 'package:aqari/modules/home/widgets/featured_unit_card.dart';
+import 'package:aqari/modules/search/widgets/custom_filter_static_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -121,7 +121,7 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                         SizedX.w3,
-                        const CustomFilter(),
+                        const CustomFilterStaticSection(),
                       ],
                     ),
                   ),

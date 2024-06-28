@@ -28,6 +28,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "aiChats": MessageLookupByLibrary.simpleMessage("AI Chats"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "apply": MessageLookupByLibrary.simpleMessage("Apply"),
         "checkOutAllOurListings":
             MessageLookupByLibrary.simpleMessage("Check out all our listings"),
         "checkOutSomeOfOurTopListings": MessageLookupByLibrary.simpleMessage(
@@ -53,9 +54,11 @@ class MessageLookup extends MessageLookupByLibrary {
         "exploreMore": MessageLookupByLibrary.simpleMessage("Explore More"),
         "featuredProperties":
             MessageLookupByLibrary.simpleMessage("Featured Properties"),
+        "filter": MessageLookupByLibrary.simpleMessage("Filter"),
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),
         "firstNameCantBeEmpty":
             MessageLookupByLibrary.simpleMessage("First Name can\'t be empty"),
+        "floor": MessageLookupByLibrary.simpleMessage("Floor"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
@@ -68,6 +71,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "loginToAccessYourAccount": MessageLookupByLibrary.simpleMessage(
             "Login to access your account"),
+        "maximum": MessageLookupByLibrary.simpleMessage("Maximum"),
+        "minimum": MessageLookupByLibrary.simpleMessage("Minimum"),
         "nearYou": MessageLookupByLibrary.simpleMessage("Near You"),
         "newChat": MessageLookupByLibrary.simpleMessage("New Chat"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
@@ -97,11 +102,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "pleaseEnterValidPassword":
             MessageLookupByLibrary.simpleMessage("Please enter valid password"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
+        "propertyType": MessageLookupByLibrary.simpleMessage("Property type"),
+        "reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchAgain": MessageLookupByLibrary.simpleMessage("Search again..."),
         "searchByAddressCity":
             MessageLookupByLibrary.simpleMessage("Search by Address or City"),
+        "selectFloor": MessageLookupByLibrary.simpleMessage("Select Floor"),
         "sellMyProperty":
             MessageLookupByLibrary.simpleMessage("Sell my property"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),

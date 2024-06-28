@@ -57,6 +57,10 @@ class Assets {
   /// assets/gen/icons/no_chats.svg
   static const String genIconsNoChats = "assets/gen/icons/no_chats.svg";
 
+  /// Assets for genIconsNonActiveRadio
+  /// assets/gen/icons/non_active_radio.svg
+  static const String genIconsNonActiveRadio = "assets/gen/icons/non_active_radio.svg";
+
   /// Assets for genIconsNotifications
   /// assets/gen/icons/notifications.svg
   static const String genIconsNotifications = "assets/gen/icons/notifications.svg";

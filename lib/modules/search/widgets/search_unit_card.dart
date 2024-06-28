@@ -71,7 +71,7 @@ class SearchUnitCard extends StatelessWidget {
                     ),
                     SizedX.w1,
                     Text(
-                      '113 m2',
+                      '113 m²',
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 7.75.sp,
                             fontWeight: FontWeight.w500,
