@@ -8,4 +8,7 @@ class Routes {
   static const String appLayoutRoute = '/appLayoutRoute';
   static const String notificationsRoute = '/notificationsRoute';
   static const String chatRoute = '/chatRoute';
+  static const String settingScreen = '/SettingScreen';
+  static const String editProfile = '/EditProfile';
+  static const String changePassword = '/ChangePassword';
 }

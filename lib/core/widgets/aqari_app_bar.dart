@@ -8,6 +8,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
+/// this class is the custom app bar
+
 /// AqariAppBar is used to manage the app bar for the app
 class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// AqariAppBar constructor
@@ -64,7 +66,7 @@ class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Navigator.pushNamed(
               navigatorKey.currentContext!,
-              Routes.notificationsRoute,
+              Routes.editProfile,
             );
           },
           icon: SvgPicture.asset(
