@@ -3,10 +3,14 @@ import 'package:aqari/core/utils/app_strings.dart';
 import 'package:aqari/modules/app_layout/screens/app_layout_screen.dart';
 import 'package:aqari/modules/login/screens/login_screen.dart';
 import 'package:aqari/modules/notifications/screens/notification_screen.dart';
+import 'package:aqari/modules/profile/screens/setting_screen.dart';
 import 'package:aqari/modules/sign_up/screens/sign_up_screen.dart';
 import 'package:aqari/modules/splash/presentation/screens/splash_screen.dart';
 import 'package:aqari/modules/verify_sign_up/screens/verify_sign_up_screen.dart';
 import 'package:flutter/material.dart';
+
+import '../../modules/profile/screens/change_password.dart';
+import '../../modules/profile/screens/edit_profile.dart';
 
 /// Application routes
 class AppRoutes {
@@ -61,6 +65,27 @@ class AppRoutes {
             return const NotificationsScreen();
           },
           settings: const RouteSettings(name: Routes.notificationsRoute),
+        );
+      case Routes.settingScreen:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const SettingScreen();
+          },
+          settings: const RouteSettings(name: Routes.settingScreen),
+        );
+      case Routes.editProfile:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const EditProfile();
+          },
+          settings: const RouteSettings(name: Routes.editProfile),
+        );
+      case Routes.changePassword:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const ChangePassword();
+          },
+          settings: const RouteSettings(name: Routes.changePassword),
         );
 
       default:
