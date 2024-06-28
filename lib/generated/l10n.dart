@@ -629,6 +629,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Explore More`
+  String get exploreMore {
+    return Intl.message(
+      'Explore More',
+      name: 'exploreMore',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Check out all our listings`
+  String get checkOutAllOurListings {
+    return Intl.message(
+      'Check out all our listings',
+      name: 'checkOutAllOurListings',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

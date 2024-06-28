@@ -3,8 +3,8 @@ import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_padding.dart';
+import 'package:aqari/core/widgets/unit_card.dart';
 import 'package:aqari/main.dart';
-import 'package:aqari/modules/home/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -19,7 +19,7 @@ final profile = Profile(
 );
 
 /// house data
-const house = HouseCard(
+const house = UnitCard(
   imagePath: Assets.genImagesTest1,
   title: 'Lorem House',
   details: '4 Beds | 4 Baths',

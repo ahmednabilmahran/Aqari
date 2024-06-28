@@ -28,6 +28,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "aiChats": MessageLookupByLibrary.simpleMessage("AI Chats"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
+        "checkOutAllOurListings":
+            MessageLookupByLibrary.simpleMessage("Check out all our listings"),
         "checkOutSomeOfOurTopListings": MessageLookupByLibrary.simpleMessage(
             "Check out some of our top listings"),
         "confirmPassword":
@@ -48,6 +50,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "enterYourPassword":
             MessageLookupByLibrary.simpleMessage("Enter Your Password"),
         "explore": MessageLookupByLibrary.simpleMessage("Explore"),
+        "exploreMore": MessageLookupByLibrary.simpleMessage("Explore More"),
         "featuredProperties":
             MessageLookupByLibrary.simpleMessage("Featured Properties"),
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),

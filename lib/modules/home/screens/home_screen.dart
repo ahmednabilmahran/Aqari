@@ -7,8 +7,12 @@ import 'package:aqari/core/widgets/custom_card_property.dart';
 import 'package:aqari/core/widgets/custom_filter.dart';
 import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/core/widgets/custom_search_field.dart';
+import 'package:aqari/core/widgets/unit_card.dart';
 import 'package:aqari/generated/l10n.dart';
+import 'package:aqari/modules/app_layout/controllers/app_layout_cubit.dart';
+import 'package:aqari/modules/home/widgets/featured_unit_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
@@ -32,7 +36,7 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final circleDiameter = 15.w;
+    final circleDiameter = 17.w;
 
     return Scaffold(
       appBar: const AqariAppBar(),
@@ -42,7 +46,7 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedX.h1,
+                SizedX.h0p5,
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   clipBehavior: Clip.none,
@@ -81,9 +85,10 @@ class HomeScreen extends StatelessWidget {
                                           .textTheme
                                           .labelSmall!
                                           .copyWith(
-                                            fontSize: 7.sp,
+                                            fontSize: 8.25.sp,
                                             fontWeight: FontWeight.w600,
                                             letterSpacing: 0,
+                                            color: ThemeHelper.appColors.black,
                                           ),
                                       overflow: TextOverflow.ellipsis,
                                     ),
@@ -91,26 +96,37 @@ class HomeScreen extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedX.w2p5,
+                            SizedX.w4,
                           ],
                         );
                       },
                     ).toList(),
                   ),
                 ),
-                SizedX.h3,
-                Row(
-                  children: [
-                    Expanded(
-                      child: CustomSearchField(
-                        controller: TextEditingController(),
-                      ),
+                SizedX.h2,
+                InkWell(
+                  focusColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  onTap: () {
+                    context.read<AppLayoutCubit>().changeIndex(1);
+                  },
+                  child: IgnorePointer(
+                    child: Row(
+                      children: [
+                        Expanded(
+                          child: CustomSearchField(
+                            controller: TextEditingController(),
+                          ),
+                        ),
+                        SizedX.w3,
+                        const CustomFilter(),
+                      ],
                     ),
-                    SizedX.w3,
-                    const CustomFilter(),
-                  ],
-                ), //CustomSearchField(),CustomFilter(),
-                SizedX.h3,
+                  ),
+                ),
+                SizedX.h2p5,
                 Container(
                   padding: EdgeInsets.only(
                     left: 4.w,
@@ -180,13 +196,56 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedX.h3,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      S.of(context).featuredProperties,
+                      style: Theme.of(context).textTheme.titleSmall!.copyWith(
+                            fontSize: 16.sp,
+                            color: ThemeHelper.appColors.black,
+                          ),
+                    ),
+                    SizedX.h0p5,
+                    Text(
+                      S.of(context).checkOutSomeOfOurTopListings,
+                      style: Theme.of(context).textTheme.labelSmall!.copyWith(
+                            fontSize: 10.sp,
+                            fontWeight: FontWeight.w300,
+                            letterSpacing: 0,
+                          ),
+                    ),
+                  ],
+                ),
+                SizedX.h3,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  clipBehavior: Clip.none,
+                  child: Row(
+                    children: houses
+                        .map(
+                          (house) => Padding(
+                            padding: EdgeInsets.only(
+                              right: 4.w,
+                            ),
+                            child: FeaturedUnitCard(
+                              imagePath: house.image,
+                              title: house.location,
+                              details: '4 Beds | 3 Baths | 2500 sqft',
+                            ),
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
+                SizedX.h3,
                 Row(
                   children: [
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          S.of(context).featuredProperties,
+                          S.of(context).exploreMore,
                           style:
                               Theme.of(context).textTheme.titleSmall!.copyWith(
                                     fontSize: 16.sp,
@@ -195,7 +254,7 @@ class HomeScreen extends StatelessWidget {
                         ),
                         SizedX.h0p5,
                         Text(
-                          S.of(context).checkOutSomeOfOurTopListings,
+                          S.of(context).checkOutAllOurListings,
                           style:
                               Theme.of(context).textTheme.labelSmall!.copyWith(
                                     fontSize: 10.sp,
@@ -231,7 +290,7 @@ class HomeScreen extends StatelessWidget {
                             padding: EdgeInsets.only(
                               right: 4.w,
                             ),
-                            child: HouseCard(
+                            child: UnitCard(
                               imagePath: house.image,
                               title: house.location,
                               details: '4 Beds | 3 Baths | 2500 sqft',
@@ -295,79 +354,6 @@ class House {
   final String location;
 }
 
-/// HouseCard widget to display a house with details.
-class HouseCard extends StatelessWidget {
-  /// Constructor
-  const HouseCard({
-    required this.imagePath,
-    required this.title,
-    required this.details,
-    super.key,
-  });
 
-  /// imagePath
-  final String imagePath;
-
-  /// title
-  final String title;
-
-  /// details
-  final String details;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 53.w,
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(4.sp),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.3),
-            blurRadius: 0.1,
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Image.asset(
-            imagePath,
-            height: 18.75.h,
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  title,
-                  style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        fontSize: 9.sp,
-                        fontWeight: FontWeight.w600,
-                        color: ThemeHelper.appColors.black,
-                      ),
-                ),
-                const SizedBox(height: 4),
-                Text(
-                  details,
-                  style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                        fontSize: 8.sp,
-                        fontWeight: FontWeight.w300,
-                        color: ThemeHelper.appColors.black,
-                        letterSpacing: 0,
-                      ),
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 
 /// PropertyCard widget to display a property with details.

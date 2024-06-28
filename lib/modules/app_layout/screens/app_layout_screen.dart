@@ -86,8 +86,8 @@ class AppLayoutScreen extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 0.6.h),
                     child: SvgPicture.asset(
                       Assets.genIconsAiCenter,
-                      height: 3.2.h,
-                      width: 3.2.w,
+                      height: 3.3.h,
+                      width: 3.3.w,
                       colorFilter: ColorFilter.mode(
                         Theme.of(context).shadowColor,
                         BlendMode.srcIn,
@@ -98,8 +98,8 @@ class AppLayoutScreen extends StatelessWidget {
                     padding: EdgeInsets.symmetric(vertical: 0.6.h),
                     child: SvgPicture.asset(
                       Assets.genIconsAiCenter,
-                      height: 3.2.h,
-                      width: 3.2.w,
+                      height: 3.3.h,
+                      width: 3.3.w,
                       colorFilter: ColorFilter.mode(
                         Theme.of(context).primaryColor,
                         BlendMode.srcIn,
