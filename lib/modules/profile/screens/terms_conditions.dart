@@ -1,6 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: lines_longer_than_80_chars
 
-import '../../../core/widgets/custom_app_bar.dart';
+import 'package:aqari/core/widgets/custom_app_bar.dart';
+import 'package:flutter/material.dart';
 
 /// TermsAndConditionsScreen
 class TermsAndConditionsScreen extends StatelessWidget {
@@ -10,7 +11,9 @@ class TermsAndConditionsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const CustomAppBar(titleText: 'Terms & Conditions',),
+      appBar: const CustomAppBar(
+        titleText: 'Terms & Conditions',
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
         children: const [

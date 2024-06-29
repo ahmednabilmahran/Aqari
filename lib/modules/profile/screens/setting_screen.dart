@@ -1,11 +1,10 @@
 import 'package:aqari/config/routes/app_routes.dart';
+import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../../core/widgets/custom_app_bar.dart';
 
 /// this class is the setting screen
 class SettingScreen extends StatefulWidget {
@@ -23,9 +22,12 @@ class _SettingScreenState extends State<SettingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white70,
-      appBar: const CustomAppBar(titleText: 'Settings',),
+      appBar: const CustomAppBar(
+        titleText: 'Settings',
+      ),
       body: Padding(
-        padding: const EdgeInsets.only(left: 24, top: 24, right: 24, bottom: 16),
+        padding:
+            const EdgeInsets.only(left: 24, top: 24, right: 24, bottom: 16),
         child: Column(
           children: [
             Padding(
@@ -44,7 +46,11 @@ class _SettingScreenState extends State<SettingScreen> {
                     children: [
                       const Text(
                         'Account Settings',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
+                        ),
                       ),
                       const SizedBox(
                         height: 20,
@@ -67,7 +73,11 @@ class _SettingScreenState extends State<SettingScreen> {
                             ),
                             Text(
                               'Edit Profile',
-                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Montserrat',
+                              ),
                             ),
                             Spacer(),
                             Icon(
@@ -94,7 +104,11 @@ class _SettingScreenState extends State<SettingScreen> {
                             ),
                             Text(
                               'Change Password',
-                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Montserrat',
+                              ),
                             ),
                             Spacer(),
                             Icon(Icons.arrow_forward_ios_rounded),
@@ -122,7 +136,11 @@ class _SettingScreenState extends State<SettingScreen> {
                     children: [
                       Text(
                         'Preferences',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
+                        ),
                       ),
                       SizedBox(
                         height: 20,
@@ -135,12 +153,19 @@ class _SettingScreenState extends State<SettingScreen> {
                           ),
                           Text(
                             'Country',
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Montserrat',
+                            ),
                           ),
                           Spacer(),
                           Text(
                             'Egypt',
-                            style: TextStyle(fontSize: 14, fontFamily: 'Montserrat'),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'Montserrat',
+                            ),
                           ),
                           Icon(
                             Icons.arrow_forward_ios_rounded,
@@ -158,12 +183,19 @@ class _SettingScreenState extends State<SettingScreen> {
                           ),
                           Text(
                             'Language',
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Montserrat',
+                            ),
                           ),
                           Spacer(),
                           Text(
                             'English',
-                            style: TextStyle(fontSize: 14, fontFamily: 'Montserrat'),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontFamily: 'Montserrat',
+                            ),
                           ),
                           Icon(Icons.arrow_forward_ios_rounded),
                         ],
@@ -189,7 +221,11 @@ class _SettingScreenState extends State<SettingScreen> {
                     children: [
                       const Text(
                         'Application settings',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                        style: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'Montserrat',
+                        ),
                       ),
                       const SizedBox(
                         height: 20,
@@ -200,17 +236,23 @@ class _SettingScreenState extends State<SettingScreen> {
                             navigatorKey.currentContext!,
                             Routes.termsAndConditions,
                           );
-
                         },
                         child: const Row(
                           children: [
-                            Icon(FontAwesomeIcons.fileLines, color: Colors.black),
+                            Icon(
+                              FontAwesomeIcons.fileLines,
+                              color: Colors.black,
+                            ),
                             SizedBox(
                               width: 7,
                             ),
                             Text(
                               'Terms & Conditions',
-                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Montserrat',
+                              ),
                             ),
                             Spacer(),
                             Icon(
@@ -224,13 +266,20 @@ class _SettingScreenState extends State<SettingScreen> {
                       ),
                       Row(
                         children: [
-                          const Icon(Icons.light_mode_outlined, color: Colors.black),
+                          const Icon(
+                            Icons.light_mode_outlined,
+                            color: Colors.black,
+                          ),
                           const SizedBox(
                             width: 7,
                           ),
                           const Text(
                             'Dark Mode',
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                            style: TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'Montserrat',
+                            ),
                           ),
                           const Spacer(),
                           CupertinoSwitch(
@@ -239,7 +288,6 @@ class _SettingScreenState extends State<SettingScreen> {
 
                             activeColor: CupertinoColors.activeBlue,
                             onChanged: (bool? value) {
-                              // This is called when the user toggles the switch.
                               setState(() {
                                 switchValue = value ?? false;
                               });
@@ -259,7 +307,10 @@ class _SettingScreenState extends State<SettingScreen> {
                         },
                         child: const Row(
                           children: [
-                            Icon(Icons.perm_contact_cal_outlined, color: Colors.black),
+                            Icon(
+                              Icons.perm_contact_cal_outlined,
+                              color: Colors.black,
+                            ),
                             SizedBox(
                               width: 7,
                             ),
@@ -280,13 +331,13 @@ class _SettingScreenState extends State<SettingScreen> {
                         height: 15,
                       ),
                       InkWell(
-                        onTap: ()  async {
+                        onTap: () async {
                           await supabaseClient.auth.signOut();
                           if (context.mounted) {
                             await Navigator.pushNamedAndRemoveUntil(
                               context,
                               Routes.loginRoute,
-                                  (route) => false,
+                              (route) => false,
                             );
                           }
                         },
@@ -298,7 +349,11 @@ class _SettingScreenState extends State<SettingScreen> {
                             ),
                             Text(
                               'Log out',
-                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Montserrat',
+                              ),
                             ),
                             Spacer(),
                             Icon(Icons.arrow_forward_ios_rounded),

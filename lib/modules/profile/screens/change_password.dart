@@ -1,9 +1,8 @@
+import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
 import 'package:aqari/core/widgets/custom_text_field.dart';
 import 'package:aqari/modules/profile/screens/profile_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../../../core/widgets/custom_app_bar.dart';
 
 /// ChangePassword is used to manage the change password screen
 class ChangePassword extends StatelessWidget {
@@ -15,7 +14,9 @@ class ChangePassword extends StatelessWidget {
     final controller = TextEditingController();
     return Scaffold(
       backgroundColor: const Color(0xffF5f5f5),
-      appBar: const CustomAppBar(titleText: 'Change Password',),
+      appBar: const CustomAppBar(
+        titleText: 'Change Password',
+      ),
       body: Padding(
         padding: const EdgeInsets.all(32),
         child: Column(

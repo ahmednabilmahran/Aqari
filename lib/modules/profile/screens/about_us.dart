@@ -12,7 +12,9 @@ class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar:const CustomAppBar(titleText: 'About Us',),
+      appBar: const CustomAppBar(
+        titleText: 'About Us',
+      ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -42,7 +44,7 @@ class AboutUs extends StatelessWidget {
               image: 'assets/gen/images/icon_aqari.png',
               name: 'Project Overview',
               subtitle: 'Aqari revolutionizes real estate transactions '
-                  'with seamless communication, and enhanced security. '
+                  'with seamless communication, and enhanced security. ',
             ),
             const CustomListTile(
               image: 'assets/gen/images/icon_group.png',
@@ -80,4 +82,3 @@ class AboutUs extends StatelessWidget {
     );
   }
 }
-

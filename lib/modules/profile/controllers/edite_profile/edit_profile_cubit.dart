@@ -1,17 +1,18 @@
-import 'package:bloc/bloc.dart';
+// ignore_for_file: lines_longer_than_80_chars
+
+import 'package:aqari/apis/sign_up_api.dart';
+import 'package:aqari/core/utils/countries_helper.dart';
+import 'package:aqari/models/aqari_country_model.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:meta/meta.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
-import '../../../../apis/sign_up_api.dart';
-import '../../../../core/utils/countries_helper.dart';
-import '../../../../models/aqari_country_model.dart';
+part 'edit_profile_state.dart';
 
-part 'edit_profile_dart_state.dart';
-
-class EditProfileDartCubit extends Cubit<EditProfileDartState> {
-
-  EditProfileDartCubit({
+/// EditProfileCubit
+class EditProfileCubit extends Cubit<EditProfileState> {
+  /// constructor
+  EditProfileCubit({
     required this.signUpApi,
   }) : super(EditProfileSignUpInitial()) {
     setupPasswordFocusListener();
@@ -19,8 +20,6 @@ class EditProfileDartCubit extends Cubit<EditProfileDartState> {
 
   /// The API service for signing up a customer with a phone and password.
   final SignUpApi signUpApi;
-
-
 
   /// GlobalKey for the sign-up form, used for validation and form control.
   final GlobalKey<FormState> signUpFormKey = GlobalKey<FormState>();
@@ -224,6 +223,3 @@ class EditProfileDartCubit extends Cubit<EditProfileDartState> {
     return super.close();
   }
 }
-
-
-

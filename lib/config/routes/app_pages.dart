@@ -3,19 +3,17 @@ import 'package:aqari/core/utils/app_strings.dart';
 import 'package:aqari/models/chat_session_model.dart';
 import 'package:aqari/modules/ai_center/screens/main_ai_chat/main_ai_chat_screen.dart';
 import 'package:aqari/modules/app_layout/screens/app_layout_screen.dart';
-import 'package:aqari/modules/home/screens/home_screen.dart';
 import 'package:aqari/modules/login/screens/login_screen.dart';
 import 'package:aqari/modules/notifications/screens/notification_screen.dart';
+import 'package:aqari/modules/profile/screens/about_us.dart';
+import 'package:aqari/modules/profile/screens/change_password.dart';
+import 'package:aqari/modules/profile/screens/edit_profile.dart';
 import 'package:aqari/modules/profile/screens/setting_screen.dart';
 import 'package:aqari/modules/profile/screens/terms_conditions.dart';
 import 'package:aqari/modules/sign_up/screens/sign_up_screen.dart';
 import 'package:aqari/modules/splash/presentation/screens/splash_screen.dart';
 import 'package:aqari/modules/verify_sign_up/screens/verify_sign_up_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../../modules/profile/screens/about_us.dart';
-import '../../modules/profile/screens/change_password.dart';
-import '../../modules/profile/screens/edit_profile.dart';
 
 /// Application routes
 class AppRoutes {
@@ -119,7 +117,6 @@ class AppRoutes {
           },
           settings: const RouteSettings(name: Routes.chatRoute),
         );
-
 
       default:
         return undefinedRoute();
