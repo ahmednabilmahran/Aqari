@@ -66,7 +66,7 @@ class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Navigator.pushNamed(
               navigatorKey.currentContext!,
-              Routes.editProfile,
+              Routes.settingScreen,
             );
           },
           icon: SvgPicture.asset(

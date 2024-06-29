@@ -33,18 +33,16 @@ class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        titleText: 'Profile',
-        onBackButtonPressed: () async {
-          await supabaseClient.auth.signOut();
-          if (context.mounted) {
-            await Navigator.pushNamedAndRemoveUntil(
-              context,
-              Routes.loginRoute,
-              (route) => false,
-            );
-          }
-        },
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        title: const Text(
+          'Profile',
+          style: TextStyle(
+            color: Colors.black,
+            fontFamily: 'Montserrat',
+            fontWeight: FontWeight.bold,
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: SafeArea(
@@ -89,8 +87,7 @@ class ProfileScreen extends StatelessWidget {
                     SizedX.zero,
                     Text(
                       profile.phone,
-                      style:
-                          TextStyle(fontSize: 10.sp, color: Colors.grey[600]),
+                      style: TextStyle(fontSize: 10.sp, color: Colors.grey[600]),
                     ),
                   ],
                 ),

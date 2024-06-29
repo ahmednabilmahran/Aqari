@@ -1,15 +1,13 @@
-import 'package:aqari/core/utils/theme_helper.dart';
+import 'package:aqari/config/routes/app_routes.dart';
+import 'package:aqari/main.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:load_switch/load_switch.dart';
 import 'package:sizer/sizer.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../config/routes/app_routes.dart';
-import '../../../main.dart';
-
+/// this class is the setting screen
 class SettingScreen extends StatefulWidget {
+  /// this class is the setting screen
   const SettingScreen({super.key});
 
   @override
@@ -200,21 +198,30 @@ class _SettingScreenState extends State<SettingScreen> {
                       const SizedBox(
                         height: 20,
                       ),
-                      const Row(
-                        children: [
-                          Icon(FontAwesomeIcons.fileLines, color: Colors.black),
-                          SizedBox(
-                            width: 7,
-                          ),
-                          Text(
-                            'Terms & Conditions',
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
-                          ),
-                          Spacer(),
-                          Icon(
-                            Icons.arrow_forward_ios_rounded,
-                          ),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            navigatorKey.currentContext!,
+                            Routes.termsAndConditions,
+                          );
+
+                        },
+                        child: const Row(
+                          children: [
+                            Icon(FontAwesomeIcons.fileLines, color: Colors.black),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Text(
+                              'Terms & Conditions',
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                            ),
+                            Spacer(),
+                            Icon(
+                              Icons.arrow_forward_ios_rounded,
+                            ),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         height: 15,
@@ -247,36 +254,60 @@ class _SettingScreenState extends State<SettingScreen> {
                       const SizedBox(
                         height: 15,
                       ),
-                      const Row(
-                        children: [
-                          Icon(Icons.perm_contact_cal_outlined, color: Colors.black),
-                          SizedBox(
-                            width: 7,
-                          ),
-                          Text(
-                            'About Us',
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
-                          ),
-                          Spacer(),
-                          Icon(Icons.arrow_forward_ios_rounded),
-                        ],
+                      InkWell(
+                        onTap: () {
+                          Navigator.pushNamed(
+                            navigatorKey.currentContext!,
+                            Routes.aboutUs,
+                          );
+                        },
+                        child: const Row(
+                          children: [
+                            Icon(Icons.perm_contact_cal_outlined, color: Colors.black),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Text(
+                              'About Us',
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.bold,
+                                fontFamily: 'Montserrat',
+                              ),
+                            ),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios_rounded),
+                          ],
+                        ),
                       ),
                       const SizedBox(
                         height: 15,
                       ),
-                      const Row(
-                        children: [
-                          Icon(Icons.exit_to_app_outlined, color: Colors.red),
-                          SizedBox(
-                            width: 7,
-                          ),
-                          Text(
-                            'Log out',
-                            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
-                          ),
-                          Spacer(),
-                          Icon(Icons.arrow_forward_ios_rounded),
-                        ],
+                      InkWell(
+                        onTap: ()  async {
+                          await supabaseClient.auth.signOut();
+                          if (context.mounted) {
+                            await Navigator.pushNamedAndRemoveUntil(
+                              context,
+                              Routes.loginRoute,
+                                  (route) => false,
+                            );
+                          }
+                        },
+                        child: const Row(
+                          children: [
+                            Icon(Icons.exit_to_app_outlined, color: Colors.red),
+                            SizedBox(
+                              width: 7,
+                            ),
+                            Text(
+                              'Log out',
+                              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, fontFamily: 'Montserrat'),
+                            ),
+                            Spacer(),
+                            Icon(Icons.arrow_forward_ios_rounded),
+                          ],
+                        ),
                       ),
                     ],
                   ),

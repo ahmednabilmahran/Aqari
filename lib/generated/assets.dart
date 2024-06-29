@@ -3,6 +3,8 @@ class Assets {
   Assets._();
 
   static const String dataCountries = 'assets/data/countries.json';
+  static const String genImagesIconAqari = 'assets/gen/images/icon_aqari.svg';
+  static const String iconsAiCenter = 'assets/gen/icons/ai_center.svg';
   static const String iconsDarkUnvalidatedTextIcon = 'assets/gen/icons/dark_unvalidated_text_icon.svg';
   static const String iconsDarkValidatedTextIcon = 'assets/gen/icons/dark_validated_text_icon.svg';
   static const String iconsDone = 'assets/gen/icons/done.svg';
@@ -15,20 +17,28 @@ class Assets {
   static const String iconsLocationPin = 'assets/gen/icons/location_pin.svg';
   static const String iconsLogoSplash = 'assets/gen/icons/logo_splash.svg';
   static const String iconsLogoText = 'assets/gen/icons/logo_text.svg';
+  static const String iconsNoChats = 'assets/gen/icons/no_chats.svg';
+  static const String iconsNonActiveRadio = 'assets/gen/icons/non_active_radio.svg';
   static const String iconsNotifications = 'assets/gen/icons/notifications.svg';
+  static const String iconsOutlinedLocationPin = 'assets/gen/icons/outlined_location_pin.svg';
   static const String iconsProfile = 'assets/gen/icons/profile.svg';
   static const String iconsRooms = 'assets/gen/icons/rooms.svg';
   static const String iconsSearch = 'assets/gen/icons/search.svg';
   static const String iconsSearchAddress = 'assets/gen/icons/search_address.svg';
+  static const String iconsSendMessage = 'assets/gen/icons/send_message.svg';
   static const String iconsShowPasswordIcon = 'assets/gen/icons/show_password_icon.svg';
   static const String iconsSquareFt = 'assets/gen/icons/square_ft.svg';
   static const String iconsUnshowPasswordIcon = 'assets/gen/icons/unshow_password_icon.svg';
   static const String iconsUnvalidatedTextIcon = 'assets/gen/icons/unvalidated_text_icon.svg';
   static const String iconsValidatedTextIcon = 'assets/gen/icons/validated_text_icon.svg';
   static const String iconsVerifySignUp = 'assets/gen/icons/verify_sign_up.svg';
+  static const String imagesAboutUsCover = 'assets/gen/images/about_us_cover.jpg';
   static const String imagesGoogleicon = 'assets/gen/images/googleicon.png';
+  static const String imagesIconAqari = 'assets/gen/images/icon_aqari.png';
   static const String imagesIconGoogle = 'assets/gen/images/iconGoogle.svg';
-  static const String imagesLock password = 'assets/gen/images/lockPassword.png';
+  static const String imagesIconGroup = 'assets/gen/images/icon_group.png';
+  static const String imagesImageTeam = 'assets/gen/images/image_team.png';
+  static const String imagesLockPassword = 'assets/gen/images/lockPassword.png';
   static const String imagesLoginBackground = 'assets/gen/images/login_background.jpg';
   static const String imagesTest1 = 'assets/gen/images/test1.jpeg';
   static const String imagesTest2 = 'assets/gen/images/test2.jpeg';

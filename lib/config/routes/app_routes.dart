@@ -11,4 +11,6 @@ class Routes {
   static const String settingScreen = '/SettingScreen';
   static const String editProfile = '/EditProfile';
   static const String changePassword = '/ChangePassword';
+  static const String aboutUs = '/AboutUs';
+  static const String termsAndConditions = '/TermsAndConditions';
 }
