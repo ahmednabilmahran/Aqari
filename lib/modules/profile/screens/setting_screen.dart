@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../core/widgets/custom_app_bar.dart';
+
 /// this class is the setting screen
 class SettingScreen extends StatefulWidget {
   /// this class is the setting screen
@@ -21,13 +23,7 @@ class _SettingScreenState extends State<SettingScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white70,
-      appBar: AppBar(
-        title: const Text(
-          'Settings',
-          style: TextStyle(color: Colors.black, fontFamily: 'Montserrat', fontWeight: FontWeight.bold),
-        ),
-        backgroundColor: Colors.white,
-      ),
+      appBar: const CustomAppBar(titleText: 'Settings',),
       body: Padding(
         padding: const EdgeInsets.only(left: 24, top: 24, right: 24, bottom: 16),
         child: Column(

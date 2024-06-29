@@ -16,6 +16,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../../core/widgets/custom_app_bar.dart';
+
 /// EditProfile is used to manage the edit profile screen
 class EditProfile extends StatelessWidget {
   /// EditProfile is used to manage the edit profile screen
@@ -52,13 +54,7 @@ class EditProfile extends StatelessWidget {
           builder: (context, state) {
             return Scaffold(
               backgroundColor: Colors.white70,
-              appBar: AppBar(
-                title: const Text(
-                  'Edit Profile',
-                  style: TextStyle(color: Colors.black, fontFamily: 'Montserrat', fontWeight: FontWeight.bold),
-                ),
-                backgroundColor: Colors.white,
-              ),
+              appBar: const CustomAppBar(titleText: 'Edit Profile',),
               body: Container(
                 height: 100.h,
                 width: 100.w,

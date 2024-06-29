@@ -1,4 +1,5 @@
 import 'package:aqari/core/utils/sized_x.dart';
+import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/modules/profile/widgets/custom_list_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -11,18 +12,7 @@ class AboutUs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'About Us',
-          style: TextStyle(
-            color: Colors.black,
-            fontFamily: 'Montserrat',
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        backgroundColor: Colors.white,
-      ),
-      backgroundColor: Colors.white,
+      appBar:const CustomAppBar(titleText: 'About Us',),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
