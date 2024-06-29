@@ -62,6 +62,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "initiatePropertySearch":
+            MessageLookupByLibrary.simpleMessage("Initiate property search"),
         "joinNow": MessageLookupByLibrary.simpleMessage("Join Now"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
         "lastNameCantBeEmpty":

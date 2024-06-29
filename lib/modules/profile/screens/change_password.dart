@@ -1,3 +1,4 @@
+import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
 import 'package:aqari/core/widgets/custom_text_field.dart';
@@ -23,7 +24,7 @@ class ChangePassword extends StatelessWidget {
           children: [
             const Center(
               child: Image(
-                image: AssetImage('assets/gen/images/lockPassword.png'),
+                image: AssetImage(Assets.genImagesLockPassword),
               ),
             ),
             const SizedBox(height: 50),

@@ -98,6 +98,9 @@ class SearchScreen extends StatelessWidget {
                 ],
               ),
             ),
+
+            // const StartSearchSection(),
+
             Expanded(
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(

@@ -729,6 +729,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Initiate property search`
+  String get initiatePropertySearch {
+    return Intl.message(
+      'Initiate property search',
+      name: 'initiatePropertySearch',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

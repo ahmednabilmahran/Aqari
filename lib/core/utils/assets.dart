@@ -41,6 +41,14 @@ class Assets {
   /// assets/gen/icons/home.svg
   static const String genIconsHome = "assets/gen/icons/home.svg";
 
+  /// Assets for genIconsIconAqari
+  /// assets/gen/icons/icon_aqari.svg
+  static const String genIconsIconAqari = "assets/gen/icons/icon_aqari.svg";
+
+  /// Assets for genIconsIconGoogle
+  /// assets/gen/icons/iconGoogle.svg
+  static const String genIconsIconGoogle = "assets/gen/icons/iconGoogle.svg";
+
   /// Assets for genIconsLocationPin
   /// assets/gen/icons/location_pin.svg
   static const String genIconsLocationPin = "assets/gen/icons/location_pin.svg";
@@ -97,6 +105,10 @@ class Assets {
   /// assets/gen/icons/square_ft.svg
   static const String genIconsSquareFt = "assets/gen/icons/square_ft.svg";
 
+  /// Assets for genIconsStartSearch
+  /// assets/gen/icons/start_search.svg
+  static const String genIconsStartSearch = "assets/gen/icons/start_search.svg";
+
   /// Assets for genIconsUnshowPasswordIcon
   /// assets/gen/icons/unshow_password_icon.svg
   static const String genIconsUnshowPasswordIcon = "assets/gen/icons/unshow_password_icon.svg";
@@ -112,6 +124,30 @@ class Assets {
   /// Assets for genIconsVerifySignUp
   /// assets/gen/icons/verify_sign_up.svg
   static const String genIconsVerifySignUp = "assets/gen/icons/verify_sign_up.svg";
+
+  /// Assets for genImagesAboutUsCover
+  /// assets/gen/images/about_us_cover.jpg
+  static const String genImagesAboutUsCover = "assets/gen/images/about_us_cover.jpg";
+
+  /// Assets for genImagesGoogleicon
+  /// assets/gen/images/googleicon.png
+  static const String genImagesGoogleicon = "assets/gen/images/googleicon.png";
+
+  /// Assets for genImagesIconAqari
+  /// assets/gen/images/icon_aqari.png
+  static const String genImagesIconAqari = "assets/gen/images/icon_aqari.png";
+
+  /// Assets for genImagesIconGroup
+  /// assets/gen/images/icon_group.png
+  static const String genImagesIconGroup = "assets/gen/images/icon_group.png";
+
+  /// Assets for genImagesImageTeam
+  /// assets/gen/images/image_team.png
+  static const String genImagesImageTeam = "assets/gen/images/image_team.png";
+
+  /// Assets for genImagesLockPassword
+  /// assets/gen/images/lockPassword.png
+  static const String genImagesLockPassword = "assets/gen/images/lockPassword.png";
 
   /// Assets for genImagesLoginBackground
   /// assets/gen/images/login_background.jpg

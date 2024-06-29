@@ -1,3 +1,4 @@
+import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -23,7 +24,7 @@ class CustomCardApartment extends StatelessWidget {
           ),
           child: const Image(
             image: AssetImage(
-              'assets/gen/images/test1.jpeg',
+              Assets.genImagesTest1,
             ),
             fit: BoxFit.cover,
           ),

@@ -66,5 +66,6 @@
   "minimum": "Minimum",
   "maximum": "Maximum",
   "apply": "Apply",
-  "reset": "Reset"
+  "reset": "Reset",
+  "initiatePropertySearch": "Initiate property search"
 }
