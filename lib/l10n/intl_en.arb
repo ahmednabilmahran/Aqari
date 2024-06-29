@@ -67,5 +67,9 @@
   "maximum": "Maximum",
   "apply": "Apply",
   "reset": "Reset",
-  "initiatePropertySearch": "Initiate property search"
+  "initiatePropertySearch": "Initiate property search",
+  "idVerification": "ID Verification",
+  "sellerDetails": "Seller details",
+  "identityVerification": "Identity Verification",
+  "reviewVerification": "Review & Verification"
 }

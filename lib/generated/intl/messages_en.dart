@@ -62,6 +62,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "idVerification":
+            MessageLookupByLibrary.simpleMessage("ID Verification"),
+        "identityVerification":
+            MessageLookupByLibrary.simpleMessage("Identity Verification"),
         "initiatePropertySearch":
             MessageLookupByLibrary.simpleMessage("Initiate property search"),
         "joinNow": MessageLookupByLibrary.simpleMessage("Join Now"),
@@ -107,6 +111,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "propertyType": MessageLookupByLibrary.simpleMessage("Property type"),
         "reset": MessageLookupByLibrary.simpleMessage("Reset"),
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),
+        "reviewVerification":
+            MessageLookupByLibrary.simpleMessage("Review & Verification"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchAgain": MessageLookupByLibrary.simpleMessage("Search again..."),
         "searchByAddressCity":
@@ -114,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectFloor": MessageLookupByLibrary.simpleMessage("Select Floor"),
         "sellMyProperty":
             MessageLookupByLibrary.simpleMessage("Sell my property"),
+        "sellerDetails": MessageLookupByLibrary.simpleMessage("Seller details"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "startTyping": MessageLookupByLibrary.simpleMessage("Start typing..."),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),

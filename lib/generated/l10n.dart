@@ -739,6 +739,46 @@ class S {
       args: [],
     );
   }
+
+  /// `ID Verification`
+  String get idVerification {
+    return Intl.message(
+      'ID Verification',
+      name: 'idVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Seller details`
+  String get sellerDetails {
+    return Intl.message(
+      'Seller details',
+      name: 'sellerDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Identity Verification`
+  String get identityVerification {
+    return Intl.message(
+      'Identity Verification',
+      name: 'identityVerification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Review & Verification`
+  String get reviewVerification {
+    return Intl.message(
+      'Review & Verification',
+      name: 'reviewVerification',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

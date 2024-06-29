@@ -1,3 +1,4 @@
+import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
@@ -127,72 +128,80 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 SizedX.h2p5,
-                Container(
-                  padding: EdgeInsets.only(
-                    left: 4.w,
-                    right: 1.w,
-                    top: 1.5.h,
-                    bottom: 1.5.h,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).splashColor,
-                    borderRadius: BorderRadius.circular(10),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.2),
-                        spreadRadius: 1,
-                        blurRadius: 5,
-                        offset: const Offset(0, 3),
-                      ),
-                    ],
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            FittedBox(
-                              child: Text(
-                                S.of(context).sellMyProperty,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleSmall!
-                                    .copyWith(
-                                      fontWeight: FontWeight.w500,
-                                      color: ThemeHelper.appColors.black,
-                                    ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                            FittedBox(
-                              child: Text(
-                                S.of(context).listMyPropertyForSale,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .labelSmall!
-                                    .copyWith(
-                                      fontSize: 11.sp,
-                                      fontWeight: FontWeight.w300,
-                                      color: ThemeHelper.appColors.darkGrey,
-                                      letterSpacing: 0,
-                                    ),
-                                maxLines: 1,
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                            ),
-                          ],
+                InkWell(
+                  focusColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  splashColor: Colors.transparent,
+                  onTap: () =>
+                      Navigator.pushNamed(context, Routes.identityVerification),
+                  child: Container(
+                    padding: EdgeInsets.only(
+                      left: 4.w,
+                      right: 1.w,
+                      top: 1.5.h,
+                      bottom: 1.5.h,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).splashColor,
+                      borderRadius: BorderRadius.circular(10),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 1,
+                          blurRadius: 5,
+                          offset: const Offset(0, 3),
                         ),
-                      ),
-                      SizedX.w2,
-                      SvgPicture.asset(
-                        Assets.genIconsForSale,
-                        height: 9.h,
-                        width: 9.w,
-                      ),
-                    ],
+                      ],
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              FittedBox(
+                                child: Text(
+                                  S.of(context).sellMyProperty,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleSmall!
+                                      .copyWith(
+                                        fontWeight: FontWeight.w500,
+                                        color: ThemeHelper.appColors.black,
+                                      ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                              FittedBox(
+                                child: Text(
+                                  S.of(context).listMyPropertyForSale,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .labelSmall!
+                                      .copyWith(
+                                        fontSize: 11.sp,
+                                        fontWeight: FontWeight.w300,
+                                        color: ThemeHelper.appColors.darkGrey,
+                                        letterSpacing: 0,
+                                      ),
+                                  maxLines: 1,
+                                  overflow: TextOverflow.ellipsis,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedX.w2,
+                        SvgPicture.asset(
+                          Assets.genIconsForSale,
+                          height: 9.h,
+                          width: 9.w,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 SizedX.h3,
