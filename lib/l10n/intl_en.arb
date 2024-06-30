@@ -71,5 +71,22 @@
   "idVerification": "ID Verification",
   "sellerDetails": "Seller details",
   "identityVerification": "Identity Verification",
-  "reviewVerification": "Review & Verification"
+  "reviewVerification": "Review & Verification",
+  "title": "Title",
+  "exApartmentZedEast": "ex. Apartment - ZED East",
+  "fillDetailsOfYourUnit": "Fill details of your unit",
+  "itsEasyToListYourUnitOnAqari": "It’s easy to list your unit on Aqari!",
+  "addYourPropertyDetails": "Add your property details",
+  "shareSomeBasicInfoLikeWhereItIsAndIts": "Share some basic info, like where it is and its area and floor ...etc",
+  "makeItStandOut": "Make it stand out",
+  "add5OrMoreHighqualityPhotosToShowTheFacilities": "Add 5 or more high-quality photos to show the facilities of the unit",
+  "finishUpAndPublish": "Finish up and publish",
+  "weReviewYourRequestToListTheUnitForSale": "We review your request to list the unit for sale on our platform. Upon completion, you will receive an approval notification.",
+  "allSet": "All set",
+  "yourUnitIsNowListedOnAqariAwaitingABuyer": "Your unit is now listed on Aqari, awaiting a buyer.",
+  "getStarted": "Get Started",
+  "propertyCategory": "Property Category",
+  "cancel": "Cancel",
+  "propertyFeatures": "Property Features",
+  "environmentFacilities": "Environment / Facilities"
 }

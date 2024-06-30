@@ -1,11 +1,13 @@
 // ignore_for_file: lines_longer_than_80_chars
 
+import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
 import 'package:aqari/core/widgets/custom_padding.dart';
+import 'package:aqari/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
@@ -29,7 +31,7 @@ class GettingStartedScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 6.5.w, vertical: 1.h),
               child: Text(
-                'It’s easy to list your unit on Aqari!',
+                S.of(context).itsEasyToListYourUnitOnAqari,
                 style: Theme.of(context).textTheme.titleLarge!.copyWith(
                       color: ThemeHelper.appColors.black,
                       fontSize: 24.sp,
@@ -64,7 +66,7 @@ class GettingStartedScreen extends StatelessWidget {
                       children: [
                         FittedBox(
                           child: Text(
-                            'Add your property details',
+                            S.of(context).addYourPropertyDetails,
                             style: Theme.of(context)
                                 .textTheme
                                 .headlineLarge!
@@ -78,7 +80,7 @@ class GettingStartedScreen extends StatelessWidget {
                         ),
                         SizedX.h0p25,
                         Text(
-                          'Share some basic info, like where it is and its area and floor ...etc',
+                          S.of(context).shareSomeBasicInfoLikeWhereItIsAndIts,
                           style:
                               Theme.of(context).textTheme.labelSmall!.copyWith(
                                     color: ThemeHelper.appColors.black,
@@ -131,7 +133,7 @@ class GettingStartedScreen extends StatelessWidget {
                       children: [
                         FittedBox(
                           child: Text(
-                            'Make it stand out',
+                            S.of(context).makeItStandOut,
                             style: Theme.of(context)
                                 .textTheme
                                 .headlineLarge!
@@ -145,7 +147,9 @@ class GettingStartedScreen extends StatelessWidget {
                         ),
                         SizedX.h0p25,
                         Text(
-                          'Add 5 or more high-quality photos to show the facilities of the unit',
+                          S
+                              .of(context)
+                              .add5OrMoreHighqualityPhotosToShowTheFacilities,
                           style:
                               Theme.of(context).textTheme.labelSmall!.copyWith(
                                     color: ThemeHelper.appColors.black,
@@ -198,7 +202,7 @@ class GettingStartedScreen extends StatelessWidget {
                       children: [
                         FittedBox(
                           child: Text(
-                            'Finish up and publish',
+                            S.of(context).finishUpAndPublish,
                             style: Theme.of(context)
                                 .textTheme
                                 .headlineLarge!
@@ -212,7 +216,7 @@ class GettingStartedScreen extends StatelessWidget {
                         ),
                         SizedX.h0p25,
                         Text(
-                          'We review your request to list the unit for sale on our platform. Upon completion, you will receive an approval notification.',
+                          S.of(context).weReviewYourRequestToListTheUnitForSale,
                           style:
                               Theme.of(context).textTheme.labelSmall!.copyWith(
                                     color: ThemeHelper.appColors.black,
@@ -265,7 +269,7 @@ class GettingStartedScreen extends StatelessWidget {
                       children: [
                         FittedBox(
                           child: Text(
-                            'All set',
+                            S.of(context).allSet,
                             style: Theme.of(context)
                                 .textTheme
                                 .headlineLarge!
@@ -279,7 +283,9 @@ class GettingStartedScreen extends StatelessWidget {
                         ),
                         SizedX.h0p25,
                         Text(
-                          'Your unit is now listed on Aqari, awaiting a buyer.',
+                          S
+                              .of(context)
+                              .yourUnitIsNowListedOnAqariAwaitingABuyer,
                           style:
                               Theme.of(context).textTheme.labelSmall!.copyWith(
                                     color: ThemeHelper.appColors.black,
@@ -310,7 +316,12 @@ class GettingStartedScreen extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            CustomButton(onPressed: () {}, buttonText: 'Get Started'),
+            CustomButton(
+              onPressed: () {
+                Navigator.pushNamed(context, Routes.unitDetails);
+              },
+              buttonText: S.of(context).getStarted,
+            ),
             SizedX.h5,
           ],
         ),

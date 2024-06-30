@@ -779,6 +779,176 @@ class S {
       args: [],
     );
   }
+
+  /// `Title`
+  String get title {
+    return Intl.message(
+      'Title',
+      name: 'title',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ex. Apartment - ZED East`
+  String get exApartmentZedEast {
+    return Intl.message(
+      'ex. Apartment - ZED East',
+      name: 'exApartmentZedEast',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Fill details of your unit`
+  String get fillDetailsOfYourUnit {
+    return Intl.message(
+      'Fill details of your unit',
+      name: 'fillDetailsOfYourUnit',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `It’s easy to list your unit on Aqari!`
+  String get itsEasyToListYourUnitOnAqari {
+    return Intl.message(
+      'It’s easy to list your unit on Aqari!',
+      name: 'itsEasyToListYourUnitOnAqari',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add your property details`
+  String get addYourPropertyDetails {
+    return Intl.message(
+      'Add your property details',
+      name: 'addYourPropertyDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Share some basic info, like where it is and its area and floor ...etc`
+  String get shareSomeBasicInfoLikeWhereItIsAndIts {
+    return Intl.message(
+      'Share some basic info, like where it is and its area and floor ...etc',
+      name: 'shareSomeBasicInfoLikeWhereItIsAndIts',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Make it stand out`
+  String get makeItStandOut {
+    return Intl.message(
+      'Make it stand out',
+      name: 'makeItStandOut',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add 5 or more high-quality photos to show the facilities of the unit`
+  String get add5OrMoreHighqualityPhotosToShowTheFacilities {
+    return Intl.message(
+      'Add 5 or more high-quality photos to show the facilities of the unit',
+      name: 'add5OrMoreHighqualityPhotosToShowTheFacilities',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Finish up and publish`
+  String get finishUpAndPublish {
+    return Intl.message(
+      'Finish up and publish',
+      name: 'finishUpAndPublish',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `We review your request to list the unit for sale on our platform. Upon completion, you will receive an approval notification.`
+  String get weReviewYourRequestToListTheUnitForSale {
+    return Intl.message(
+      'We review your request to list the unit for sale on our platform. Upon completion, you will receive an approval notification.',
+      name: 'weReviewYourRequestToListTheUnitForSale',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All set`
+  String get allSet {
+    return Intl.message(
+      'All set',
+      name: 'allSet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your unit is now listed on Aqari, awaiting a buyer.`
+  String get yourUnitIsNowListedOnAqariAwaitingABuyer {
+    return Intl.message(
+      'Your unit is now listed on Aqari, awaiting a buyer.',
+      name: 'yourUnitIsNowListedOnAqariAwaitingABuyer',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Get Started`
+  String get getStarted {
+    return Intl.message(
+      'Get Started',
+      name: 'getStarted',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Property Category`
+  String get propertyCategory {
+    return Intl.message(
+      'Property Category',
+      name: 'propertyCategory',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message(
+      'Cancel',
+      name: 'cancel',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Property Features`
+  String get propertyFeatures {
+    return Intl.message(
+      'Property Features',
+      name: 'propertyFeatures',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Environment / Facilities`
+  String get environmentFacilities {
+    return Intl.message(
+      'Environment / Facilities',
+      name: 'environmentFacilities',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

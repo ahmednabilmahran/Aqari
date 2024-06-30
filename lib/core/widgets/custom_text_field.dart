@@ -16,7 +16,7 @@ class CustomTextField extends StatelessWidget {
     this.label,
     this.readOnly = false,
     this.useBorder = true,
-    this.borderRadius = 6,
+    this.borderRadius,
     this.validator,
     this.onChanged,
     this.keyboardType,
@@ -133,11 +133,11 @@ class CustomTextField extends StatelessWidget {
               horizontal: contentPaddingHorizontal ?? 4.w,
             ),
             border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.sp),
+              borderRadius: BorderRadius.circular(borderRadius ?? 8.sp),
               // borderSide: BorderSide.none,
             ),
             enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.sp),
+              borderRadius: BorderRadius.circular(borderRadius ?? 8.sp),
               borderSide: useBorder
                   ? BorderSide(
                       color: Theme.of(context).hoverColor,
@@ -147,7 +147,7 @@ class CustomTextField extends StatelessWidget {
             errorBorder: OutlineInputBorder(
               borderSide:
                   BorderSide(color: Theme.of(context).colorScheme.error),
-              borderRadius: BorderRadius.circular(8.sp),
+              borderRadius: BorderRadius.circular(borderRadius ?? 8.sp),
             ),
             errorStyle: Theme.of(context).textTheme.labelSmall!.copyWith(
                   color: Theme.of(context).colorScheme.error,
@@ -155,12 +155,12 @@ class CustomTextField extends StatelessWidget {
                   fontWeight: FontWeight.w400,
                 ),
             focusedBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.sp),
+              borderRadius: BorderRadius.circular(borderRadius ?? 8.sp),
               borderSide: BorderSide(color: Theme.of(context).hoverColor),
             ),
             focusedErrorBorder: OutlineInputBorder(
               borderSide: BorderSide(color: Theme.of(context).hoverColor),
-              borderRadius: BorderRadius.circular(8.sp),
+              borderRadius: BorderRadius.circular(borderRadius ?? 8.sp),
             ),
           ),
         ),

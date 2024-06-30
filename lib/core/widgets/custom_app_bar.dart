@@ -11,6 +11,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     this.appBarHeight = kToolbarHeight,
     this.onBackButtonPressed,
+    this.leading,
   });
 
   /// appBarHeight is used to manage the app bar height
@@ -22,6 +23,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// onBackButtonPressed
   final void Function()? onBackButtonPressed;
 
+  /// leading
+  final Widget? leading;
+
   @override
   Size get preferredSize => Size.fromHeight(appBarHeight);
 
@@ -30,7 +34,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       elevation: 0,
       toolbarHeight: appBarHeight,
-      leadingWidth: 17.5.w,
+      leadingWidth: leading != null ? 31.w : 17.5.w,
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: Colors.transparent,
         statusBarIconBrightness: Brightness.dark,
@@ -38,28 +42,29 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: true,
       scrolledUnderElevation: 0,
       automaticallyImplyLeading: false,
-      leading: InkWell(
-        hoverColor: Colors.transparent,
-        highlightColor: Colors.transparent,
-        splashColor: Colors.transparent,
-        onTap: onBackButtonPressed ??
-            () {
-              Navigator.pop(context);
-            },
-        child: Align(
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(6.sp),
-              color: const Color(0XFF1B1B1B).withOpacity(0.05),
-            ),
-            child: Icon(
-              Icons.chevron_left_rounded,
-              color: Theme.of(context).primaryColor,
-              size: 26.sp,
+      leading: leading ??
+          InkWell(
+            hoverColor: Colors.transparent,
+            highlightColor: Colors.transparent,
+            splashColor: Colors.transparent,
+            onTap: onBackButtonPressed ??
+                () {
+                  Navigator.pop(context);
+                },
+            child: Align(
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6.sp),
+                  color: const Color(0XFF1B1B1B).withOpacity(0.05),
+                ),
+                child: Icon(
+                  Icons.chevron_left_rounded,
+                  color: Theme.of(context).primaryColor,
+                  size: 26.sp,
+                ),
+              ),
             ),
           ),
-        ),
-      ),
       title: Text(
         titleText,
         style: Theme.of(context).textTheme.titleSmall!.copyWith(
