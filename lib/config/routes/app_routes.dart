@@ -14,4 +14,5 @@ class Routes {
   static const String aboutUs = '/AboutUs';
   static const String termsAndConditions = '/TermsAndConditions';
   static const String identityVerification = '/IdentityVerification';
+  static const String gettingStarted = '/GettingStarted';
 }

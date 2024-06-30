@@ -36,6 +36,7 @@ dependencies:
   persistent_bottom_nav_bar: ^5.0.2
   shimmer: ^3.0.0
   sizer: ^2.0.15
+  step_progress_indicator: ^1.0.2
   supabase_flutter: ^2.5.3
   syncfusion_flutter_sliders: ^26.1.39
   very_good_analysis: ^5.1.0

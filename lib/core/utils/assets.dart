@@ -1,9 +1,17 @@
 class Assets {
   Assets._();
   
+  /// Assets for genIconsAddYourPropertyDetails
+  /// assets/gen/icons/add_your_property_details.svg
+  static const String genIconsAddYourPropertyDetails = "assets/gen/icons/add_your_property_details.svg";
+
   /// Assets for genIconsAiCenter
   /// assets/gen/icons/ai_center.svg
   static const String genIconsAiCenter = "assets/gen/icons/ai_center.svg";
+
+  /// Assets for genIconsAllSet
+  /// assets/gen/icons/all_set.svg
+  static const String genIconsAllSet = "assets/gen/icons/all_set.svg";
 
   /// Assets for genIconsDarkUnvalidatedTextIcon
   /// assets/gen/icons/dark_unvalidated_text_icon.svg
@@ -28,6 +36,10 @@ class Assets {
   /// Assets for genIconsFilter
   /// assets/gen/icons/filter.svg
   static const String genIconsFilter = "assets/gen/icons/filter.svg";
+
+  /// Assets for genIconsFinishUpAndPublish
+  /// assets/gen/icons/finish_up_and_publish.svg
+  static const String genIconsFinishUpAndPublish = "assets/gen/icons/finish_up_and_publish.svg";
 
   /// Assets for genIconsForSale
   /// assets/gen/icons/for_sale.svg
@@ -60,6 +72,10 @@ class Assets {
   /// Assets for genIconsLogoText
   /// assets/gen/icons/logo_text.svg
   static const String genIconsLogoText = "assets/gen/icons/logo_text.svg";
+
+  /// Assets for genIconsMakeItStandOut
+  /// assets/gen/icons/make_it_stand_out.svg
+  static const String genIconsMakeItStandOut = "assets/gen/icons/make_it_stand_out.svg";
 
   /// Assets for genIconsNoChats
   /// assets/gen/icons/no_chats.svg

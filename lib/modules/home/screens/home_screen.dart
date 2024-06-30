@@ -134,7 +134,7 @@ class HomeScreen extends StatelessWidget {
                   hoverColor: Colors.transparent,
                   splashColor: Colors.transparent,
                   onTap: () =>
-                      Navigator.pushNamed(context, Routes.identityVerification),
+                      Navigator.pushNamed(context, Routes.gettingStarted),
                   child: Container(
                     padding: EdgeInsets.only(
                       left: 4.w,

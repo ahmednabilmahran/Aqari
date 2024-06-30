@@ -3,6 +3,7 @@ import 'package:aqari/core/utils/app_strings.dart';
 import 'package:aqari/models/chat_session_model.dart';
 import 'package:aqari/modules/ai_center/screens/main_ai_chat/main_ai_chat_screen.dart';
 import 'package:aqari/modules/app_layout/screens/app_layout_screen.dart';
+import 'package:aqari/modules/getting_started/screens/getting_started_screen.dart';
 import 'package:aqari/modules/identity_verification/screens/identity_verification_screen.dart';
 import 'package:aqari/modules/login/screens/login_screen.dart';
 import 'package:aqari/modules/notifications/screens/notification_screen.dart';
@@ -112,6 +113,14 @@ class AppRoutes {
             return const IdentityVerificationScreen();
           },
           settings: const RouteSettings(name: Routes.identityVerification),
+        );
+
+      case Routes.gettingStarted:
+        return MaterialPageRoute(
+          builder: (context) {
+            return const GettingStartedScreen();
+          },
+          settings: const RouteSettings(name: Routes.gettingStarted),
         );
 
       case Routes.chatRoute:
