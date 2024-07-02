@@ -109,7 +109,7 @@ class AppRoutes {
       case Routes.identityVerification:
         return MaterialPageRoute(
           builder: (context) {
-            return const IdentityVerificationScreen();
+            return IdentityVerificationScreen();
           },
           settings: const RouteSettings(name: Routes.identityVerification),
         );
