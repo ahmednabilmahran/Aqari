@@ -69,6 +69,8 @@ class Assets {
   /// assets/gen/icons/logo_splash.svg
   static const String genIconsLogoSplash = "assets/gen/icons/logo_splash.svg";
 
+  static const String genImagesIdentityVerification = "assets/gen/images/thank_id_verfication.png";
+
   /// Assets for genIconsLogoText
   /// assets/gen/icons/logo_text.svg
   static const String genIconsLogoText = "assets/gen/icons/logo_text.svg";
