@@ -15,8 +15,7 @@ class CustomFilterCubit extends Cubit<CustomFilterState> {
   CustomFilterState _appliedState = CustomFilterState();
   late CustomFilterState _tempState;
 
-
-/// Min Area Controller
+  /// Min Area Controller
   late TextEditingController minAreaController;
 
   /// Max Area Controller

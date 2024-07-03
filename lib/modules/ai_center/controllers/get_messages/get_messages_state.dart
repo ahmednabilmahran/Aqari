@@ -11,7 +11,6 @@ class GetMessagesLoadingState extends GetMessagesState {}
 
 /// GetMessagesErrorState
 class GetMessagesErrorState extends GetMessagesState {
-
   /// GetMessagesErrorState
   GetMessagesErrorState({required this.error});
 
@@ -19,10 +18,8 @@ class GetMessagesErrorState extends GetMessagesState {
   final String error;
 }
 
-
 /// GetMessagesSuccessState
 class GetMessagesSuccessState extends GetMessagesState {
-
   /// GetMessagesSuccessState
   GetMessagesSuccessState({required this.messages});
 

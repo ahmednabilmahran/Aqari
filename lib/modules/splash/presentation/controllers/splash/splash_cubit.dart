@@ -121,7 +121,7 @@ class SplashCubit extends Cubit<SplashState> {
 
     // Access the AuthenticationCubit to check the current authentication state.
     final authState = context.read<SharedAuthenticationCubit>().state;
-    
+
     // Decide the next screen based on the authentication state and whether the onboarding was shown.
     if (authState is SharedAuthenticationAuthenticatedState) {
       unawaited(supabaseClient.auth.refreshSession());

@@ -3,14 +3,22 @@ import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
+/// FloorSelectionItem
 class FloorSelectionItem extends StatelessWidget {
+  /// Constructor
   FloorSelectionItem({
     required this.selectedFloor,
     required this.onFloorSelected,
     super.key,
   });
+
+  /// selectedFloor
   final String selectedFloor;
+
+  /// onFloorSelected
   final ValueChanged<String> onFloorSelected;
+
+  /// floors
   final List<String> floors = [
     '1st',
     '2nd',

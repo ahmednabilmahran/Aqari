@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 /// CustomListTile is used to manage the custom list tile
 class CustomListTile extends StatelessWidget {
   /// CustomListTile is used to manage the custom list tile
@@ -8,10 +9,13 @@ class CustomListTile extends StatelessWidget {
     required this.subtitle,
     super.key,
   });
-/// name is used to manage the name of the list tile
+
+  /// name is used to manage the name of the list tile
   final String? name;
+
   /// image is used to manage the image of the list tile
   final String? image;
+
   /// subtitle is used to manage the subtitle of the list tile
   final String? subtitle;
 

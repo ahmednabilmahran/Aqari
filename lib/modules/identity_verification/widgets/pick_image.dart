@@ -1,33 +1,31 @@
 import 'dart:io';
 
+import 'package:aqari/core/utils/sized_x.dart';
+import 'package:aqari/core/widgets/custom_button.dart';
+import 'package:aqari/core/widgets/custom_padding.dart';
+import 'package:aqari/modules/identity_verification/controllers/imageUpload/image_upload_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
-
 import 'package:sizer/sizer.dart';
-
-import '../../../core/utils/sized_x.dart';
-import '../../../core/widgets/custom_button.dart';
-import '../../../core/widgets/custom_padding.dart';
-import '../../../generated/l10n.dart';
-import '../controllers/imageUpload/image_upload_cubit.dart';
 
 /// UploadContainer
 class UploadContainer extends StatelessWidget {
   /// Constructor
   const UploadContainer({
     required this.type,
+    required this.cubitContext,
     super.key,
     this.image,
-    required this.cubitContext,
   });
 
   /// image
   final File? image;
 
-
   /// type
   final String type;
+
+  /// cubitContext
   final ImageUploadCubit cubitContext;
 
   @override
@@ -56,11 +54,12 @@ class UploadContainer extends StatelessWidget {
                         ),
                         title: Text(
                           'photo_library',
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                fontSize: 15.sp,
-                                color: Theme.of(context).primaryColor,
-                                letterSpacing: 0,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    fontSize: 15.sp,
+                                    color: Theme.of(context).primaryColor,
+                                    letterSpacing: 0,
+                                  ),
                         ),
                         onTap: () {
                           cubitContext.pickImage(ImageSource.gallery, type);
@@ -75,11 +74,12 @@ class UploadContainer extends StatelessWidget {
                         ),
                         title: Text(
                           'Camera',
-                          style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                fontSize: 15.sp,
-                                color: Theme.of(context).primaryColor,
-                                letterSpacing: 0,
-                              ),
+                          style:
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    fontSize: 15.sp,
+                                    color: Theme.of(context).primaryColor,
+                                    letterSpacing: 0,
+                                  ),
                         ),
                         onTap: () {
                           cubitContext.pickImage(ImageSource.camera, type);
@@ -100,7 +100,7 @@ class UploadContainer extends StatelessWidget {
               border: Border.all(
                 color: Colors.grey,
               ),
-              color:  Colors.white,
+              color: Colors.white,
               borderRadius: BorderRadius.circular(10.sp),
             ),
             child: image == null
@@ -129,7 +129,8 @@ class UploadContainer extends StatelessWidget {
                             onPressed: () {},
                             buttonText: 'Upload Image',
                             isFilled: false,
-                            notFillBackgroundColor: Theme.of(context).primaryColor,
+                            notFillBackgroundColor:
+                                Theme.of(context).primaryColor,
                             notFillTextColor: Colors.white,
                             borderColor: Theme.of(context).primaryColor,
                             //height: 5.h,
@@ -152,7 +153,10 @@ class UploadContainer extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 2.w, vertical: 1.5.h),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 2.w,
+                          vertical: 1.5.h,
+                        ),
                         child: SizedBox(
                           width: 32.5.w,
                           child: CustomButton(
@@ -173,14 +177,21 @@ class UploadContainer extends StatelessWidget {
                                           ),
                                           title: Text(
                                             'photo_library',
-                                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                              fontSize: 15.sp,
-                                              color: Theme.of(context).primaryColor,
-                                              letterSpacing: 0,
-                                            ),
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall
+                                                ?.copyWith(
+                                                  fontSize: 15.sp,
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
+                                                  letterSpacing: 0,
+                                                ),
                                           ),
                                           onTap: () {
-                                            cubitContext.pickImage(ImageSource.gallery, type);
+                                            cubitContext.pickImage(
+                                              ImageSource.gallery,
+                                              type,
+                                            );
                                             Navigator.of(context).pop();
                                           },
                                         ),
@@ -192,14 +203,21 @@ class UploadContainer extends StatelessWidget {
                                           ),
                                           title: Text(
                                             'Camera',
-                                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                                              fontSize: 15.sp,
-                                              color: Theme.of(context).primaryColor,
-                                              letterSpacing: 0,
-                                            ),
+                                            style: Theme.of(context)
+                                                .textTheme
+                                                .bodySmall
+                                                ?.copyWith(
+                                                  fontSize: 15.sp,
+                                                  color: Theme.of(context)
+                                                      .primaryColor,
+                                                  letterSpacing: 0,
+                                                ),
                                           ),
                                           onTap: () {
-                                            cubitContext.pickImage(ImageSource.camera, type);
+                                            cubitContext.pickImage(
+                                              ImageSource.camera,
+                                              type,
+                                            );
                                             Navigator.of(context).pop();
                                           },
                                         ),
@@ -211,7 +229,8 @@ class UploadContainer extends StatelessWidget {
                               },
                             ),
                             buttonText: 'reUpload',
-                            fillBackgroundColor: Theme.of(context).scaffoldBackgroundColor,
+                            fillBackgroundColor:
+                                Theme.of(context).scaffoldBackgroundColor,
                             fillTextColor: Theme.of(context).primaryColor,
                             borderColor: Theme.of(context).primaryColor,
                             //height: 5.h,

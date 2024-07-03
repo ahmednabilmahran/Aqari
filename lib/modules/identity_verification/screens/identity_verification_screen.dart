@@ -1,33 +1,31 @@
+import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
+import 'package:aqari/core/widgets/custom_button.dart';
 import 'package:aqari/core/widgets/custom_text_field.dart';
 import 'package:aqari/generated/l10n.dart';
+import 'package:aqari/modules/identity_verification/controllers/imageUpload/image_upload_cubit.dart';
 import 'package:aqari/modules/identity_verification/controllers/stepper_cubit/stepper_cubit.dart';
-import 'package:aqari/modules/identity_verification/widgets/custom_container_pickImage.dart';
+import 'package:aqari/modules/identity_verification/widgets/pick_image.dart';
 import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
-import '../../../core/utils/assets.dart';
-import '../../../core/widgets/custom_button.dart';
-import '../../../core/widgets/custom_phone_number_text_field.dart';
-import '../controllers/imageUpload/image_upload_cubit.dart';
-import '../widgets/pick_image.dart';
-
 /// Identity Verification Screen
 class IdentityVerificationScreen extends StatefulWidget {
   /// Constructor
-  IdentityVerificationScreen({super.key});
+  const IdentityVerificationScreen({super.key});
 
   @override
-  State<IdentityVerificationScreen> createState() => _IdentityVerificationScreenState();
+  State<IdentityVerificationScreen> createState() =>
+      _IdentityVerificationScreenState();
 }
 
-class _IdentityVerificationScreenState extends State<IdentityVerificationScreen> {
+class _IdentityVerificationScreenState
+    extends State<IdentityVerificationScreen> {
   @override
   Widget build(BuildContext context) {
-    const file = CustomPickImageContainer();
     final controller = TextEditingController();
     return MultiBlocProvider(
       providers: [
@@ -66,16 +64,20 @@ class _IdentityVerificationScreenState extends State<IdentityVerificationScreen>
                       activeStepIconColor: Colors.white,
                       finishedStepTextColor: ThemeHelper.appColors.black,
                       showStepBorder: false,
-                      finishedStepIconColor: Theme.of(context).scaffoldBackgroundColor,
+                      finishedStepIconColor:
+                          Theme.of(context).scaffoldBackgroundColor,
                       activeStepTextColor: ThemeHelper.appColors.black,
                       unreachedStepTextColor: ThemeHelper.appColors.black,
-                      finishedStepBackgroundColor: Theme.of(context).primaryColor,
+                      finishedStepBackgroundColor:
+                          Theme.of(context).primaryColor,
                       steps: [
                         EasyStep(
                           customStep: _buildCustomStep(
                             context,
-                            isActive: state.index == StepperState.sellerDetails.index,
-                            isFinished: state.index > StepperState.sellerDetails.index,
+                            isActive:
+                                state.index == StepperState.sellerDetails.index,
+                            isFinished:
+                                state.index > StepperState.sellerDetails.index,
                             index: 1,
                           ),
                           title: 'Seller \ndetails',
@@ -83,8 +85,10 @@ class _IdentityVerificationScreenState extends State<IdentityVerificationScreen>
                         EasyStep(
                           customStep: _buildCustomStep(
                             context,
-                            isActive: state.index == StepperState.identityVerification.index,
-                            isFinished: state.index > StepperState.identityVerification.index,
+                            isActive: state.index ==
+                                StepperState.identityVerification.index,
+                            isFinished: state.index >
+                                StepperState.identityVerification.index,
                             index: 2,
                           ),
                           title: 'Identity \nVerification',
@@ -92,8 +96,10 @@ class _IdentityVerificationScreenState extends State<IdentityVerificationScreen>
                         EasyStep(
                           customStep: _buildCustomStep(
                             context,
-                            isActive: state.index == StepperState.reviewAndVerification.index,
-                            isFinished: state.index > StepperState.reviewAndVerification.index,
+                            isActive: state.index ==
+                                StepperState.reviewAndVerification.index,
+                            isFinished: state.index >
+                                StepperState.reviewAndVerification.index,
                             index: 3,
                           ),
                           title: 'Review & \nVerification',
@@ -129,6 +135,7 @@ class _IdentityVerificationScreenState extends State<IdentityVerificationScreen>
                                   ),
                                   const Center(
                                     child: Text(
+                                      // ignore: lines_longer_than_80_chars
                                       'We need to verify your identity for authentic',
                                       style: TextStyle(
                                         fontSize: 12,
@@ -150,19 +157,20 @@ class _IdentityVerificationScreenState extends State<IdentityVerificationScreen>
                                     label: 'National ID',
                                     hintText: 'Enter your National ID',
                                     controller: controller,
-
                                   ),
                                   const SizedBox(height: 30),
                                   const Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text('ID Photo'),
                                   ),
-                                  BlocBuilder<ImageUploadCubit, ImageUploadState>(
+                                  BlocBuilder<ImageUploadCubit,
+                                      ImageUploadState>(
                                     builder: (context, state) {
                                       return Column(
                                         children: [
                                           UploadContainer(
-                                            cubitContext: context.read<ImageUploadCubit>(),
+                                            cubitContext: context
+                                                .read<ImageUploadCubit>(),
                                             image: state.imageID,
                                             type: 'ID',
                                           ),
@@ -176,7 +184,6 @@ class _IdentityVerificationScreenState extends State<IdentityVerificationScreen>
                                       context.read<StepperCubit>().nextStep();
                                     },
                                     buttonText: 'Confirm',
-
                                   ),
                                 ],
                               ),
@@ -204,7 +211,9 @@ class _IdentityVerificationScreenState extends State<IdentityVerificationScreen>
                                     ),
                                     SizedBox(height: 25.h),
                                     CustomButton(
-                                      onPressed: () {  Navigator.pop(context);},
+                                      onPressed: () {
+                                        Navigator.pop(context);
+                                      },
                                       buttonText: 'HomePage',
                                     ),
                                   ],
@@ -231,7 +240,9 @@ class _IdentityVerificationScreenState extends State<IdentityVerificationScreen>
     required int index,
   }) {
     return CircleAvatar(
-      backgroundColor: isFinished || isActive ? Theme.of(context).primaryColor : ThemeHelper.appColors.darkGrey,
+      backgroundColor: isFinished || isActive
+          ? Theme.of(context).primaryColor
+          : ThemeHelper.appColors.darkGrey,
       child: isFinished
           ? Icon(
               Icons.check,

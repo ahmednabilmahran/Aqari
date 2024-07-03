@@ -103,7 +103,9 @@ class LoginScreen extends StatelessWidget {
                                   context.read<LoginCubit>().selectedCountry,
                               validator: (value) {
                                 if (value == null || value.isEmpty) {
-                                  context.read<LoginCubit>().phoneNumberIsEmpty();
+                                  context
+                                      .read<LoginCubit>()
+                                      .phoneNumberIsEmpty();
                                   return S.of(context).phoneNumberCantBeEmpty;
                                 }
                                 if (value.length >
@@ -179,7 +181,8 @@ class LoginScreen extends StatelessWidget {
                                             ),
                                           ),
                                           validator: (value) {
-                                            if (value == null || value.isEmpty) {
+                                            if (value == null ||
+                                                value.isEmpty) {
                                               context
                                                   .read<LoginCubit>()
                                                   .passwordIsEmpty();
@@ -187,7 +190,7 @@ class LoginScreen extends StatelessWidget {
                                                   .of(context)
                                                   .passwordCantBeEmpty;
                                             }
-              
+
                                             return null;
                                           },
                                         ),
@@ -202,8 +205,8 @@ class LoginScreen extends StatelessWidget {
                                                 .copyWith(
                                                   fontSize: 10.sp,
                                                   fontWeight: FontWeight.w500,
-                                                  color:
-                                                      ThemeHelper.appColors.black,
+                                                  color: ThemeHelper
+                                                      .appColors.black,
                                                 ),
                                           ),
                                         ),
@@ -257,8 +260,8 @@ class LoginScreen extends StatelessWidget {
                                         .copyWith(
                                           fontSize: 10.sp,
                                           fontWeight: FontWeight.w600,
-                                          color:
-                                              ThemeHelper.appColors.primaryColor,
+                                          color: ThemeHelper
+                                              .appColors.primaryColor,
                                         ),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {

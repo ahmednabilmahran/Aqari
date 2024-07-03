@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:image_picker/image_picker.dart';
 
-part  'image_upload_state_u.dart';
+part 'image_upload_state_u.dart';
 
 /// ImageUploadCubit
 class ImageUploadCubit extends Cubit<ImageUploadState> {

@@ -2,7 +2,6 @@ import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/database_manager.dart';
 import 'package:injectable/injectable.dart';
 
-
 /// The [SplashLocalDataSource] abstract class defines methods for saving
 /// and fetching language codes and theme modes.
 abstract class SplashLocalDataSource {

@@ -363,6 +363,4 @@ class House {
   final String location;
 }
 
-
-
 /// PropertyCard widget to display a property with details.

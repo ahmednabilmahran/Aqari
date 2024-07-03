@@ -10,7 +10,8 @@ class CustomPickImageContainer extends StatefulWidget {
   const CustomPickImageContainer({super.key});
 
   @override
-  State<CustomPickImageContainer> createState() => _CustomPickImageContainerState();
+  State<CustomPickImageContainer> createState() =>
+      _CustomPickImageContainerState();
 }
 
 class _CustomPickImageContainerState extends State<CustomPickImageContainer> {
@@ -32,13 +33,13 @@ class _CustomPickImageContainerState extends State<CustomPickImageContainer> {
         imageUrl = result!.files.first.path;
         pickedFile = result!.files.first;
         fileToDisplay = File(pickedFile!.path!);
-        print(imageUrl);
+        debugPrint(imageUrl);
       }
       setState(() {
         isLoading = false;
       });
     } catch (e) {
-      print(e);
+      debugPrint(e.toString());
     }
   }
 
@@ -72,11 +73,13 @@ class _CustomPickImageContainerState extends State<CustomPickImageContainer> {
             ),
             const SizedBox(height: 15),
             Center(
-                child: isLoading ? const CircularProgressIndicator() :
-                CustomButton(
-              onPressed: pickImage,
-              buttonText: 'Upload Image',
-            ),),
+              child: isLoading
+                  ? const CircularProgressIndicator()
+                  : CustomButton(
+                      onPressed: pickImage,
+                      buttonText: 'Upload Image',
+                    ),
+            ),
             const SizedBox(height: 15),
           ],
         ),
@@ -85,19 +88,26 @@ class _CustomPickImageContainerState extends State<CustomPickImageContainer> {
   }
 }
 
+/// DisplayImage is used to display the image
 class DisplayImage extends StatelessWidget {
+  /// Constructor
   const DisplayImage({
-    super.key,
     required this.fileToDisplay,
+    super.key,
   });
 
+  /// fileToDisplay
   final File? fileToDisplay;
 
   @override
   Widget build(BuildContext context) {
     return Center(
       child: fileToDisplay != null
-          ? Image.file(fileToDisplay!,height: 40,width: 300,)
+          ? Image.file(
+              fileToDisplay!,
+              height: 40,
+              width: 300,
+            )
           : const Text('No image selected'),
     );
   }
