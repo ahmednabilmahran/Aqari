@@ -1,5 +1,6 @@
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
+import 'package:aqari/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -43,22 +44,22 @@ class FloorSelectionItem extends StatelessWidget {
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
             splashColor: Colors.transparent,
-            onTap: () => onFloorSelected('Ground'),
+            onTap: () => onFloorSelected(S.of(context).ground),
             child: Container(
               padding: EdgeInsets.symmetric(horizontal: 6.w, vertical: 2.h),
               decoration: BoxDecoration(
-                color: selectedFloor == 'Ground'
+                color: selectedFloor == S.of(context).ground
                     ? Theme.of(context).primaryColor
                     : const Color(0XFFDBDBDB),
                 borderRadius: BorderRadius.circular(12.5.sp),
               ),
               child: Center(
                 child: Text(
-                  'Ground',
+                  S.of(context).ground,
                   style: Theme.of(context).textTheme.labelMedium!.copyWith(
                         fontWeight: FontWeight.w500,
                         fontSize: 9.sp,
-                        color: selectedFloor == 'Ground'
+                        color: selectedFloor == S.of(context).ground
                             ? Theme.of(context).scaffoldBackgroundColor
                             : ThemeHelper.appColors.black,
                       ),
@@ -87,7 +88,7 @@ class FloorSelectionItem extends StatelessWidget {
                 bottom: 0.5.h,
               ),
               decoration: BoxDecoration(
-                color: selectedFloor != 'Ground'
+                color: selectedFloor != S.of(context).ground
                     ? Theme.of(context).primaryColor
                     : Colors.grey[300],
                 borderRadius: BorderRadius.circular(20),
@@ -95,10 +96,12 @@ class FloorSelectionItem extends StatelessWidget {
               child: DropdownButtonHideUnderline(
                 child: DropdownButton<String>(
                   borderRadius: BorderRadius.circular(20),
-                  dropdownColor: selectedFloor == 'Ground'
+                  dropdownColor: selectedFloor == S.of(context).ground
                       ? const Color(0XFFF4F4F4)
                       : Theme.of(context).primaryColor,
-                  value: selectedFloor == 'Ground' ? floors[0] : selectedFloor,
+                  value: selectedFloor == S.of(context).ground
+                      ? floors[0]
+                      : selectedFloor,
                   items: floors.map((String floor) {
                     return DropdownMenuItem<String>(
                       value: floor,
@@ -111,7 +114,7 @@ class FloorSelectionItem extends StatelessWidget {
                                   .textTheme
                                   .titleMedium!
                                   .copyWith(
-                                    color: selectedFloor == 'Ground'
+                                    color: selectedFloor == S.of(context).ground
                                         ? ThemeHelper.appColors.black
                                         : Theme.of(context)
                                             .scaffoldBackgroundColor,
@@ -129,7 +132,8 @@ class FloorSelectionItem extends StatelessWidget {
                                       .textTheme
                                       .titleMedium!
                                       .copyWith(
-                                        color: selectedFloor == 'Ground'
+                                        color: selectedFloor ==
+                                                S.of(context).ground
                                             ? ThemeHelper.appColors.black
                                             : Theme.of(context)
                                                 .scaffoldBackgroundColor,
@@ -154,14 +158,14 @@ class FloorSelectionItem extends StatelessWidget {
                     angle: 1.5708,
                     child: Icon(
                       Icons.chevron_right_rounded,
-                      color: selectedFloor == 'Ground'
+                      color: selectedFloor == S.of(context).ground
                           ? ThemeHelper.appColors.black
                           : Theme.of(context).scaffoldBackgroundColor,
                       size: 24.sp,
                     ),
                   ),
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: selectedFloor == 'Ground'
+                        color: selectedFloor == S.of(context).ground
                             ? ThemeHelper.appColors.black
                             : Theme.of(context).scaffoldBackgroundColor,
                         fontSize: 10.sp,

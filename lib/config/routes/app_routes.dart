@@ -16,4 +16,5 @@ class Routes {
   static const String identityVerification = '/IdentityVerification';
   static const String gettingStarted = '/GettingStarted';
   static const String unitDetails = '/UnitDetails';
+  static const String unitAddressDetails = '/UnitAddressDetails';
 }

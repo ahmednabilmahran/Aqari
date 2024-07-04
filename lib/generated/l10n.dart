@@ -949,6 +949,286 @@ class S {
       args: [],
     );
   }
+
+  /// `Please fill all the fields`
+  String get pleaseFillAllTheFields {
+    return Intl.message(
+      'Please fill all the fields',
+      name: 'pleaseFillAllTheFields',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message(
+      'Next',
+      name: 'next',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back`
+  String get back {
+    return Intl.message(
+      'Back',
+      name: 'back',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Balcony`
+  String get balcony {
+    return Intl.message(
+      'Balcony',
+      name: 'balcony',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bathroom`
+  String get bathroom {
+    return Intl.message(
+      'Bathroom',
+      name: 'bathroom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Bedroom`
+  String get bedroom {
+    return Intl.message(
+      'Bedroom',
+      name: 'bedroom',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `House`
+  String get house {
+    return Intl.message(
+      'House',
+      name: 'house',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Commercial`
+  String get commercial {
+    return Intl.message(
+      'Commercial',
+      name: 'commercial',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Flat`
+  String get flat {
+    return Intl.message(
+      'Flat',
+      name: 'flat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Villa`
+  String get villa {
+    return Intl.message(
+      'Villa',
+      name: 'villa',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Parking Lot`
+  String get parkingLot {
+    return Intl.message(
+      'Parking Lot',
+      name: 'parkingLot',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pet Allowed`
+  String get petAllowed {
+    return Intl.message(
+      'Pet Allowed',
+      name: 'petAllowed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Garden`
+  String get garden {
+    return Intl.message(
+      'Garden',
+      name: 'garden',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gym`
+  String get gym {
+    return Intl.message(
+      'Gym',
+      name: 'gym',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Park`
+  String get park {
+    return Intl.message(
+      'Park',
+      name: 'park',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home theatre`
+  String get homeTheatre {
+    return Intl.message(
+      'Home theatre',
+      name: 'homeTheatre',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Kid’s Friendly`
+  String get kidsFriendly {
+    return Intl.message(
+      'Kid’s Friendly',
+      name: 'kidsFriendly',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pool`
+  String get pool {
+    return Intl.message(
+      'Pool',
+      name: 'pool',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Other`
+  String get other {
+    return Intl.message(
+      'Other',
+      name: 'other',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Ground`
+  String get ground {
+    return Intl.message(
+      'Ground',
+      name: 'ground',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Where is the location?`
+  String get whereIsTheLocation {
+    return Intl.message(
+      'Where is the location?',
+      name: 'whereIsTheLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address line 1`
+  String get addressLine1 {
+    return Intl.message(
+      'Address line 1',
+      name: 'addressLine1',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ex. 28 Ahmed Kasem Goda St.`
+  String get ex28AhmedKasemGodaSt {
+    return Intl.message(
+      'ex. 28 Ahmed Kasem Goda St.',
+      name: 'ex28AhmedKasemGodaSt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address line 2`
+  String get addressLine2 {
+    return Intl.message(
+      'Address line 2',
+      name: 'addressLine2',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ex. From Abbas El Akad St.`
+  String get exFromAbbasElAkadSt {
+    return Intl.message(
+      'ex. From Abbas El Akad St.',
+      name: 'exFromAbbasElAkadSt',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `City`
+  String get city {
+    return Intl.message(
+      'City',
+      name: 'city',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ex. Cairo`
+  String get exCairo {
+    return Intl.message(
+      'ex. Cairo',
+      name: 'exCairo',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Country`
+  String get country {
+    return Intl.message(
+      'Country',
+      name: 'country',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

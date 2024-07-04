@@ -29,23 +29,32 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Add 5 or more high-quality photos to show the facilities of the unit"),
         "addYourPropertyDetails":
             MessageLookupByLibrary.simpleMessage("Add your property details"),
+        "addressLine1": MessageLookupByLibrary.simpleMessage("Address line 1"),
+        "addressLine2": MessageLookupByLibrary.simpleMessage("Address line 2"),
         "aiCenter": MessageLookupByLibrary.simpleMessage("AI Center"),
         "aiChats": MessageLookupByLibrary.simpleMessage("AI Chats"),
         "allSet": MessageLookupByLibrary.simpleMessage("All set"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),
+        "back": MessageLookupByLibrary.simpleMessage("Back"),
+        "balcony": MessageLookupByLibrary.simpleMessage("Balcony"),
+        "bathroom": MessageLookupByLibrary.simpleMessage("Bathroom"),
+        "bedroom": MessageLookupByLibrary.simpleMessage("Bedroom"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "checkOutAllOurListings":
             MessageLookupByLibrary.simpleMessage("Check out all our listings"),
         "checkOutSomeOfOurTopListings": MessageLookupByLibrary.simpleMessage(
             "Check out some of our top listings"),
+        "city": MessageLookupByLibrary.simpleMessage("City"),
+        "commercial": MessageLookupByLibrary.simpleMessage("Commercial"),
         "confirmPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Password"),
         "confirmYourPassword":
             MessageLookupByLibrary.simpleMessage("Confirm Your Password"),
         "copiedToClipboard":
             MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
+        "country": MessageLookupByLibrary.simpleMessage("Country"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
@@ -59,8 +68,13 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter Your Password"),
         "environmentFacilities":
             MessageLookupByLibrary.simpleMessage("Environment / Facilities"),
+        "ex28AhmedKasemGodaSt":
+            MessageLookupByLibrary.simpleMessage("ex. 28 Ahmed Kasem Goda St."),
         "exApartmentZedEast":
             MessageLookupByLibrary.simpleMessage("ex. Apartment - ZED East"),
+        "exCairo": MessageLookupByLibrary.simpleMessage("ex. Cairo"),
+        "exFromAbbasElAkadSt":
+            MessageLookupByLibrary.simpleMessage("ex. From Abbas El Akad St."),
         "explore": MessageLookupByLibrary.simpleMessage("Explore"),
         "exploreMore": MessageLookupByLibrary.simpleMessage("Explore More"),
         "featuredProperties":
@@ -73,11 +87,17 @@ class MessageLookup extends MessageLookupByLibrary {
         "firstName": MessageLookupByLibrary.simpleMessage("First name"),
         "firstNameCantBeEmpty":
             MessageLookupByLibrary.simpleMessage("First Name can\'t be empty"),
+        "flat": MessageLookupByLibrary.simpleMessage("Flat"),
         "floor": MessageLookupByLibrary.simpleMessage("Floor"),
         "forgotPassword":
             MessageLookupByLibrary.simpleMessage("Forgot Password?"),
+        "garden": MessageLookupByLibrary.simpleMessage("Garden"),
         "getStarted": MessageLookupByLibrary.simpleMessage("Get Started"),
+        "ground": MessageLookupByLibrary.simpleMessage("Ground"),
+        "gym": MessageLookupByLibrary.simpleMessage("Gym"),
         "home": MessageLookupByLibrary.simpleMessage("Home"),
+        "homeTheatre": MessageLookupByLibrary.simpleMessage("Home theatre"),
+        "house": MessageLookupByLibrary.simpleMessage("House"),
         "idVerification":
             MessageLookupByLibrary.simpleMessage("ID Verification"),
         "identityVerification":
@@ -87,6 +107,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "itsEasyToListYourUnitOnAqari": MessageLookupByLibrary.simpleMessage(
             "It’s easy to list your unit on Aqari!"),
         "joinNow": MessageLookupByLibrary.simpleMessage("Join Now"),
+        "kidsFriendly": MessageLookupByLibrary.simpleMessage("Kid’s Friendly"),
         "lastName": MessageLookupByLibrary.simpleMessage("Last name"),
         "lastNameCantBeEmpty":
             MessageLookupByLibrary.simpleMessage("Last Name can\'t be empty"),
@@ -101,8 +122,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "minimum": MessageLookupByLibrary.simpleMessage("Minimum"),
         "nearYou": MessageLookupByLibrary.simpleMessage("Near You"),
         "newChat": MessageLookupByLibrary.simpleMessage("New Chat"),
+        "next": MessageLookupByLibrary.simpleMessage("Next"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "optional": MessageLookupByLibrary.simpleMessage("Optional"),
+        "other": MessageLookupByLibrary.simpleMessage("Other"),
+        "park": MessageLookupByLibrary.simpleMessage("Park"),
+        "parkingLot": MessageLookupByLibrary.simpleMessage("Parking Lot"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "passwordCantBeEmpty":
             MessageLookupByLibrary.simpleMessage("Password can\'t be empty"),
@@ -116,6 +141,7 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Password contains at least 8 characters"),
         "passwordsAreMatched":
             MessageLookupByLibrary.simpleMessage("Passwords are matched"),
+        "petAllowed": MessageLookupByLibrary.simpleMessage("Pet Allowed"),
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
         "phoneNumberCantBeEmpty": MessageLookupByLibrary.simpleMessage(
             "Phone number can\'t be empty"),
@@ -127,6 +153,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Please enter valid name"),
         "pleaseEnterValidPassword":
             MessageLookupByLibrary.simpleMessage("Please enter valid password"),
+        "pleaseFillAllTheFields":
+            MessageLookupByLibrary.simpleMessage("Please fill all the fields"),
+        "pool": MessageLookupByLibrary.simpleMessage("Pool"),
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "propertyCategory":
             MessageLookupByLibrary.simpleMessage("Property Category"),
@@ -153,11 +182,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
         "viewMore": MessageLookupByLibrary.simpleMessage("View more"),
+        "villa": MessageLookupByLibrary.simpleMessage("Villa"),
         "weNeedToConfirmYourAccount": MessageLookupByLibrary.simpleMessage(
             "We need to confirm your account."),
         "weReviewYourRequestToListTheUnitForSale":
             MessageLookupByLibrary.simpleMessage(
                 "We review your request to list the unit for sale on our platform. Upon completion, you will receive an approval notification."),
+        "whereIsTheLocation":
+            MessageLookupByLibrary.simpleMessage("Where is the location?"),
         "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),
         "youCanStartUsingTheAppRightAway": MessageLookupByLibrary.simpleMessage(
             "You can start using the app right away."),

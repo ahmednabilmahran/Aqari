@@ -1,3 +1,4 @@
+import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/generated/l10n.dart';
@@ -16,7 +17,10 @@ class CancelButton extends StatelessWidget {
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
       onTap: () {
-        Navigator.pop(context);
+        Navigator.popUntil(
+          context,
+          ModalRoute.withName(Routes.appLayoutRoute),
+        );
       },
       child: Padding(
         padding: EdgeInsets.only(left: 4.w),

@@ -11,7 +11,9 @@ import 'package:aqari/modules/profile/screens/change_password.dart';
 import 'package:aqari/modules/profile/screens/edit_profile.dart';
 import 'package:aqari/modules/profile/screens/setting_screen.dart';
 import 'package:aqari/modules/profile/screens/terms_conditions.dart';
+import 'package:aqari/modules/sell_my_property/controllers/unit_details/unit_details_cubit.dart';
 import 'package:aqari/modules/sell_my_property/screens/getting_started_screen.dart';
+import 'package:aqari/modules/sell_my_property/screens/unit_address_details_screen.dart';
 import 'package:aqari/modules/sell_my_property/screens/unit_details_screen.dart';
 import 'package:aqari/modules/sign_up/screens/sign_up_screen.dart';
 import 'package:aqari/modules/splash/presentation/screens/splash_screen.dart';
@@ -130,6 +132,16 @@ class AppRoutes {
             return UnitDetailsScreen();
           },
           settings: const RouteSettings(name: Routes.unitDetails),
+        );
+
+      case Routes.unitAddressDetails:
+        return MaterialPageRoute(
+          builder: (context) {
+            return UnitAddressDetailsScreen(
+              unitDetailsCubit: routeSettings.arguments! as UnitDetailsCubit,
+            );
+          },
+          settings: const RouteSettings(name: Routes.unitAddressDetails),
         );
 
       case Routes.chatRoute:

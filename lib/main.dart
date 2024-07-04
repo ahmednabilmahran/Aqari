@@ -1,9 +1,14 @@
+import 'dart:ui';
+
 import 'package:aqari/app.dart';
 import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/bloc_observer.dart';
 import 'package:aqari/core/utils/countries_helper.dart';
 import 'package:aqari/core/utils/database_manager.dart';
 import 'package:aqari/core/utils/supabase_manager.dart';
+import 'package:aqari/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -18,6 +23,10 @@ Future<void> main() async {
   // Ensures that widget-binding is initialized.
   // This is required because plugins might be called before runApp.
   WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
 
   // Initialize Supabase.
   await Supabase.initialize(
@@ -35,6 +44,16 @@ Future<void> main() async {
     DatabaseManager.initHive(),
     CountriesHelper.loadCountriesData(),
   ]);
+
+  FlutterError.onError = (errorDetails) {
+    FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
+  };
+  // ignore: lines_longer_than_80_chars
+  // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
+  PlatformDispatcher.instance.onError = (error, stack) {
+    FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
+    return true;
+  };
 
   // Set the global Bloc observer for better debugging and logging.
   Bloc.observer = AppBlocObserver();

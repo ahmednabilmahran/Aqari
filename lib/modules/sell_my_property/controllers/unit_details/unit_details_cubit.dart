@@ -1,3 +1,6 @@
+import 'package:aqari/core/utils/countries_helper.dart';
+import 'package:aqari/generated/l10n.dart';
+import 'package:aqari/models/aqari_country_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,15 +12,32 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
   UnitDetailsCubit()
       : super(
           UnitDetailsState(
-            selectedCategory: 'House',
+            selectedCategory: S.current.house,
             titleController: TextEditingController(),
-            bedroomCount: 3,
-            bathroomCount: 2,
-            balconyCount: 2,
-            selectedFloor: 'Ground',
+            titleFocusNode: FocusNode(),
+            unitGeneralDetailsScrollController: ScrollController(),
+            bedroomCount: 0,
+            bathroomCount: 0,
+            balconyCount: 0,
+            selectedFloor: S.current.ground,
             selectedFacilities: [],
+            addressLine1Controller: TextEditingController(),
+            addressLine2Controller: TextEditingController(),
+            cityController: TextEditingController(),
+            countries: CountriesHelper.countries,
+            selectedCountry: null,
           ),
         );
+
+  /// Load Countries (Example method to load countries, implement as needed)
+  void loadCountries(List<AqariCountryModel> countries) {
+    emit(state.copyWith(countries: countries));
+  }
+
+  /// Select Country
+  void selectCountry(AqariCountryModel country) {
+    emit(state.copyWith(selectedCountry: country));
+  }
 
   /// Select Category
   void selectCategory(String category) {
@@ -26,7 +46,9 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
 
   /// Increment Bedroom Count
   void incrementBedroomCount() {
-    emit(state.copyWith(bedroomCount: state.bedroomCount + 1));
+    if (state.bedroomCount < 10) {
+      emit(state.copyWith(bedroomCount: state.bedroomCount + 1));
+    }
   }
 
   /// Decrement Bedroom Count
@@ -38,7 +60,9 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
 
   /// Increment Bathroom Count
   void incrementBathroomCount() {
-    emit(state.copyWith(bathroomCount: state.bathroomCount + 1));
+    if (state.bathroomCount < 10) {
+      emit(state.copyWith(bathroomCount: state.bathroomCount + 1));
+    }
   }
 
   /// Decrement Bathroom Count
@@ -50,7 +74,9 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
 
   /// Increment Balcony Count
   void incrementBalconyCount() {
-    emit(state.copyWith(balconyCount: state.balconyCount + 1));
+    if (state.balconyCount < 10) {
+      emit(state.copyWith(balconyCount: state.balconyCount + 1));
+    }
   }
 
   /// Decrement Balcony Count
@@ -76,9 +102,23 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
     emit(state.copyWith(selectedFacilities: selectedFacilities));
   }
 
+  /// Validate inputs
+  bool validateGeneralInputs() {
+    return state.titleController.text.isNotEmpty &&
+        state.bedroomCount > 0 &&
+        state.bathroomCount > 0 &&
+        state.balconyCount > 0 &&
+        state.selectedFacilities.isNotEmpty;
+  }
+
   @override
   Future<void> close() {
     state.titleController.dispose();
+    state.titleFocusNode.dispose();
+    state.unitGeneralDetailsScrollController.dispose();
+    state.addressLine1Controller.dispose();
+    state.addressLine2Controller.dispose();
+    state.cityController.dispose();
     return super.close();
   }
 }

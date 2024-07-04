@@ -1,4 +1,6 @@
+import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/sized_x.dart';
+import 'package:aqari/core/utils/snack_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
@@ -22,20 +24,22 @@ class UnitDetailsScreen extends StatelessWidget {
   UnitDetailsScreen({super.key});
 
   final List<String> _categories = [
-    'House',
-    'Commercial',
-    'Flat',
-    'Villa',
+    S.current.house,
+    S.current.commercial,
+    S.current.flat,
+    S.current.villa,
   ];
 
   final List<String> _facilities = [
-    'Parking Lot',
-    'Pet Allowed',
-    'Garden',
-    'Gym',
-    'Park',
-    'Home theatre',
-    'Kid’s Friendly',
+    S.current.parkingLot,
+    S.current.petAllowed,
+    S.current.garden,
+    S.current.gym,
+    S.current.park,
+    S.current.homeTheatre,
+    S.current.kidsFriendly,
+    S.current.pool,
+    S.current.other,
   ];
 
   @override
@@ -54,221 +58,235 @@ class UnitDetailsScreen extends StatelessWidget {
               color: ThemeHelper.appColors.black.withOpacity(0.1),
               thickness: 1,
             ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: CustomPadding(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      FittedBox(
-                        child: Text(
-                          S.of(context).fillDetailsOfYourUnit,
-                          style:
-                              Theme.of(context).textTheme.titleLarge!.copyWith(
+            BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
+              builder: (context, state) {
+                return Expanded(
+                  child: SingleChildScrollView(
+                    controller: state.unitGeneralDetailsScrollController,
+                    child: CustomPadding(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          FittedBox(
+                            child: Text(
+                              S.of(context).fillDetailsOfYourUnit,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleLarge!
+                                  .copyWith(
                                     color: ThemeHelper.appColors.black,
                                     fontSize: 21.sp,
                                     fontWeight: FontWeight.w600,
                                     letterSpacing: 0,
                                   ),
-                          maxLines: 1,
-                        ),
-                      ),
-                      SizedX.h3,
-                      BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
-                        builder: (context, state) {
-                          return CustomTextField(
-                            controller: state.titleController,
-                            contentPaddingVertical: 1.75.h,
-                            hintText: S.of(context).exApartmentZedEast,
-                            label: S.of(context).title,
-                            labelTextStyle: Theme.of(context)
+                              maxLines: 1,
+                            ),
+                          ),
+                          SizedX.h3,
+                          BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
+                            builder: (context, state) {
+                              return CustomTextField(
+                                controller: state.titleController,
+                                focusNode: state.titleFocusNode,
+                                contentPaddingVertical: 1.75.h,
+                                hintText: S.of(context).exApartmentZedEast,
+                                label: S.of(context).title,
+                                labelTextStyle: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                      color: ThemeHelper.appColors.black,
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 0.5,
+                                    ),
+                                borderRadius: 13.sp,
+                                fillColor: const Color(0XFFF4F4F4),
+                                hintStyle: Theme.of(context)
+                                    .textTheme
+                                    .labelMedium!
+                                    .copyWith(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 10.sp,
+                                      color: ThemeHelper.appColors.black,
+                                    ),
+                              );
+                            },
+                          ),
+                          SizedX.h2p5,
+                          Text(
+                            S.of(context).propertyCategory,
+                            style: Theme.of(context)
                                 .textTheme
                                 .titleMedium!
                                 .copyWith(
                                   color: ThemeHelper.appColors.black,
                                   fontSize: 15.sp,
                                   fontWeight: FontWeight.w600,
-                                  letterSpacing: 0.5,
-                                ),
-                            borderRadius: 13.sp,
-                            fillColor: const Color(0XFFF4F4F4),
-                            hintStyle: Theme.of(context)
-                                .textTheme
-                                .labelMedium!
-                                .copyWith(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 11.sp,
-                                  color: ThemeHelper.appColors.black,
-                                ),
-                          );
-                        },
-                      ),
-                      SizedX.h2p5,
-                      Text(
-                        S.of(context).propertyCategory,
-                        style:
-                            Theme.of(context).textTheme.titleMedium!.copyWith(
-                                  color: ThemeHelper.appColors.black,
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w600,
                                   letterSpacing: 0,
                                 ),
-                      ),
-                      SizedX.h2,
-                      BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
-                        builder: (context, state) {
-                          return Wrap(
-                            spacing: 3.w,
-                            runSpacing: 1.5.h,
-                            children: _categories.map((category) {
-                              final isSelected =
-                                  state.selectedCategory == category;
-                              return CategoryItem(
-                                category: category,
-                                isSelected: isSelected,
-                                onTap: () {
-                                  context
-                                      .read<UnitDetailsCubit>()
-                                      .selectCategory(category);
-                                },
-                              );
-                            }).toList(),
-                          );
-                        },
-                      ),
-                      SizedX.h3,
-                      Text(
-                        S.of(context).propertyFeatures,
-                        style:
-                            Theme.of(context).textTheme.titleMedium!.copyWith(
-                                  color: ThemeHelper.appColors.black,
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 0,
-                                ),
-                      ),
-                      SizedX.h2,
-                      BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
-                        builder: (context, state) {
-                          return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              PropertyFeatureItem(
-                                label: 'Bedroom',
-                                count: state.bedroomCount,
-                                onIncrement: () {
-                                  context
-                                      .read<UnitDetailsCubit>()
-                                      .incrementBedroomCount();
-                                },
-                                onDecrement: () {
-                                  context
-                                      .read<UnitDetailsCubit>()
-                                      .decrementBedroomCount();
-                                },
-                              ),
-                              SizedX.h2,
-                              PropertyFeatureItem(
-                                label: 'Bathroom',
-                                count: state.bathroomCount,
-                                onIncrement: () {
-                                  context
-                                      .read<UnitDetailsCubit>()
-                                      .incrementBathroomCount();
-                                },
-                                onDecrement: () {
-                                  context
-                                      .read<UnitDetailsCubit>()
-                                      .decrementBathroomCount();
-                                },
-                              ),
-                              SizedX.h2,
-                              PropertyFeatureItem(
-                                label: 'Balcony',
-                                count: state.balconyCount,
-                                onIncrement: () {
-                                  context
-                                      .read<UnitDetailsCubit>()
-                                      .incrementBalconyCount();
-                                },
-                                onDecrement: () {
-                                  context
-                                      .read<UnitDetailsCubit>()
-                                      .decrementBalconyCount();
-                                },
-                              ),
-                              SizedX.h3,
-                              Text(
-                                S.of(context).floor,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium!
-                                    .copyWith(
-                                      color: ThemeHelper.appColors.black,
-                                      fontSize: 15.sp,
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: 0,
-                                    ),
-                              ),
-                              SizedX.h1,
-                              BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
-                                builder: (context, state) {
-                                  return FloorSelectionItem(
-                                    selectedFloor: state.selectedFloor,
-                                    onFloorSelected: (floor) {
+                          ),
+                          SizedX.h2,
+                          BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
+                            builder: (context, state) {
+                              return Wrap(
+                                spacing: 3.w,
+                                runSpacing: 1.5.h,
+                                children: _categories.map((category) {
+                                  final isSelected =
+                                      state.selectedCategory == category;
+                                  return CategoryItem(
+                                    category: category,
+                                    isSelected: isSelected,
+                                    onTap: () {
                                       context
                                           .read<UnitDetailsCubit>()
-                                          .selectFloor(floor);
+                                          .selectCategory(category);
                                     },
                                   );
-                                },
-                              ),
-                              SizedX.h4,
-                              Text(
-                                S.of(context).environmentFacilities,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium!
-                                    .copyWith(
-                                      color: ThemeHelper.appColors.black,
-                                      fontSize: 15.sp,
-                                      fontWeight: FontWeight.w600,
-                                      letterSpacing: 0,
-                                    ),
-                              ),
-                              SizedX.h2,
-                              BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
-                                builder: (context, state) {
-                                  return Wrap(
-                                    spacing: 3.w,
-                                    runSpacing: 1.5.h,
-                                    children: _facilities.map((facility) {
-                                      final isSelected = state
-                                          .selectedFacilities
-                                          .contains(facility);
-                                      return FacilityItem(
-                                        facility: facility,
-                                        isSelected: isSelected,
-                                        onTap: () {
+                                }).toList(),
+                              );
+                            },
+                          ),
+                          SizedX.h3,
+                          Text(
+                            S.of(context).propertyFeatures,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleMedium!
+                                .copyWith(
+                                  color: ThemeHelper.appColors.black,
+                                  fontSize: 15.sp,
+                                  fontWeight: FontWeight.w600,
+                                  letterSpacing: 0,
+                                ),
+                          ),
+                          SizedX.h2,
+                          BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
+                            builder: (context, state) {
+                              return Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  PropertyFeatureItem(
+                                    label: S.of(context).bedroom,
+                                    count: state.bedroomCount,
+                                    onIncrement: () {
+                                      context
+                                          .read<UnitDetailsCubit>()
+                                          .incrementBedroomCount();
+                                    },
+                                    onDecrement: () {
+                                      context
+                                          .read<UnitDetailsCubit>()
+                                          .decrementBedroomCount();
+                                    },
+                                  ),
+                                  SizedX.h2,
+                                  PropertyFeatureItem(
+                                    label: S.of(context).bathroom,
+                                    count: state.bathroomCount,
+                                    onIncrement: () {
+                                      context
+                                          .read<UnitDetailsCubit>()
+                                          .incrementBathroomCount();
+                                    },
+                                    onDecrement: () {
+                                      context
+                                          .read<UnitDetailsCubit>()
+                                          .decrementBathroomCount();
+                                    },
+                                  ),
+                                  SizedX.h2,
+                                  PropertyFeatureItem(
+                                    label: S.of(context).balcony,
+                                    count: state.balconyCount,
+                                    onIncrement: () {
+                                      context
+                                          .read<UnitDetailsCubit>()
+                                          .incrementBalconyCount();
+                                    },
+                                    onDecrement: () {
+                                      context
+                                          .read<UnitDetailsCubit>()
+                                          .decrementBalconyCount();
+                                    },
+                                  ),
+                                  SizedX.h3,
+                                  Text(
+                                    S.of(context).floor,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium!
+                                        .copyWith(
+                                          color: ThemeHelper.appColors.black,
+                                          fontSize: 15.sp,
+                                          fontWeight: FontWeight.w600,
+                                          letterSpacing: 0,
+                                        ),
+                                  ),
+                                  SizedX.h1,
+                                  BlocBuilder<UnitDetailsCubit,
+                                      UnitDetailsState>(
+                                    builder: (context, state) {
+                                      return FloorSelectionItem(
+                                        selectedFloor: state.selectedFloor,
+                                        onFloorSelected: (floor) {
                                           context
                                               .read<UnitDetailsCubit>()
-                                              .toggleFacility(facility);
+                                              .selectFloor(floor);
                                         },
                                       );
-                                    }).toList(),
-                                  );
-                                },
-                              ),
-                            ],
-                          );
-                        },
+                                    },
+                                  ),
+                                  SizedX.h4,
+                                  Text(
+                                    S.of(context).environmentFacilities,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .titleMedium!
+                                        .copyWith(
+                                          color: ThemeHelper.appColors.black,
+                                          fontSize: 15.sp,
+                                          fontWeight: FontWeight.w600,
+                                          letterSpacing: 0,
+                                        ),
+                                  ),
+                                  SizedX.h2,
+                                  BlocBuilder<UnitDetailsCubit,
+                                      UnitDetailsState>(
+                                    builder: (context, state) {
+                                      return Wrap(
+                                        spacing: 3.w,
+                                        runSpacing: 1.5.h,
+                                        children: _facilities.map((facility) {
+                                          final isSelected = state
+                                              .selectedFacilities
+                                              .contains(facility);
+                                          return FacilityItem(
+                                            facility: facility,
+                                            isSelected: isSelected,
+                                            onTap: () {
+                                              context
+                                                  .read<UnitDetailsCubit>()
+                                                  .toggleFacility(facility);
+                                            },
+                                          );
+                                        }).toList(),
+                                      );
+                                    },
+                                  ),
+                                ],
+                              );
+                            },
+                          ),
+                          SizedX.h12,
+                          // SizedX.h3,
+                        ],
                       ),
-                      SizedX.h12,
-                      // SizedX.h3,
-                    ],
+                    ),
                   ),
-                ),
-              ),
+                );
+              },
             ),
           ],
         ),
@@ -277,7 +295,6 @@ class UnitDetailsScreen extends StatelessWidget {
           children: [
             StepProgressIndicator(
               totalSteps: 3,
-              currentStep: 1,
               size: 0.5.h,
               // padding: 1.5.w,
               selectedColor: ThemeHelper.appColors.black.withOpacity(0.45),
@@ -298,7 +315,7 @@ class UnitDetailsScreen extends StatelessWidget {
                       Navigator.of(context).pop();
                     },
                     child: Text(
-                      'Back',
+                      S.of(context).back,
                       style: Theme.of(context).textTheme.titleMedium!.copyWith(
                             color: ThemeHelper.appColors.black,
                             fontSize: 15.sp,
@@ -309,10 +326,29 @@ class UnitDetailsScreen extends StatelessWidget {
                     ),
                   ),
                   const Spacer(),
-                  CustomButton(
-                    buttonSize: Size(23.w, 5.25.h),
-                    onPressed: () {},
-                    buttonText: 'Next',
+                  BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
+                    builder: (context, state) {
+                      return CustomButton(
+                        buttonSize: Size(23.w, 5.25.h),
+                        onPressed: () {
+                          if (context
+                              .read<UnitDetailsCubit>()
+                              .validateGeneralInputs()) {
+                            Navigator.pushNamed(
+                              context,
+                              Routes.unitAddressDetails,
+                              arguments: context.read<UnitDetailsCubit>(),
+                            );
+                          } else {
+                            // Show error message
+                            SnackX.showSnackBar(
+                              message: S.of(context).pleaseFillAllTheFields,
+                            );
+                          }
+                        },
+                        buttonText: S.of(context).next,
+                      );
+                    },
                   ),
                   SizedX.w1,
                 ],

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "8795418359",
+    "project_id": "aqari-nctu",
+    "storage_bucket": "aqari-nctu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:8795418359:android:e900731f4a25bf377b2df2",
+        "android_client_info": {
+          "package_name": "com.app.aqari"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBijeL76xjOWLbPPN1EDolh-w6-Cd5j7ws"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
