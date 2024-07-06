@@ -27,6 +27,10 @@ class MessageLookup extends MessageLookupByLibrary {
         "add5OrMoreHighqualityPhotosToShowTheFacilities":
             MessageLookupByLibrary.simpleMessage(
                 "Add 5 or more high-quality photos to show the facilities of the unit"),
+        "addPhotosToYourListing":
+            MessageLookupByLibrary.simpleMessage("Add photos to your listing"),
+        "addUpTo20PhotosMaximumSize5MbEach": MessageLookupByLibrary.simpleMessage(
+            "Add up to 20 photos (maximum size 5 MB each). The first photo will be the main photo."),
         "addYourPropertyDetails":
             MessageLookupByLibrary.simpleMessage("Add your property details"),
         "addressLine1": MessageLookupByLibrary.simpleMessage("Address line 1"),

@@ -45,10 +45,10 @@ packages:
     dependency: transitive
     description:
       name: app_links_linux
-      sha256: "567139eca3ca9fb113f2082f3aaa75a26f30f0ebdbe5fa7f09a3913c5bebd630"
+      sha256: f5f7173a78609f3dfd4c2ff2c95bd559ab43c80a87dc6a095921d96c05688c81
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.2"
+    version: "1.0.3"
   app_links_platform_interface:
     dependency: transitive
     description:

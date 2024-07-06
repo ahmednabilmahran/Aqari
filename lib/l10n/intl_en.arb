@@ -121,5 +121,7 @@
   "changeTheLocation": "Change the location",
   "pickALocation": "Pick a location",
   "thisLocationIsOutsideTheChosenCountry": "This location is outside the chosen country",
-  "saveLocation": "Save Location"
+  "saveLocation": "Save Location",
+  "addPhotosToYourListing": "Add photos to your listing",
+  "addUpTo20PhotosMaximumSize5MbEach": "Add up to 20 photos (maximum size 5 MB each). The first photo will be the main photo."
 }

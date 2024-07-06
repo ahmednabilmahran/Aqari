@@ -1279,6 +1279,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Add photos to your listing`
+  String get addPhotosToYourListing {
+    return Intl.message(
+      'Add photos to your listing',
+      name: 'addPhotosToYourListing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add up to 20 photos (maximum size 5 MB each). The first photo will be the main photo.`
+  String get addUpTo20PhotosMaximumSize5MbEach {
+    return Intl.message(
+      'Add up to 20 photos (maximum size 5 MB each). The first photo will be the main photo.',
+      name: 'addUpTo20PhotosMaximumSize5MbEach',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -20,6 +20,7 @@ class UnitDetailsState {
     required this.selectedCountry,
     required this.selectedCountryCode,
     required this.selectedCountryCenter,
+    required this.images,
     this.selectedLocation,
     this.selectedLocationMapUrl,
   });
@@ -78,6 +79,9 @@ class UnitDetailsState {
   /// Selected Location Map Url
   final String? selectedLocationMapUrl;
 
+  /// Images
+  final List<String> images;
+
   /// CopyWith method
   UnitDetailsState copyWith({
     String? selectedCategory,
@@ -98,6 +102,7 @@ class UnitDetailsState {
     LatLng? selectedCountryCenter,
     LatLng? selectedLocation,
     String? selectedLocationMapUrl,
+    List<String>? images,
   }) {
     return UnitDetailsState(
       selectedCategory: selectedCategory ?? this.selectedCategory,
@@ -123,6 +128,7 @@ class UnitDetailsState {
       selectedLocation: selectedLocation ?? this.selectedLocation,
       selectedLocationMapUrl:
           selectedLocationMapUrl ?? this.selectedLocationMapUrl,
+      images: images ?? this.images,
     );
   }
 }

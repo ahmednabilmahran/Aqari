@@ -17,4 +17,5 @@ class Routes {
   static const String gettingStarted = '/GettingStarted';
   static const String unitDetails = '/UnitDetails';
   static const String unitAddressDetails = '/UnitAddressDetails';
+  static const String unitGalleryDetails = '/UnitGalleryDetails';
 }

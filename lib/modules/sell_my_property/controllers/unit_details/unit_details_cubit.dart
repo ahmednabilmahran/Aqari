@@ -1,10 +1,12 @@
 import 'package:aqari/core/utils/countries_helper.dart';
+import 'package:aqari/core/utils/snack_x.dart';
 import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/models/aqari_country_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:image_picker/image_picker.dart';
 
 part 'unit_details_state.dart';
 
@@ -31,6 +33,7 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
             selectedCountryCode: CountriesHelper.countries.first.code,
             selectedCountryCenter:
                 const LatLng(30.044394026989863, 31.23564798384905), // Egypt
+            images: [],
           ),
         );
 
@@ -169,6 +172,11 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
         state.selectedLocation != null;
   }
 
+  /// Validate Address Inputs
+  bool validateGalleryInputs() {
+    return state.images.isNotEmpty;
+  }
+
   /// Update Location
   void updateLocation(double latitude, double longitude) {
     // Generate the URL of the captured map with the pin
@@ -180,6 +188,31 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
         selectedLocationMapUrl: mapUrl,
       ),
     );
+  }
+
+  /// Add Images
+  Future<void> addImages() async {
+    try {
+      final picker = ImagePicker();
+      final pickedFiles = await picker.pickMultiImage();
+      final newImages = pickedFiles.map((file) => file.path).toList();
+      final allImages = List<String>.from(state.images)..addAll(newImages);
+      if (allImages.length > 20) {
+        SnackX.showSnackBar(message: 'You can only add up to 20 images.');
+        return;
+      }
+      emit(state.copyWith(images: allImages));
+    } catch (e) {
+      // Handle any errors that might occur
+      debugPrint('Error picking images: $e');
+      SnackX.showSnackBar(message: 'Error picking images: $e');
+    }
+  }
+
+  /// Remove Image
+  void removeImage(int index) {
+    final updatedImages = List<String>.from(state.images)..removeAt(index);
+    emit(state.copyWith(images: updatedImages));
   }
 
   @override

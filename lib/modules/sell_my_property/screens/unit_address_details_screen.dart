@@ -1,3 +1,4 @@
+import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/snack_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
@@ -261,7 +262,7 @@ class UnitAddressDetailsScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             StepProgressIndicator(
-              totalSteps: 3,
+              totalSteps: 4,
               currentStep: 1,
               size: 0.5.h,
               // padding: 1.5.w,
@@ -302,11 +303,11 @@ class UnitAddressDetailsScreen extends StatelessWidget {
                           if (context
                               .read<UnitDetailsCubit>()
                               .validateAddressInputs()) {
-                            // Navigator.pushNamed(
-                            //   context,
-                            //   Routes.unitAddressDetails,
-                            //   arguments: context.read<UnitDetailsCubit>(),
-                            // );
+                            Navigator.pushNamed(
+                              context,
+                              Routes.unitGalleryDetails,
+                              arguments: context.read<UnitDetailsCubit>(),
+                            );
                           } else {
                             // Show error message
                             SnackX.showSnackBar(

@@ -294,7 +294,7 @@ class UnitDetailsScreen extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             StepProgressIndicator(
-              totalSteps: 3,
+              totalSteps: 4,
               size: 0.5.h,
               // padding: 1.5.w,
               selectedColor: ThemeHelper.appColors.black.withOpacity(0.45),
