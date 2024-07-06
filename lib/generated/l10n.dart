@@ -1229,6 +1229,56 @@ class S {
       args: [],
     );
   }
+
+  /// `Select on the map`
+  String get selectOnTheMap {
+    return Intl.message(
+      'Select on the map',
+      name: 'selectOnTheMap',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Change the location`
+  String get changeTheLocation {
+    return Intl.message(
+      'Change the location',
+      name: 'changeTheLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pick a location`
+  String get pickALocation {
+    return Intl.message(
+      'Pick a location',
+      name: 'pickALocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `This location is outside the chosen country`
+  String get thisLocationIsOutsideTheChosenCountry {
+    return Intl.message(
+      'This location is outside the chosen country',
+      name: 'thisLocationIsOutsideTheChosenCountry',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save Location`
+  String get saveLocation {
+    return Intl.message(
+      'Save Location',
+      name: 'saveLocation',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

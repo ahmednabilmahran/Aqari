@@ -1,4 +1,5 @@
 import 'package:aqari/core/utils/sized_x.dart';
+import 'package:aqari/core/utils/snack_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
@@ -8,6 +9,7 @@ import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/models/aqari_country_model.dart';
 import 'package:aqari/modules/sell_my_property/controllers/unit_details/unit_details_cubit.dart';
 import 'package:aqari/modules/sell_my_property/widgets/cancel_button.dart';
+import 'package:aqari/modules/sell_my_property/widgets/map_selection_section.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
@@ -242,6 +244,8 @@ class UnitAddressDetailsScreen extends StatelessWidget {
                               ],
                             ),
                           ),
+                          SizedX.h3,
+                          const MapSelectionSection(),
                           SizedX.h12,
                           // SizedX.h3,
                         ],
@@ -295,16 +299,20 @@ class UnitAddressDetailsScreen extends StatelessWidget {
                       return CustomButton(
                         buttonSize: Size(23.w, 5.25.h),
                         onPressed: () {
-                          // if (context
-                          //     .read<UnitDetailsCubit>()
-                          //     .validateInputs()) {
-                          //   // Navigate to next screen
-                          // } else {
-                          //   // Show error message
-                          //   SnackX.showSnackBar(
-                          //     message: S.of(context).pleaseFillAllTheFields,
-                          //   );
-                          // }
+                          if (context
+                              .read<UnitDetailsCubit>()
+                              .validateAddressInputs()) {
+                            // Navigator.pushNamed(
+                            //   context,
+                            //   Routes.unitAddressDetails,
+                            //   arguments: context.read<UnitDetailsCubit>(),
+                            // );
+                          } else {
+                            // Show error message
+                            SnackX.showSnackBar(
+                              message: S.of(context).pleaseFillAllTheFields,
+                            );
+                          }
                         },
                         buttonText: S.of(context).next,
                       );

@@ -45,7 +45,7 @@ class UnitDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => UnitDetailsCubit(),
+      create: (_) => UnitDetailsCubit()..getPermissions(),
       child: Scaffold(
         appBar: const CustomAppBar(
           titleText: '',

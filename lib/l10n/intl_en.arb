@@ -116,5 +116,10 @@
   "exFromAbbasElAkadSt": "ex. From Abbas El Akad St.",
   "city": "City",
   "exCairo": "ex. Cairo",
-  "country": "Country"
+  "country": "Country",
+  "selectOnTheMap": "Select on the map",
+  "changeTheLocation": "Change the location",
+  "pickALocation": "Pick a location",
+  "thisLocationIsOutsideTheChosenCountry": "This location is outside the chosen country",
+  "saveLocation": "Save Location"
 }

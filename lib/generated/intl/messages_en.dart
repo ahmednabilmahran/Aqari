@@ -42,6 +42,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "bathroom": MessageLookupByLibrary.simpleMessage("Bathroom"),
         "bedroom": MessageLookupByLibrary.simpleMessage("Bedroom"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+        "changeTheLocation":
+            MessageLookupByLibrary.simpleMessage("Change the location"),
         "checkOutAllOurListings":
             MessageLookupByLibrary.simpleMessage("Check out all our listings"),
         "checkOutSomeOfOurTopListings": MessageLookupByLibrary.simpleMessage(
@@ -145,6 +147,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone number"),
         "phoneNumberCantBeEmpty": MessageLookupByLibrary.simpleMessage(
             "Phone number can\'t be empty"),
+        "pickALocation":
+            MessageLookupByLibrary.simpleMessage("Pick a location"),
         "pleaseEnterAValidPhoneNumber": MessageLookupByLibrary.simpleMessage(
             "Please enter a valid phone number"),
         "pleaseEnterValidEmail":
@@ -166,11 +170,14 @@ class MessageLookup extends MessageLookupByLibrary {
         "retry": MessageLookupByLibrary.simpleMessage("Retry"),
         "reviewVerification":
             MessageLookupByLibrary.simpleMessage("Review & Verification"),
+        "saveLocation": MessageLookupByLibrary.simpleMessage("Save Location"),
         "search": MessageLookupByLibrary.simpleMessage("Search"),
         "searchAgain": MessageLookupByLibrary.simpleMessage("Search again..."),
         "searchByAddressCity":
             MessageLookupByLibrary.simpleMessage("Search by Address or City"),
         "selectFloor": MessageLookupByLibrary.simpleMessage("Select Floor"),
+        "selectOnTheMap":
+            MessageLookupByLibrary.simpleMessage("Select on the map"),
         "sellMyProperty":
             MessageLookupByLibrary.simpleMessage("Sell my property"),
         "sellerDetails": MessageLookupByLibrary.simpleMessage("Seller details"),
@@ -179,6 +186,9 @@ class MessageLookup extends MessageLookupByLibrary {
                 "Share some basic info, like where it is and its area and floor ...etc"),
         "signUp": MessageLookupByLibrary.simpleMessage("Sign Up"),
         "startTyping": MessageLookupByLibrary.simpleMessage("Start typing..."),
+        "thisLocationIsOutsideTheChosenCountry":
+            MessageLookupByLibrary.simpleMessage(
+                "This location is outside the chosen country"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
         "viewMore": MessageLookupByLibrary.simpleMessage("View more"),

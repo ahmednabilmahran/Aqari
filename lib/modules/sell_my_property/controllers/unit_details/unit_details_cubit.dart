@@ -3,6 +3,8 @@ import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/models/aqari_country_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:geolocator/geolocator.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 part 'unit_details_state.dart';
 
@@ -25,7 +27,10 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
             addressLine2Controller: TextEditingController(),
             cityController: TextEditingController(),
             countries: CountriesHelper.countries,
-            selectedCountry: null,
+            selectedCountry: CountriesHelper.countries.first,
+            selectedCountryCode: CountriesHelper.countries.first.code,
+            selectedCountryCenter:
+                const LatLng(30.044394026989863, 31.23564798384905), // Egypt
           ),
         );
 
@@ -36,7 +41,54 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
 
   /// Select Country
   void selectCountry(AqariCountryModel country) {
-    emit(state.copyWith(selectedCountry: country));
+    LatLng initialCenter;
+    switch (country.code) {
+      case 'EG':
+        initialCenter =
+            const LatLng(30.044394026989863, 31.23564798384905); // Egypt
+      case 'US':
+        initialCenter = const LatLng(37.0902, -95.7129); // United States
+      case 'NG':
+        initialCenter = const LatLng(9.0820, 8.6753); // Nigeria
+      case 'RW':
+        initialCenter = const LatLng(-1.9403, 29.8739); // Rwanda
+      case 'GH':
+        initialCenter = const LatLng(7.9465, -1.0232); // Ghana
+      default:
+        initialCenter = const LatLng(
+          30.044394026989863,
+          31.23564798384905,
+        ); // Default to Tahrir
+    }
+
+    emit(
+      state.copyWith(
+        selectedCountry: country,
+        selectedCountryCode: country.code,
+        selectedCountryCenter: initialCenter,
+      ),
+    );
+  }
+
+  /// Get Permissions
+  Future<void> getPermissions() async {
+    final serviceEnabled = await Geolocator.isLocationServiceEnabled();
+    if (!serviceEnabled) {
+      return Future.error('Location services are disabled.');
+    }
+    var permission = await Geolocator.checkPermission();
+    if (permission == LocationPermission.denied) {
+      permission = await Geolocator.requestPermission();
+      if (permission == LocationPermission.denied) {
+        return Future.error('Location permissions are denied');
+      }
+    }
+    if (permission == LocationPermission.deniedForever) {
+      return Future.error(
+        // ignore: lines_longer_than_80_chars
+        'Location permissions are permanently denied, we cannot request permissions.',
+      );
+    }
   }
 
   /// Select Category
@@ -107,8 +159,27 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
     return state.titleController.text.isNotEmpty &&
         state.bedroomCount > 0 &&
         state.bathroomCount > 0 &&
-        state.balconyCount > 0 &&
         state.selectedFacilities.isNotEmpty;
+  }
+
+  /// Validate Address Inputs
+  bool validateAddressInputs() {
+    return state.addressLine1Controller.text.isNotEmpty &&
+        state.cityController.text.isNotEmpty &&
+        state.selectedLocation != null;
+  }
+
+  /// Update Location
+  void updateLocation(double latitude, double longitude) {
+    // Generate the URL of the captured map with the pin
+    final mapUrl =
+        'https://maps.googleapis.com/maps/api/staticmap?center=$latitude,$longitude&zoom=15&size=650x350&maptype=roadmap&markers=color:0xB5854B%7C$latitude,$longitude&key=AIzaSyDRO-bkN2PHsgaXmV9LUfaQXDASjQfrZ3g';
+    emit(
+      state.copyWith(
+        selectedLocation: LatLng(latitude, longitude),
+        selectedLocationMapUrl: mapUrl,
+      ),
+    );
   }
 
   @override

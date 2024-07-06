@@ -206,7 +206,7 @@ class _IdentityVerificationScreenState
                                     const SizedBox(height: 20),
                                     const Image(
                                       image: AssetImage(
-                                        Assets.genImagesIdentityVerification,
+                                        Assets.genImagesThankIdVerfication,
                                       ),
                                     ),
                                     SizedBox(height: 25.h),

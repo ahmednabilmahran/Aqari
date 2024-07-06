@@ -12,6 +12,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.appBarHeight = kToolbarHeight,
     this.onBackButtonPressed,
     this.leading,
+    this.backgroundColor,
   });
 
   /// appBarHeight is used to manage the app bar height
@@ -25,6 +26,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   /// leading
   final Widget? leading;
+
+  /// backgroundColor
+  final Color? backgroundColor;
 
   @override
   Size get preferredSize => Size.fromHeight(appBarHeight);
@@ -74,7 +78,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               letterSpacing: 0.05.sp,
             ),
       ),
-      backgroundColor: Theme.of(context).splashColor,
+      backgroundColor: backgroundColor ?? Theme.of(context).splashColor,
     );
   }
 }

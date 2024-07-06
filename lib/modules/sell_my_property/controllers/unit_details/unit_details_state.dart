@@ -18,6 +18,10 @@ class UnitDetailsState {
     required this.cityController,
     required this.countries,
     required this.selectedCountry,
+    required this.selectedCountryCode,
+    required this.selectedCountryCenter,
+    this.selectedLocation,
+    this.selectedLocationMapUrl,
   });
 
   /// Selected Category
@@ -44,7 +48,7 @@ class UnitDetailsState {
   /// Selected Facilities
   final List<String> selectedFacilities;
 
-  /// Scroll Controller
+  /// Unit General Details Scroll Controller
   final ScrollController unitGeneralDetailsScrollController;
 
   /// Address Line 1 Controller
@@ -56,13 +60,25 @@ class UnitDetailsState {
   /// City Controller
   final TextEditingController cityController;
 
-  /// List of Countries
+  /// Countries
   final List<AqariCountryModel> countries;
 
   /// Selected Country
-  final AqariCountryModel? selectedCountry;
+  final AqariCountryModel selectedCountry;
 
-  /// Copy With
+  /// Selected Country Code
+  final String selectedCountryCode;
+
+  /// Selected Country Center
+  final LatLng selectedCountryCenter;
+
+  /// Selected Location
+  final LatLng? selectedLocation;
+
+  /// Selected Location Map Url
+  final String? selectedLocationMapUrl;
+
+  /// CopyWith method
   UnitDetailsState copyWith({
     String? selectedCategory,
     TextEditingController? titleController,
@@ -78,6 +94,10 @@ class UnitDetailsState {
     TextEditingController? cityController,
     List<AqariCountryModel>? countries,
     AqariCountryModel? selectedCountry,
+    String? selectedCountryCode,
+    LatLng? selectedCountryCenter,
+    LatLng? selectedLocation,
+    String? selectedLocationMapUrl,
   }) {
     return UnitDetailsState(
       selectedCategory: selectedCategory ?? this.selectedCategory,
@@ -97,6 +117,12 @@ class UnitDetailsState {
       cityController: cityController ?? this.cityController,
       countries: countries ?? this.countries,
       selectedCountry: selectedCountry ?? this.selectedCountry,
+      selectedCountryCode: selectedCountryCode ?? this.selectedCountryCode,
+      selectedCountryCenter:
+          selectedCountryCenter ?? this.selectedCountryCenter,
+      selectedLocation: selectedLocation ?? this.selectedLocation,
+      selectedLocationMapUrl:
+          selectedLocationMapUrl ?? this.selectedLocationMapUrl,
     );
   }
 }

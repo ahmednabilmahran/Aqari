@@ -1,19 +1,27 @@
 [
   {
-    "name": "Nigeria",
-    "code": "NG",
-    "dialCode": "+234",
-    "flag": "🇳🇬",
-    "minPhoneLength": 7,
-    "maxPhoneLength": 11
-  },
-  {
     "name": "Egypt",
     "code": "EG",
     "dialCode": "+20",
     "flag": "🇪🇬",
     "minPhoneLength": 10,
     "maxPhoneLength": 10
+  },
+  {
+    "name": "United States",
+    "code": "US",
+    "dialCode": "+1",
+    "flag": "🇺🇸",
+    "minPhoneLength": 10,
+    "maxPhoneLength": 10
+  },
+  {
+    "name": "Nigeria",
+    "code": "NG",
+    "dialCode": "+234",
+    "flag": "🇳🇬",
+    "minPhoneLength": 7,
+    "maxPhoneLength": 11
   },
   {
     "name": "Rwanda",
@@ -30,13 +38,5 @@
     "flag": "🇬🇭",
     "minPhoneLength": 9,
     "maxPhoneLength": 9
-  },
-  {
-    "name": "United States",
-    "code": "US",
-    "dialCode": "+1",
-    "flag": "🇺🇸",
-    "minPhoneLength": 10,
-    "maxPhoneLength": 10
   }
 ]
