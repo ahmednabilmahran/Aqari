@@ -93,6 +93,10 @@ class Assets {
   /// assets/gen/icons/map_marker.svg
   static const String genIconsMapMarker = "assets/gen/icons/map_marker.svg";
 
+  /// Assets for genIconsNewAiChat
+  /// assets/gen/icons/new_ai_chat.svg
+  static const String genIconsNewAiChat = "assets/gen/icons/new_ai_chat.svg";
+
   /// Assets for genIconsNoChats
   /// assets/gen/icons/no_chats.svg
   static const String genIconsNoChats = "assets/gen/icons/no_chats.svg";

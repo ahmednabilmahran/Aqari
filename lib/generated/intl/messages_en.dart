@@ -146,6 +146,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "minimum": MessageLookupByLibrary.simpleMessage("Minimum"),
         "nearYou": MessageLookupByLibrary.simpleMessage("Near You"),
         "newChat": MessageLookupByLibrary.simpleMessage("New Chat"),
+        "newText": MessageLookupByLibrary.simpleMessage("New"),
         "next": MessageLookupByLibrary.simpleMessage("Next"),
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "optional": MessageLookupByLibrary.simpleMessage("Optional"),

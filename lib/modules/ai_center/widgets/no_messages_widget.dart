@@ -1,11 +1,6 @@
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
-import 'package:aqari/core/widgets/custom_button.dart';
-import 'package:aqari/generated/l10n.dart';
-import 'package:aqari/main.dart';
-import 'package:aqari/modules/ai_center/controllers/get_all_chats/get_all_chats_cubit.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:sizer/sizer.dart';
 
@@ -19,15 +14,6 @@ class NoMessagesWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedX.h1,
-        Text(
-          S.of(context).aiChats,
-          style: Theme.of(context).textTheme.displayLarge!.copyWith(
-                fontSize: 27.sp,
-                color: Theme.of(context).primaryColor,
-                fontWeight: FontWeight.w600,
-              ),
-        ),
         SizedBox(
           height: 72.5.h,
           child: Column(
@@ -42,28 +28,20 @@ class NoMessagesWidget extends StatelessWidget {
                   BlendMode.srcIn,
                 ),
               ),
-              SizedBox(height: 3.h),
+              SizedX.h2p5,
               Center(
                 child: Text(
-                  "You don't have any conversations yet",
+                  'Create new chat to start chatting with Aqari AI Chat bot.',
                   style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.w500,
+                        // color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.w400,
                         fontSize: 13.sp,
+                        height: 0.17.h,
                         letterSpacing: 0,
                       ),
                   textAlign: TextAlign.center,
                   softWrap: true,
                 ),
-              ),
-              SizedX.h3,
-              CustomButton(
-                onPressed: () {
-                  context
-                      .read<GetAllChatsCubit>()
-                      .getAllChats(supabaseClient.auth.currentUser!.id);
-                },
-                buttonText: S.of(context).searchAgain,
               ),
             ],
           ),

@@ -1,3 +1,4 @@
+import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/main.dart';
 import 'package:aqari/models/chat_session_model.dart';
 import 'package:aqari/modules/ai_center/controllers/get_all_chats/get_all_chats_cubit.dart';
@@ -65,7 +66,7 @@ class _MessagesListState extends State<MessagesList> {
         itemCount: widget.chatSessions.length,
         padding: EdgeInsets.only(bottom: 10.h),
         separatorBuilder: (context, index) {
-          return SizedBox(height: 2.h);
+          return SizedX.h2;
         },
         itemBuilder: (context, index) {
           return MessageOverviewRow(

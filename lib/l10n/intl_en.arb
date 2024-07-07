@@ -144,5 +144,6 @@
   "chat": "Chat",
   "ourPersonalAiAssistantIsReadyToHelpYou": "Our personal AI assistant is ready to help you.",
   "selects": "Selects",
-  "ourAiRecommendationSystemIsTailoredToFindThePerfect": "Our AI recommendation system is tailored to find the perfect match for you."
+  "ourAiRecommendationSystemIsTailoredToFindThePerfect": "Our AI recommendation system is tailored to find the perfect match for you.",
+  "newText": "New"
 }

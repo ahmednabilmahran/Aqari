@@ -1,5 +1,6 @@
 import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/extensions.dart';
+import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/models/chat_session_model.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -53,17 +54,18 @@ class MessageOverviewRow extends StatelessWidget {
                   overflow: TextOverflow.ellipsis,
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                         color: Colors.black,
-                        fontWeight: FontWeight.w500,
-                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w600,
+                        fontSize: 13.sp,
+                        letterSpacing: 0,
                       ),
                 ),
-                SizedBox(height: 0.5.h),
+                SizedX.h0p5,
                 Text(
                   chatSession.lastMessageContent,
                   style: Theme.of(context).textTheme.headlineSmall!.copyWith(
                         color: Colors.grey.withOpacity(0.9),
-                        fontWeight: FontWeight.w500,
-                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w400,
+                        fontSize: 12.sp,
                       ),
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
@@ -72,7 +74,7 @@ class MessageOverviewRow extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(width: 2.w),
+          SizedX.w4,
           Row(
             children: [
               Text(
@@ -80,7 +82,7 @@ class MessageOverviewRow extends StatelessWidget {
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                       color: Colors.grey.withOpacity(0.9),
                       fontWeight: FontWeight.w500,
-                      fontSize: 10.sp,
+                      fontSize: 9.sp,
                     ),
               ),
             ],
