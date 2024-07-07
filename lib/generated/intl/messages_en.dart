@@ -38,9 +38,18 @@ class MessageLookup extends MessageLookupByLibrary {
         "aiCenter": MessageLookupByLibrary.simpleMessage("AI Center"),
         "aiChats": MessageLookupByLibrary.simpleMessage("AI Chats"),
         "allSet": MessageLookupByLibrary.simpleMessage("All set"),
+        "almostFinishedCompleteTheListing":
+            MessageLookupByLibrary.simpleMessage(
+                "Almost finish, complete the listing"),
         "alreadyHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Already have an account?"),
         "apply": MessageLookupByLibrary.simpleMessage("Apply"),
+        "aqarisRecommendedPrice":
+            MessageLookupByLibrary.simpleMessage("Aqari’s recommended price"),
+        "areaM": MessageLookupByLibrary.simpleMessage("Area (m²)"),
+        "automaticallyGeneratedPriceBasedOnYourUnitsSpecificationsUsingAn":
+            MessageLookupByLibrary.simpleMessage(
+                "Automatically generated price based on your unit\'s specifications (using an AI model)."),
         "back": MessageLookupByLibrary.simpleMessage("Back"),
         "balcony": MessageLookupByLibrary.simpleMessage("Balcony"),
         "bathroom": MessageLookupByLibrary.simpleMessage("Bathroom"),
@@ -63,6 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "country": MessageLookupByLibrary.simpleMessage("Country"),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
+        "egp": MessageLookupByLibrary.simpleMessage("EGP"),
         "emailAddress": MessageLookupByLibrary.simpleMessage("Email Address"),
         "enterYourEmail":
             MessageLookupByLibrary.simpleMessage("Enter Your Email"),
@@ -74,6 +84,8 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Enter Your Password"),
         "environmentFacilities":
             MessageLookupByLibrary.simpleMessage("Environment / Facilities"),
+        "ex100": MessageLookupByLibrary.simpleMessage("ex. 100"),
+        "ex100000": MessageLookupByLibrary.simpleMessage("ex. 100,000"),
         "ex28AhmedKasemGodaSt":
             MessageLookupByLibrary.simpleMessage("ex. 28 Ahmed Kasem Goda St."),
         "exApartmentZedEast":
@@ -153,6 +165,8 @@ class MessageLookup extends MessageLookupByLibrary {
             "Phone number can\'t be empty"),
         "pickALocation":
             MessageLookupByLibrary.simpleMessage("Pick a location"),
+        "pleaseAddAtLeastOneImage": MessageLookupByLibrary.simpleMessage(
+            "Please add at least one image."),
         "pleaseEnterAValidPhoneNumber": MessageLookupByLibrary.simpleMessage(
             "Please enter a valid phone number"),
         "pleaseEnterValidEmail":
@@ -184,6 +198,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Select on the map"),
         "sellMyProperty":
             MessageLookupByLibrary.simpleMessage("Sell my property"),
+        "sellPrice": MessageLookupByLibrary.simpleMessage("Sell Price"),
         "sellerDetails": MessageLookupByLibrary.simpleMessage("Seller details"),
         "shareSomeBasicInfoLikeWhereItIsAndIts":
             MessageLookupByLibrary.simpleMessage(

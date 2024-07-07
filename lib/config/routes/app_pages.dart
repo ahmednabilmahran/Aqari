@@ -16,6 +16,7 @@ import 'package:aqari/modules/sell_my_property/screens/getting_started_screen.da
 import 'package:aqari/modules/sell_my_property/screens/unit_address_details_screen.dart';
 import 'package:aqari/modules/sell_my_property/screens/unit_details_screen.dart';
 import 'package:aqari/modules/sell_my_property/screens/unit_gallery_details_screen.dart';
+import 'package:aqari/modules/sell_my_property/screens/unit_price_details_screen.dart';
 import 'package:aqari/modules/sign_up/screens/sign_up_screen.dart';
 import 'package:aqari/modules/splash/presentation/screens/splash_screen.dart';
 import 'package:aqari/modules/verify_sign_up/screens/verify_sign_up_screen.dart';
@@ -153,6 +154,16 @@ class AppRoutes {
             );
           },
           settings: const RouteSettings(name: Routes.unitAddressDetails),
+        );
+
+      case Routes.unitPriceDetails:
+        return MaterialPageRoute(
+          builder: (context) {
+            return UnitPriceDetailsScreen(
+              unitDetailsCubit: routeSettings.arguments! as UnitDetailsCubit,
+            );
+          },
+          settings: const RouteSettings(name: Routes.unitPriceDetails),
         );
 
       case Routes.chatRoute:

@@ -14,6 +14,7 @@ import 'package:aqari/modules/sell_my_property/widgets/facility_item.dart';
 import 'package:aqari/modules/sell_my_property/widgets/floor_selection_item.dart';
 import 'package:aqari/modules/sell_my_property/widgets/property_feature_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
@@ -110,6 +111,40 @@ class UnitDetailsScreen extends StatelessWidget {
                                       fontSize: 10.sp,
                                       color: ThemeHelper.appColors.black,
                                     ),
+                              );
+                            },
+                          ),
+                          SizedX.h2p5,
+                          BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
+                            builder: (context, state) {
+                              return CustomTextField(
+                                controller: state.areaController,
+                                contentPaddingVertical: 1.75.h,
+                                hintText: S.of(context).ex100,
+                                label: S.of(context).areaM,
+                                labelTextStyle: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                      color: ThemeHelper.appColors.black,
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 0.5,
+                                    ),
+                                borderRadius: 13.sp,
+                                fillColor: const Color(0XFFF4F4F4),
+                                hintStyle: Theme.of(context)
+                                    .textTheme
+                                    .labelMedium!
+                                    .copyWith(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 10.sp,
+                                      color: ThemeHelper.appColors.black,
+                                    ),
+                                keyboardType: TextInputType.number,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.digitsOnly,
+                                ],
                               );
                             },
                           ),

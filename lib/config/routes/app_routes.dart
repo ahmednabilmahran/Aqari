@@ -18,4 +18,5 @@ class Routes {
   static const String unitDetails = '/UnitDetails';
   static const String unitAddressDetails = '/UnitAddressDetails';
   static const String unitGalleryDetails = '/UnitGalleryDetails';
+  static const String unitPriceDetails = '/UnitPriceDetails';
 }

@@ -1299,6 +1299,96 @@ class S {
       args: [],
     );
   }
+
+  /// `Almost finish, complete the listing`
+  String get almostFinishedCompleteTheListing {
+    return Intl.message(
+      'Almost finish, complete the listing',
+      name: 'almostFinishedCompleteTheListing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please add at least one image.`
+  String get pleaseAddAtLeastOneImage {
+    return Intl.message(
+      'Please add at least one image.',
+      name: 'pleaseAddAtLeastOneImage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ex. 100,000`
+  String get ex100000 {
+    return Intl.message(
+      'ex. 100,000',
+      name: 'ex100000',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sell Price`
+  String get sellPrice {
+    return Intl.message(
+      'Sell Price',
+      name: 'sellPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Area (m²)`
+  String get areaM {
+    return Intl.message(
+      'Area (m²)',
+      name: 'areaM',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `ex. 100`
+  String get ex100 {
+    return Intl.message(
+      'ex. 100',
+      name: 'ex100',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Aqari’s recommended price`
+  String get aqarisRecommendedPrice {
+    return Intl.message(
+      'Aqari’s recommended price',
+      name: 'aqarisRecommendedPrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `EGP`
+  String get egp {
+    return Intl.message(
+      'EGP',
+      name: 'egp',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Automatically generated price based on your unit's specifications (using an AI model).`
+  String get automaticallyGeneratedPriceBasedOnYourUnitsSpecificationsUsingAn {
+    return Intl.message(
+      'Automatically generated price based on your unit\'s specifications (using an AI model).',
+      name: 'automaticallyGeneratedPriceBasedOnYourUnitsSpecificationsUsingAn',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

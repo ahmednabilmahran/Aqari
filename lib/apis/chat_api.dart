@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:aqari/main.dart';
 import 'package:aqari/models/chat_message_model.dart';
@@ -59,10 +60,10 @@ class ChatApi {
         'Authorization': 'Bearer $openAiApiKey',
       },
       body: jsonEncode({
-        'model': 'gpt-4',
+        'model': 'gpt-4o',
         'messages': messages,
         'max_tokens': 150,
-        'temperature': 0.7,
+        'temperature': 0.0,
       }),
     );
 
@@ -138,5 +139,65 @@ class ChatApi {
 
     final data = response;
     return data.map<ChatMessage>(ChatMessage.fromMap).toList();
+  }
+
+  /// [truncatePrompt] method to truncate prompt
+  String truncatePrompt(String prompt, int maxLength) {
+    if (prompt.length > maxLength) {
+      return '${prompt.substring(0, maxLength)}...';
+    }
+    return prompt;
+  }
+
+  /// [getRecommendedPrice] method to get recommended price
+  Future<double> getRecommendedPrice(
+    String unitDetailsPrompt,
+    List<Map<String, dynamic>> referenceData,
+  ) async {
+    const maxPromptLength = 35000;
+    const maxReferenceDataEntries = 50;
+
+    final truncatedPrompt = truncatePrompt(unitDetailsPrompt, maxPromptLength);
+    final limitedReferenceData =
+        referenceData.take(maxReferenceDataEntries).toList();
+
+    final response = await http.post(
+      Uri.parse('https://api.openai.com/v1/chat/completions'),
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer $openAiApiKey',
+      },
+      body: jsonEncode({
+        'model': 'gpt-4o',
+        'messages': [
+          {
+            'role': 'system',
+            'content':
+                // ignore: lines_longer_than_80_chars
+                'You are an AI model that recommends real estate prices based on unit details and market data. Only respond with a number representing the recommended price and nothing else.',
+          },
+          {
+            'role': 'user',
+            'content':
+                // ignore: lines_longer_than_80_chars
+                '$truncatedPrompt Based on the following reference data, recommend a price: ${jsonEncode(limitedReferenceData)}',
+          },
+        ],
+        'max_tokens': 50,
+        'temperature': 0.0,
+      }),
+    );
+
+    if (response.statusCode == 200) {
+      final result = jsonDecode(response.body) as Map<String, dynamic>;
+      log('Recommended price response: $result');
+      final priceString =
+          // ignore: avoid_dynamic_calls
+          (result['choices'][0]['message']['content'] as String).trim();
+      final recommendedPrice = double.parse(priceString);
+      return recommendedPrice;
+    } else {
+      throw Exception('Failed to get recommended price: ${response.body}');
+    }
   }
 }

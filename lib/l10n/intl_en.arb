@@ -123,5 +123,14 @@
   "thisLocationIsOutsideTheChosenCountry": "This location is outside the chosen country",
   "saveLocation": "Save Location",
   "addPhotosToYourListing": "Add photos to your listing",
-  "addUpTo20PhotosMaximumSize5MbEach": "Add up to 20 photos (maximum size 5 MB each). The first photo will be the main photo."
+  "addUpTo20PhotosMaximumSize5MbEach": "Add up to 20 photos (maximum size 5 MB each). The first photo will be the main photo.",
+  "almostFinishedCompleteTheListing": "Almost finish, complete the listing",
+  "pleaseAddAtLeastOneImage": "Please add at least one image.",
+  "ex100000": "ex. 100,000",
+  "sellPrice": "Sell Price",
+  "areaM": "Area (m²)",
+  "ex100": "ex. 100",
+  "aqarisRecommendedPrice": "Aqari’s recommended price",
+  "egp": "EGP",
+  "automaticallyGeneratedPriceBasedOnYourUnitsSpecificationsUsingAn": "Automatically generated price based on your unit's specifications (using an AI model)."
 }

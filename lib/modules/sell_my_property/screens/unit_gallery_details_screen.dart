@@ -131,13 +131,13 @@ class UnitGalleryDetailsScreen extends StatelessWidget {
                               .validateGalleryInputs()) {
                             Navigator.pushNamed(
                               context,
-                              Routes.unitAddressDetails,
+                              Routes.unitPriceDetails,
                               arguments: context.read<UnitDetailsCubit>(),
                             );
                           } else {
                             // Show error message
                             SnackX.showSnackBar(
-                              message: S.of(context).pleaseFillAllTheFields,
+                              message: S.of(context).pleaseAddAtLeastOneImage,
                             );
                           }
                         },

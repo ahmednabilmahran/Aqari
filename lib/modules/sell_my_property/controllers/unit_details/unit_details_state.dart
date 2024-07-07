@@ -21,6 +21,10 @@ class UnitDetailsState {
     required this.selectedCountryCode,
     required this.selectedCountryCenter,
     required this.images,
+    required this.sellPriceController,
+    required this.recommendedPriceController,
+    required this.areaController,
+    required this.isLoading,
     this.selectedLocation,
     this.selectedLocationMapUrl,
   });
@@ -82,6 +86,18 @@ class UnitDetailsState {
   /// Images
   final List<String> images;
 
+  /// Sell Price Controller
+  final TextEditingController sellPriceController;
+
+  /// Recommended Price Controller
+  final TextEditingController recommendedPriceController;
+
+  /// Area Controller
+  final TextEditingController areaController;
+
+  /// Is Loading
+  final bool isLoading;
+
   /// CopyWith method
   UnitDetailsState copyWith({
     String? selectedCategory,
@@ -103,6 +119,10 @@ class UnitDetailsState {
     LatLng? selectedLocation,
     String? selectedLocationMapUrl,
     List<String>? images,
+    TextEditingController? sellPriceController,
+    TextEditingController? recommendedPriceController,
+    TextEditingController? areaController,
+    bool? isLoading,
   }) {
     return UnitDetailsState(
       selectedCategory: selectedCategory ?? this.selectedCategory,
@@ -129,6 +149,11 @@ class UnitDetailsState {
       selectedLocationMapUrl:
           selectedLocationMapUrl ?? this.selectedLocationMapUrl,
       images: images ?? this.images,
+      sellPriceController: sellPriceController ?? this.sellPriceController,
+      recommendedPriceController:
+          recommendedPriceController ?? this.recommendedPriceController,
+      areaController: areaController ?? this.areaController,
+      isLoading: isLoading ?? this.isLoading,
     );
   }
 }

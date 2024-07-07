@@ -34,8 +34,17 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
             selectedCountryCenter:
                 const LatLng(30.044394026989863, 31.23564798384905), // Egypt
             images: [],
+            sellPriceController: TextEditingController(),
+            recommendedPriceController: TextEditingController(),
+            areaController: TextEditingController(),
+            isLoading: false,
           ),
         );
+
+  /// Toggle loading state
+  void setLoading({required bool loading}) {
+    emit(state.copyWith(isLoading: loading));
+  }
 
   /// Load Countries (Example method to load countries, implement as needed)
   void loadCountries(List<AqariCountryModel> countries) {
@@ -172,7 +181,7 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
         state.selectedLocation != null;
   }
 
-  /// Validate Address Inputs
+  /// Validate Gallery Inputs
   bool validateGalleryInputs() {
     return state.images.isNotEmpty;
   }
@@ -223,6 +232,9 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
     state.addressLine1Controller.dispose();
     state.addressLine2Controller.dispose();
     state.cityController.dispose();
+    state.sellPriceController.dispose();
+    state.recommendedPriceController.dispose();
+    state.areaController.dispose();
     return super.close();
   }
 }
