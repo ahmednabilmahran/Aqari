@@ -138,5 +138,11 @@
   "aLittleBitLow": "A little bit low",
   "veryGood": "Very Good",
   "aLittleBitHigh": "A little bit high",
-  "veryHigh": "Very High"
+  "veryHigh": "Very High",
+  "welcomeToAqaris": "Welcome to Aqari’s",
+  "ai": "AI",
+  "chat": "Chat",
+  "ourPersonalAiAssistantIsReadyToHelpYou": "Our personal AI assistant is ready to help you.",
+  "selects": "Selects",
+  "ourAiRecommendationSystemIsTailoredToFindThePerfect": "Our AI recommendation system is tailored to find the perfect match for you."
 }

@@ -39,6 +39,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Add your property details"),
         "addressLine1": MessageLookupByLibrary.simpleMessage("Address line 1"),
         "addressLine2": MessageLookupByLibrary.simpleMessage("Address line 2"),
+        "ai": MessageLookupByLibrary.simpleMessage("AI"),
         "aiCenter": MessageLookupByLibrary.simpleMessage("AI Center"),
         "aiChats": MessageLookupByLibrary.simpleMessage("AI Chats"),
         "allSet": MessageLookupByLibrary.simpleMessage("All set"),
@@ -61,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "changeTheLocation":
             MessageLookupByLibrary.simpleMessage("Change the location"),
+        "chat": MessageLookupByLibrary.simpleMessage("Chat"),
         "checkOutAllOurListings":
             MessageLookupByLibrary.simpleMessage("Check out all our listings"),
         "checkOutSomeOfOurTopListings": MessageLookupByLibrary.simpleMessage(
@@ -148,6 +150,12 @@ class MessageLookup extends MessageLookupByLibrary {
         "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
         "optional": MessageLookupByLibrary.simpleMessage("Optional"),
         "other": MessageLookupByLibrary.simpleMessage("Other"),
+        "ourAiRecommendationSystemIsTailoredToFindThePerfect":
+            MessageLookupByLibrary.simpleMessage(
+                "Our AI recommendation system is tailored to find the perfect match for you."),
+        "ourPersonalAiAssistantIsReadyToHelpYou":
+            MessageLookupByLibrary.simpleMessage(
+                "Our personal AI assistant is ready to help you."),
         "park": MessageLookupByLibrary.simpleMessage("Park"),
         "parkingLot": MessageLookupByLibrary.simpleMessage("Parking Lot"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
@@ -200,6 +208,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "selectFloor": MessageLookupByLibrary.simpleMessage("Select Floor"),
         "selectOnTheMap":
             MessageLookupByLibrary.simpleMessage("Select on the map"),
+        "selects": MessageLookupByLibrary.simpleMessage("Selects"),
         "sellMyProperty":
             MessageLookupByLibrary.simpleMessage("Sell my property"),
         "sellPrice": MessageLookupByLibrary.simpleMessage("Sell Price"),
@@ -224,6 +233,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "weReviewYourRequestToListTheUnitForSale":
             MessageLookupByLibrary.simpleMessage(
                 "We review your request to list the unit for sale on our platform. Upon completion, you will receive an approval notification."),
+        "welcomeToAqaris":
+            MessageLookupByLibrary.simpleMessage("Welcome to Aqari’s"),
         "whereIsTheLocation":
             MessageLookupByLibrary.simpleMessage("Where is the location?"),
         "yesterday": MessageLookupByLibrary.simpleMessage("Yesterday"),

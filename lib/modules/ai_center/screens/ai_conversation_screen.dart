@@ -19,10 +19,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
-/// MainAiChatScreen
-class MainAiChatScreen extends StatefulWidget {
+/// AiConversationScreen
+class AiConversationScreen extends StatefulWidget {
   /// MainAiChatScreen constructor
-  const MainAiChatScreen({this.chatSession, this.isNewChat = false, super.key});
+  const AiConversationScreen({
+    this.chatSession,
+    this.isNewChat = false,
+    super.key,
+  });
 
   /// [chatSession]
   final ChatSession? chatSession;
@@ -32,10 +36,10 @@ class MainAiChatScreen extends StatefulWidget {
 
   @override
   // ignore: library_private_types_in_public_api
-  _MainAiChatScreenState createState() => _MainAiChatScreenState();
+  _AiConversationScreenState createState() => _AiConversationScreenState();
 }
 
-class _MainAiChatScreenState extends State<MainAiChatScreen> {
+class _AiConversationScreenState extends State<AiConversationScreen> {
   ChatSession? _currentChatSession;
   GetMessagesCubit? _getMessagesCubit;
 

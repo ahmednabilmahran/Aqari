@@ -1,7 +1,7 @@
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/generated/l10n.dart';
-import 'package:aqari/modules/ai_center/screens/main_ai_center/ai_center_screen.dart';
+import 'package:aqari/modules/ai_center/screens/ai_center_screen.dart';
 import 'package:aqari/modules/app_layout/controllers/app_layout_cubit.dart';
 import 'package:aqari/modules/home/screens/home_screen.dart';
 import 'package:aqari/modules/profile/screens/profile_screen.dart';
@@ -23,7 +23,7 @@ class AppLayoutScreen extends StatelessWidget {
     final screens = <Widget>[
       HomeScreen(),
       SearchScreen(),
-      const MainAiCenterScreen(),
+      const AiCenterScreen(),
       const ProfileScreen(),
     ];
 

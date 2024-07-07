@@ -21,7 +21,7 @@ class MessageOverviewRow extends StatelessWidget {
       onTap: () {
         Navigator.pushNamed(
           context,
-          Routes.chatRoute,
+          Routes.aiConversationRoute,
           arguments: [chatSession, false],
         );
       },

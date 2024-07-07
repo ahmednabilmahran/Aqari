@@ -15,10 +15,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
-/// MainAiCenterScreen
-class MainAiCenterScreen extends StatelessWidget {
+/// AiChatScreen
+class AiChatScreen extends StatelessWidget {
   /// constructor
-  const MainAiCenterScreen({super.key});
+  const AiChatScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +34,7 @@ class MainAiCenterScreen extends StatelessWidget {
             onPressed: () {
               Navigator.pushNamed(
                 context,
-                Routes.chatRoute,
+                Routes.aiConversationRoute,
                 arguments: [null, true],
               );
             },

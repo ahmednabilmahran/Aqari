@@ -1449,6 +1449,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Welcome to Aqari’s`
+  String get welcomeToAqaris {
+    return Intl.message(
+      'Welcome to Aqari’s',
+      name: 'welcomeToAqaris',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `AI`
+  String get ai {
+    return Intl.message(
+      'AI',
+      name: 'ai',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Chat`
+  String get chat {
+    return Intl.message(
+      'Chat',
+      name: 'chat',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our personal AI assistant is ready to help you.`
+  String get ourPersonalAiAssistantIsReadyToHelpYou {
+    return Intl.message(
+      'Our personal AI assistant is ready to help you.',
+      name: 'ourPersonalAiAssistantIsReadyToHelpYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Selects`
+  String get selects {
+    return Intl.message(
+      'Selects',
+      name: 'selects',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Our AI recommendation system is tailored to find the perfect match for you.`
+  String get ourAiRecommendationSystemIsTailoredToFindThePerfect {
+    return Intl.message(
+      'Our AI recommendation system is tailored to find the perfect match for you.',
+      name: 'ourAiRecommendationSystemIsTailoredToFindThePerfect',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

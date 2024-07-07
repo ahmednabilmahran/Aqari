@@ -17,6 +17,10 @@ class Assets {
   /// assets/gen/icons/ai_center.svg
   static const String genIconsAiCenter = "assets/gen/icons/ai_center.svg";
 
+  /// Assets for genIconsAiCenterBackground
+  /// assets/gen/icons/ai_center_background.svg
+  static const String genIconsAiCenterBackground = "assets/gen/icons/ai_center_background.svg";
+
   /// Assets for genIconsAllSet
   /// assets/gen/icons/all_set.svg
   static const String genIconsAllSet = "assets/gen/icons/all_set.svg";
@@ -168,6 +172,14 @@ class Assets {
   /// Assets for genImagesAboutUsCover
   /// assets/gen/images/about_us_cover.jpg
   static const String genImagesAboutUsCover = "assets/gen/images/about_us_cover.jpg";
+
+  /// Assets for genImagesAiChatBot
+  /// assets/gen/images/ai_chat_bot.png
+  static const String genImagesAiChatBot = "assets/gen/images/ai_chat_bot.png";
+
+  /// Assets for genImagesAiRecommendationSystem
+  /// assets/gen/images/ai_recommendation_system.png
+  static const String genImagesAiRecommendationSystem = "assets/gen/images/ai_recommendation_system.png";
 
   /// Assets for genImagesFinishAddStateImage
   /// assets/gen/images/finish-add-state_image.png
