@@ -1,5 +1,5 @@
 import 'package:aqari/apis/chat_api.dart';
-import 'package:aqari/config/routes/app_routes.dart';
+import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/excel_sheets_handler.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/snack_x.dart';
@@ -12,6 +12,7 @@ import 'package:aqari/core/widgets/custom_text_field.dart';
 import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/modules/sell_my_property/controllers/unit_details/unit_details_cubit.dart';
 import 'package:aqari/modules/sell_my_property/widgets/cancel_button.dart';
+import 'package:aqari/modules/sell_my_property/widgets/custom_price_gauge.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -33,6 +34,10 @@ class UnitPriceDetailsScreen extends StatefulWidget {
 }
 
 class _UnitPriceDetailsScreenState extends State<UnitPriceDetailsScreen> {
+  double _gaugeValue = 0;
+  String _gaugeIcon = Assets.genIconsVeryLowGauge;
+  String _gaugeLabel = '';
+
   @override
   void initState() {
     super.initState();
@@ -79,11 +84,59 @@ class _UnitPriceDetailsScreenState extends State<UnitPriceDetailsScreen> {
       );
       cubit.state.recommendedPriceController.text =
           NumberFormat.decimalPattern().format(recommendedPrice);
+      _updateGauge();
     } catch (e) {
       SnackX.showSnackBar(message: 'Failed to get recommended price: $e');
     } finally {
       cubit.setLoading(loading: false);
     }
+  }
+
+  /// Update Gauge
+  void _updateGauge() {
+    final cubit = widget.unitDetailsCubit;
+    final sellPrice = double.tryParse(
+          cubit.state.sellPriceController.text.replaceAll(',', ''),
+        ) ??
+        0;
+    final recommendedPrice = double.tryParse(
+          cubit.state.recommendedPriceController.text.replaceAll(',', ''),
+        ) ??
+        0;
+
+    setState(() {
+      _gaugeValue = getGaugeValue(sellPrice, recommendedPrice);
+      _gaugeIcon = getGaugeIcon(_gaugeValue);
+      _gaugeLabel = getGaugeLabel(_gaugeValue);
+    });
+  }
+
+  /// Get Gauge Icon
+  String getGaugeIcon(double gaugeValue) {
+    if (gaugeValue < -20) return Assets.genIconsVeryLowGauge;
+    if (gaugeValue >= -20 && gaugeValue < -5) {
+      return Assets.genIconsALittleBitLowGauge;
+    }
+    if (gaugeValue >= -5 && gaugeValue <= 5) return Assets.genIconsVeryGood;
+    if (gaugeValue > 5 && gaugeValue <= 20) {
+      return Assets.genIconsALittleBitHighGauge;
+    }
+    return Assets.genIconsVeryHighGauge;
+  }
+
+  double getGaugeValue(double sellPrice, double recommendedPrice) {
+    final difference = (sellPrice - recommendedPrice) / recommendedPrice * 100;
+    return difference;
+  }
+
+  String getGaugeLabel(double gaugeValue) {
+    if (gaugeValue < -20) return S.of(context).veryLow;
+    if (gaugeValue >= -20 && gaugeValue < -5) {
+      return S.of(context).aLittleBitLow;
+    }
+    if (gaugeValue >= -5 && gaugeValue <= 5) return S.of(context).veryGood;
+    if (gaugeValue > 5 && gaugeValue <= 20) return S.of(context).aLittleBitHigh;
+    return S.of(context).veryHigh;
   }
 
   @override
@@ -164,6 +217,10 @@ class _UnitPriceDetailsScreenState extends State<UnitPriceDetailsScreen> {
                               FilteringTextInputFormatter.digitsOnly,
                               ThousandsSeparatorInputFormatter(),
                             ],
+                            onChanged: (value) {
+                              _updateGauge();
+                              return null;
+                            },
                           ),
                           SizedX.h2,
                           Text(
@@ -240,6 +297,14 @@ class _UnitPriceDetailsScreenState extends State<UnitPriceDetailsScreen> {
                                 ThousandsSeparatorInputFormatter(),
                               ],
                             ),
+                          SizedX.h2,
+                          if (state.isLoading)
+                            const SizedBox()
+                          else
+                            CustomPriceGauge(
+                              gaugeIcon: _gaugeIcon,
+                              gaugeLabel: _gaugeLabel,
+                            ),
                           SizedX.h12,
                         ],
                       );
@@ -289,21 +354,7 @@ class _UnitPriceDetailsScreenState extends State<UnitPriceDetailsScreen> {
                     builder: (context, state) {
                       return CustomButton(
                         buttonSize: Size(23.w, 5.25.h),
-                        onPressed: () {
-                          if (context
-                              .read<UnitDetailsCubit>()
-                              .validateAddressInputs()) {
-                            Navigator.pushNamed(
-                              context,
-                              Routes.unitGalleryDetails,
-                              arguments: context.read<UnitDetailsCubit>(),
-                            );
-                          } else {
-                            SnackX.showSnackBar(
-                              message: S.of(context).pleaseFillAllTheFields,
-                            );
-                          }
-                        },
+                        onPressed: () {},
                         buttonText: S.of(context).next,
                       );
                     },

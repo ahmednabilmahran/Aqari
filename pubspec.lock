@@ -697,10 +697,10 @@ packages:
     dependency: transitive
     description:
       name: google_maps_flutter_android
-      sha256: "6b7f7730960f9adb1b77a530572182451d66e30808ebb052665e64c4276a8f0e"
+      sha256: f6306d83edddba7aa017ca6f547d6f36a1443f90ed49d91d48ef70d7aa86e2e1
       url: "https://pub.dev"
     source: hosted
-    version: "2.11.1"
+    version: "2.12.0"
   google_maps_flutter_ios:
     dependency: transitive
     description:
@@ -1402,22 +1402,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.5.7"
-  syncfusion_flutter_core:
-    dependency: transitive
-    description:
-      name: syncfusion_flutter_core
-      sha256: "87cbeee9b916e013eedbd43bf07f253c34dd5184c88325e5227434e0f8b89a68"
-      url: "https://pub.dev"
-    source: hosted
-    version: "26.1.40"
-  syncfusion_flutter_sliders:
-    dependency: "direct main"
-    description:
-      name: syncfusion_flutter_sliders
-      sha256: e2ef998ad1078f564487c56b8b57ecd2215f8b87ea4acc9e4743b9502cb980fc
-      url: "https://pub.dev"
-    source: hosted
-    version: "26.1.40"
   term_glyph:
     dependency: transitive
     description:

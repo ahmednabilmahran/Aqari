@@ -1,6 +1,14 @@
 class Assets {
   Assets._();
   
+  /// Assets for genIconsALittleBitHighGauge
+  /// assets/gen/icons/a_little_bit_high_gauge.svg
+  static const String genIconsALittleBitHighGauge = "assets/gen/icons/a_little_bit_high_gauge.svg";
+
+  /// Assets for genIconsALittleBitLowGauge
+  /// assets/gen/icons/a_little_bit_low_gauge.svg
+  static const String genIconsALittleBitLowGauge = "assets/gen/icons/a_little_bit_low_gauge.svg";
+
   /// Assets for genIconsAddYourPropertyDetails
   /// assets/gen/icons/add_your_property_details.svg
   static const String genIconsAddYourPropertyDetails = "assets/gen/icons/add_your_property_details.svg";
@@ -144,6 +152,18 @@ class Assets {
   /// Assets for genIconsVerifySignUp
   /// assets/gen/icons/verify_sign_up.svg
   static const String genIconsVerifySignUp = "assets/gen/icons/verify_sign_up.svg";
+
+  /// Assets for genIconsVeryGood
+  /// assets/gen/icons/very_good.svg
+  static const String genIconsVeryGood = "assets/gen/icons/very_good.svg";
+
+  /// Assets for genIconsVeryHighGauge
+  /// assets/gen/icons/very_high_gauge.svg
+  static const String genIconsVeryHighGauge = "assets/gen/icons/very_high_gauge.svg";
+
+  /// Assets for genIconsVeryLowGauge
+  /// assets/gen/icons/very_low_gauge.svg
+  static const String genIconsVeryLowGauge = "assets/gen/icons/very_low_gauge.svg";
 
   /// Assets for genImagesAboutUsCover
   /// assets/gen/images/about_us_cover.jpg

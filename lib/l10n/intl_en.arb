@@ -132,5 +132,11 @@
   "ex100": "ex. 100",
   "aqarisRecommendedPrice": "Aqari’s recommended price",
   "egp": "EGP",
-  "automaticallyGeneratedPriceBasedOnYourUnitsSpecificationsUsingAn": "Automatically generated price based on your unit's specifications (using an AI model)."
+  "automaticallyGeneratedPriceBasedOnYourUnitsSpecificationsUsingAn": "Automatically generated price based on your unit's specifications (using an AI model).",
+  "yourPriceIs": "Your price is",
+  "veryLow": "Very Low",
+  "aLittleBitLow": "A little bit low",
+  "veryGood": "Very Good",
+  "aLittleBitHigh": "A little bit high",
+  "veryHigh": "Very High"
 }

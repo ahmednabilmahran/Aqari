@@ -47,7 +47,6 @@ dependencies:
   sizer: ^2.0.15
   step_progress_indicator: ^1.0.2
   supabase_flutter: ^2.5.3
-  syncfusion_flutter_sliders: ^26.1.39
   very_good_analysis: ^5.1.0
 
 dev_dependencies:

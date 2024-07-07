@@ -1389,6 +1389,66 @@ class S {
       args: [],
     );
   }
+
+  /// `Your price is`
+  String get yourPriceIs {
+    return Intl.message(
+      'Your price is',
+      name: 'yourPriceIs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Very Low`
+  String get veryLow {
+    return Intl.message(
+      'Very Low',
+      name: 'veryLow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A little bit low`
+  String get aLittleBitLow {
+    return Intl.message(
+      'A little bit low',
+      name: 'aLittleBitLow',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Very Good`
+  String get veryGood {
+    return Intl.message(
+      'Very Good',
+      name: 'veryGood',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `A little bit high`
+  String get aLittleBitHigh {
+    return Intl.message(
+      'A little bit high',
+      name: 'aLittleBitHigh',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Very High`
+  String get veryHigh {
+    return Intl.message(
+      'Very High',
+      name: 'veryHigh',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -22,6 +22,10 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+        "aLittleBitHigh":
+            MessageLookupByLibrary.simpleMessage("A little bit high"),
+        "aLittleBitLow":
+            MessageLookupByLibrary.simpleMessage("A little bit low"),
         "accountInformation":
             MessageLookupByLibrary.simpleMessage("Account Information"),
         "add5OrMoreHighqualityPhotosToShowTheFacilities":
@@ -209,6 +213,9 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage(
                 "This location is outside the chosen country"),
         "title": MessageLookupByLibrary.simpleMessage("Title"),
+        "veryGood": MessageLookupByLibrary.simpleMessage("Very Good"),
+        "veryHigh": MessageLookupByLibrary.simpleMessage("Very High"),
+        "veryLow": MessageLookupByLibrary.simpleMessage("Very Low"),
         "viewAll": MessageLookupByLibrary.simpleMessage("View All"),
         "viewMore": MessageLookupByLibrary.simpleMessage("View more"),
         "villa": MessageLookupByLibrary.simpleMessage("Villa"),
@@ -225,6 +232,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "youWillReceiveAnEmailOnceAccepted":
             MessageLookupByLibrary.simpleMessage(
                 "you will receive an email once accepted."),
+        "yourPriceIs": MessageLookupByLibrary.simpleMessage("Your price is"),
         "yourUnitIsNowListedOnAqariAwaitingABuyer":
             MessageLookupByLibrary.simpleMessage(
                 "Your unit is now listed on Aqari, awaiting a buyer."),
