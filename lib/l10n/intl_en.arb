@@ -145,5 +145,7 @@
   "ourPersonalAiAssistantIsReadyToHelpYou": "Our personal AI assistant is ready to help you.",
   "selects": "Selects",
   "ourAiRecommendationSystemIsTailoredToFindThePerfect": "Our AI recommendation system is tailored to find the perfect match for you.",
-  "newText": "New"
+  "newText": "New",
+  "chatWithAqariAiChatToGetYourQuestionsAnswered": "Chat with Aqari AI chat to get your questions answered.",
+  "createNewChatToStartChattingWithAqariAiChat": "Create new chat to start chatting with Aqari AI Chat bot."
 }

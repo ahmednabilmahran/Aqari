@@ -201,8 +201,41 @@ class _AiConversationScreenState extends State<AiConversationScreen> {
                                 ),
                               );
                             } else {
-                              return const Center(
-                                child: Text('Start the conversation'),
+                              return Column(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  SvgPicture.asset(
+                                    Assets.genIconsNewAiChat,
+                                    height: 8.h,
+                                    width: 8.w,
+                                    colorFilter: ColorFilter.mode(
+                                      Theme.of(context)
+                                          .primaryColor
+                                          .withOpacity(1),
+                                      BlendMode.srcIn,
+                                    ),
+                                  ),
+                                  SizedX.h2p5,
+                                  Center(
+                                    child: Text(
+                                      S
+                                          .of(context)
+                                          // ignore: lines_longer_than_80_chars
+                                          .chatWithAqariAiChatToGetYourQuestionsAnswered,
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headlineLarge!
+                                          .copyWith(
+                                            fontWeight: FontWeight.w400,
+                                            fontSize: 13.sp,
+                                            height: 0.17.h,
+                                            letterSpacing: 0,
+                                          ),
+                                      textAlign: TextAlign.center,
+                                      softWrap: true,
+                                    ),
+                                  ),
+                                ],
                               );
                             }
                           },

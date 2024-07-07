@@ -63,6 +63,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "changeTheLocation":
             MessageLookupByLibrary.simpleMessage("Change the location"),
         "chat": MessageLookupByLibrary.simpleMessage("Chat"),
+        "chatWithAqariAiChatToGetYourQuestionsAnswered":
+            MessageLookupByLibrary.simpleMessage(
+                "Chat with Aqari AI chat to get your questions answered."),
         "checkOutAllOurListings":
             MessageLookupByLibrary.simpleMessage("Check out all our listings"),
         "checkOutSomeOfOurTopListings": MessageLookupByLibrary.simpleMessage(
@@ -76,6 +79,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "copiedToClipboard":
             MessageLookupByLibrary.simpleMessage("Copied to clipboard"),
         "country": MessageLookupByLibrary.simpleMessage("Country"),
+        "createNewChatToStartChattingWithAqariAiChat":
+            MessageLookupByLibrary.simpleMessage(
+                "Create new chat to start chatting with Aqari AI Chat bot."),
         "dontHaveAnAccount":
             MessageLookupByLibrary.simpleMessage("Don\'t have an account?"),
         "egp": MessageLookupByLibrary.simpleMessage("EGP"),

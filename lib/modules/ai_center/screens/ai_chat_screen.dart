@@ -1,4 +1,5 @@
 import 'package:aqari/apis/chat_api.dart';
+import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
@@ -31,47 +32,60 @@ class AiChatScreen extends StatelessWidget {
       child: Scaffold(
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
         backgroundColor: const Color(0XFFF9F9F9),
-        floatingActionButton: Container(
-          width: 40.w,
-          decoration: BoxDecoration(
-            color: Theme.of(context).primaryColor,
-            borderRadius: BorderRadius.circular(10.sp),
-          ),
-          child: Padding(
-            padding: EdgeInsets.symmetric(
-              vertical: 1.75.h,
-              horizontal: 4.w,
+        floatingActionButton: InkWell(
+          focusColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          splashColor: Colors.transparent,
+          onTap: () {
+            Navigator.pushNamed(
+              context,
+              Routes.aiConversationRoute,
+              arguments: [null, true],
+            );
+          },
+          child: Container(
+            width: 40.w,
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              borderRadius: BorderRadius.circular(10.sp),
             ),
-            child: Row(
-              children: [
-                Text(
-                  S.of(context).newText,
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 13.sp,
-                        letterSpacing: 0,
-                      ),
-                ),
-                SizedX.w1,
-                SizedX.w0p5,
-                SvgPicture.asset(
-                  Assets.genIconsNewAiChat,
-                  height: 3.5.h,
-                  width: 3.5.w,
-                ),
-                SizedX.w1,
-                SizedX.w0p5,
-                Text(
-                  S.of(context).chat,
-                  style: Theme.of(context).textTheme.titleMedium!.copyWith(
-                        color: Colors.white,
-                        fontWeight: FontWeight.w600,
-                        fontSize: 13.sp,
-                        letterSpacing: 0,
-                      ),
-                ),
-              ],
+            child: Padding(
+              padding: EdgeInsets.symmetric(
+                vertical: 1.75.h,
+                horizontal: 4.w,
+              ),
+              child: Row(
+                children: [
+                  Text(
+                    S.of(context).newText,
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 13.sp,
+                          letterSpacing: 0,
+                        ),
+                  ),
+                  SizedX.w1,
+                  SizedX.w0p5,
+                  SvgPicture.asset(
+                    Assets.genIconsNewAiChat,
+                    height: 3.5.h,
+                    width: 3.5.w,
+                  ),
+                  SizedX.w1,
+                  SizedX.w0p5,
+                  Text(
+                    S.of(context).chat,
+                    style: Theme.of(context).textTheme.titleMedium!.copyWith(
+                          color: Colors.white,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 13.sp,
+                          letterSpacing: 0,
+                        ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),

@@ -1519,6 +1519,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Chat with Aqari AI chat to get your questions answered.`
+  String get chatWithAqariAiChatToGetYourQuestionsAnswered {
+    return Intl.message(
+      'Chat with Aqari AI chat to get your questions answered.',
+      name: 'chatWithAqariAiChatToGetYourQuestionsAnswered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create new chat to start chatting with Aqari AI Chat bot.`
+  String get createNewChatToStartChattingWithAqariAiChat {
+    return Intl.message(
+      'Create new chat to start chatting with Aqari AI Chat bot.',
+      name: 'createNewChatToStartChattingWithAqariAiChat',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
