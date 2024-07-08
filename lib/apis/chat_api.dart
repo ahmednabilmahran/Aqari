@@ -51,7 +51,7 @@ class ChatApi {
       body: jsonEncode({
         'model': 'gpt-4o',
         'messages': messages,
-        'max_tokens': 500,
+        'max_tokens': 700,
         'temperature': 0.0,
       }),
     );
