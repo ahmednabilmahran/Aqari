@@ -8,6 +8,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
+import '../../modules/property_details/property_details.dart';
+
 /// this class is the custom app bar
 
 /// AqariAppBar is used to manage the app bar for the app
@@ -46,7 +48,7 @@ class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute<void>(
-                builder: (context) => const FavoritesScreen(),
+                builder: (context) =>  PropertyDetails(),
               ),
             );
           },
