@@ -3,6 +3,8 @@ class Assets {
   Assets._();
 
   static const String dataCountries = 'assets/data/countries.json';
+  static const String genImagesBathtub = 'assets/gen/images/bathtub.svg';
+  static const String genImagesBed = 'assets/gen/images/bed.svg';
   static const String iconsAiCenter = 'assets/gen/icons/ai_center.svg';
   static const String iconsDarkUnvalidatedTextIcon = 'assets/gen/icons/dark_unvalidated_text_icon.svg';
   static const String iconsDarkValidatedTextIcon = 'assets/gen/icons/dark_validated_text_icon.svg';
@@ -35,13 +37,25 @@ class Assets {
   static const String iconsValidatedTextIcon = 'assets/gen/icons/validated_text_icon.svg';
   static const String iconsVerifySignUp = 'assets/gen/icons/verify_sign_up.svg';
   static const String imagesAboutUsCover = 'assets/gen/images/about_us_cover.jpg';
+  static const String imagesArea = 'assets/gen/images/area.svg';
+  static const String imagesAreaIcon = 'assets/gen/images/area_icon.png';
+  static const String imagesBathtub = 'assets/gen/images/bathtub.png';
+  static const String imagesBed = 'assets/gen/images/bed.png';
+  static const String imagesCar = 'assets/gen/images/car.svg';
+  static const String imagesExercise = 'assets/gen/images/exercise.svg';
   static const String imagesFinishAddStateImage = 'assets/gen/images/finish-add-state_image.png';
   static const String imagesGoogleicon = 'assets/gen/images/googleicon.png';
   static const String imagesIconAqari = 'assets/gen/images/icon_aqari.png';
   static const String imagesIconGroup = 'assets/gen/images/icon_group.png';
   static const String imagesImageTeam = 'assets/gen/images/image_team.png';
+  static const String imagesLaundry = 'assets/gen/images/laundry.svg';
   static const String imagesLockPassword = 'assets/gen/images/lockPassword.png';
   static const String imagesLoginBackground = 'assets/gen/images/login_background.jpg';
+  static const String imagesPets = 'assets/gen/images/pets.svg';
+  static const String imagesRestaurant = 'assets/gen/images/restaurant.svg';
+  static const String imagesRunning = 'assets/gen/images/running.svg';
+  static const String imagesSteair = 'assets/gen/images/steair.svg';
+  static const String imagesSwim = 'assets/gen/images/swim.svg';
   static const String imagesTest1 = 'assets/gen/images/test1.jpeg';
   static const String imagesTest2 = 'assets/gen/images/test2.jpeg';
   static const String imagesTest3 = 'assets/gen/images/test3.png';
@@ -51,6 +65,8 @@ class Assets {
   static const String imagesTest7 = 'assets/gen/images/test7.png';
   static const String imagesTest8 = 'assets/gen/images/test8.png';
   static const String imagesThankIdVerfication = 'assets/gen/images/thank_id_verfication.png';
+  static const String imagesVector = 'assets/gen/images/Vector.png';
+  static const String imagesWifi = 'assets/gen/images/wifi.svg';
   static const String lottieLoading = 'assets/gen/lottie/loading.json';
   static const String montserratMontserratBlack = 'assets/fonts/Montserrat/Montserrat-Black.ttf';
   static const String montserratMontserratBlackItalic = 'assets/fonts/Montserrat/Montserrat-BlackItalic.ttf';

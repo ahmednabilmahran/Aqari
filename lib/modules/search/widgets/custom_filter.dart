@@ -50,7 +50,7 @@ class CustomFilter extends StatelessWidget {
                         height: 0.6.h,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: const Color(0XFFDBDBDB),
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                       SizedX.h2,
