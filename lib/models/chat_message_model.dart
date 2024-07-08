@@ -16,7 +16,7 @@ class ChatMessage {
       sessionId: map['session_id'] as int,
       sender: map['sender'] as String,
       message: map['message'] as String,
-      createdAt: DateTime.parse(map['created_at'] as String),
+      createdAt: DateTime.parse(map['created_at'] as String).toUtc(),
     );
   }
 

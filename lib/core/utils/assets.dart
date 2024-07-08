@@ -173,6 +173,10 @@ class Assets {
   /// assets/gen/icons/very_low_gauge.svg
   static const String genIconsVeryLowGauge = "assets/gen/icons/very_low_gauge.svg";
 
+  /// Assets for genIllustrationsTyping
+  /// assets/gen/illustrations/typing.json
+  static const String genIllustrationsTyping = "assets/gen/illustrations/typing.json";
+
   /// Assets for genImagesAboutUsCover
   /// assets/gen/images/about_us_cover.jpg
   static const String genImagesAboutUsCover = "assets/gen/images/about_us_cover.jpg";

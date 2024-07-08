@@ -62,7 +62,7 @@ class ChatApi {
       body: jsonEncode({
         'model': 'gpt-4o',
         'messages': messages,
-        'max_tokens': 150,
+        'max_tokens': 500,
         'temperature': 0.0,
       }),
     );
@@ -126,7 +126,10 @@ class ChatApi {
     ]);
 
     await supabaseClient.from('chat_sessions').update(
-      {'last_message_content': assistantMessage},
+      {
+        'last_message_content': assistantMessage,
+        'last_message_date': DateTime.now().toUtc().toIso8601String(),
+      },
     ).eq('session_id', sessionId);
   }
 

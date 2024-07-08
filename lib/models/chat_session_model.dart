@@ -7,6 +7,7 @@ class ChatSession {
     required this.title,
     required this.createdAt,
     required this.lastMessageContent,
+    required this.lastMessageDate,
   });
 
   /// ChatSession factory
@@ -15,8 +16,10 @@ class ChatSession {
       sessionId: map['session_id'] as int,
       userId: map['user_id'] as String,
       title: map['title'] as String,
-      createdAt: DateTime.parse(map['created_at'] as String),
+      createdAt: DateTime.parse(map['created_at'] as String).toUtc(),
       lastMessageContent: map['last_message_content'] as String,
+      lastMessageDate:
+          DateTime.parse(map['last_message_date'] as String).toUtc(),
     );
   }
 
@@ -34,4 +37,7 @@ class ChatSession {
 
   /// ChatSession factory
   final String lastMessageContent;
+
+  /// ChatSession factory
+  final DateTime lastMessageDate;
 }

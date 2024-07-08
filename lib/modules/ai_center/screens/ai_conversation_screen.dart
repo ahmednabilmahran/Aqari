@@ -1,13 +1,17 @@
+import 'dart:developer';
+
 import 'package:aqari/apis/chat_api.dart';
 import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
+import 'package:aqari/core/utils/snack_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
 import 'package:aqari/core/widgets/custom_text_field.dart';
 import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/main.dart';
+import 'package:aqari/models/chat_message_model.dart';
 import 'package:aqari/models/chat_session_model.dart';
 import 'package:aqari/modules/ai_center/controllers/create_new_chat/create_new_chat_cubit.dart';
 import 'package:aqari/modules/ai_center/controllers/get_messages/get_messages_cubit.dart';
@@ -325,14 +329,64 @@ class _AiConversationScreenState extends State<AiConversationScreen> {
   }
 
   Future<void> sendMessageOnTab(BuildContext context) async {
-    if (context.read<SendMessageCubit>().messageController.text.isNotEmpty) {
-      await context.read<SendMessageCubit>().sendMessage(
-            message: context.read<SendMessageCubit>().messageController.text,
-            sessionId: _currentChatSession!.sessionId,
+    final messageController =
+        context.read<SendMessageCubit>().messageController;
+    if (messageController.text.isNotEmpty) {
+      final userMessage = messageController.text;
+
+      // Generate a unique messageId and get the current timestamp
+      final userMessageId = DateTime.now().millisecondsSinceEpoch;
+      final timestamp =
+          DateTime.now().toUtc().subtract(const Duration(hours: 3));
+      log(timestamp.toString());
+
+      // Add user's message to the chat immediately
+      context.read<GetMessagesCubit>().addMessage(
+            ChatMessage(
+              messageId: userMessageId,
+              sessionId: _currentChatSession!.sessionId,
+              sender: 'user',
+              message: userMessage,
+              createdAt: timestamp,
+            ),
           );
 
-      if (context.mounted) {
-        context.read<SendMessageCubit>().messageController.clear();
+      // Clear the text field
+      messageController.clear();
+
+      // Generate a unique messageId for the loading placeholder
+      final loadingMessageId = userMessageId + 1;
+
+      // Add a loading placeholder for the assistant's response
+      final loadingMessage = ChatMessage(
+        messageId: loadingMessageId,
+        sessionId: _currentChatSession!.sessionId,
+        sender: 'assistant',
+        message: '...',
+        createdAt: timestamp,
+      );
+      context.read<GetMessagesCubit>().addMessage(loadingMessage);
+
+      // Send the message to the backend
+      try {
+        // ignore: lines_longer_than_80_chars
+        final assistantMessage =
+            await context.read<SendMessageCubit>().sendMessage(
+                  message: userMessage,
+                  sessionId: _currentChatSession!.sessionId,
+                );
+
+        // Update the loading message with the actual response
+        // ignore: use_build_context_synchronously
+        context.read<GetMessagesCubit>().updateMessage(
+              loadingMessage,
+              assistantMessage,
+            );
+      } catch (e) {
+        // Handle error
+        // ignore: use_build_context_synchronously
+        context.read<GetMessagesCubit>().removeMessage(loadingMessage);
+        SnackX.showSnackBar(message: 'Failed to send message: $e');
       }
     }
   }

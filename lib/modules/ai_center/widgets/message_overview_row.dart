@@ -78,7 +78,10 @@ class MessageOverviewRow extends StatelessWidget {
           Row(
             children: [
               Text(
-                chatSession.createdAt.toLocal().toCustomMainMessagesDate,
+                chatSession.lastMessageDate
+                    .toLocal()
+                    .add(const Duration(hours: 3))
+                    .toCustomChatAndNotificationsDate,
                 style: Theme.of(context).textTheme.bodySmall!.copyWith(
                       color: Colors.grey.withOpacity(0.9),
                       fontWeight: FontWeight.w500,

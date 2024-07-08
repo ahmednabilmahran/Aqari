@@ -63,6 +63,7 @@ flutter:
     - assets/gen/images/
     - assets/gen/icons/
     - assets/gen/lottie/
+    - assets/gen/illustrations/
     - assets/
     - assets/gen/
     - assets/fonts/

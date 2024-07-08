@@ -54,4 +54,25 @@ class GetMessagesCubit extends Cubit<GetMessagesState> {
       emit(GetMessagesErrorState(error: e.toString()));
     }
   }
+
+  /// addMessage
+  void addMessage(ChatMessage message) {
+    messageList.add(message);
+    emit(GetMessagesSuccessState(messages: List.from(messageList)));
+  }
+
+  /// updateMessage
+  void updateMessage(ChatMessage oldMessage, ChatMessage newMessage) {
+    final index = messageList.indexOf(oldMessage);
+    if (index != -1) {
+      messageList[index] = newMessage;
+      emit(GetMessagesSuccessState(messages: List.from(messageList)));
+    }
+  }
+
+  /// removeMessage
+  void removeMessage(ChatMessage message) {
+    messageList.remove(message);
+    emit(GetMessagesSuccessState(messages: List.from(messageList)));
+  }
 }

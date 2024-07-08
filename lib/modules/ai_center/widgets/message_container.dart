@@ -1,8 +1,10 @@
+import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/extensions.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/models/chat_message_model.dart';
 import 'package:flutter/material.dart';
+import 'package:lottie/lottie.dart';
 import 'package:sizer/sizer.dart';
 
 /// [MessageContainer]
@@ -38,44 +40,61 @@ class MessageContainer extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                Text(
-                  chatMessage.message,
-                  style: Theme.of(context).textTheme.displayMedium!.copyWith(
-                        height: 0.15.h,
-                        color: ThemeHelper.appColors.black,
-                        fontSize: 11.sp,
-                        fontWeight: FontWeight.w500,
-                      ),
-                ),
-                SizedX.h1,
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    if (chatMessage.sender != 'user')
+                if (chatMessage.message == '...')
+                  Lottie.asset(
+                    Assets.genIllustrationsTyping,
+                    height: 15.w,
+                    width: 15.w,
+                  )
+                else
+                  Text(
+                    chatMessage.message,
+                    style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                          height: 0.15.h,
+                          color: ThemeHelper.appColors.black,
+                          fontSize: 11.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
+                  ),
+                if (chatMessage.message == '...')
+                  const SizedBox()
+                else
+                  SizedX.h1,
+                if (chatMessage.message == '...')
+                  const SizedBox()
+                else
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      if (chatMessage.sender != 'user')
+                        Text(
+                          'AI Assistant • ',
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style:
+                              Theme.of(context).textTheme.bodySmall!.copyWith(
+                                    color: Theme.of(context)
+                                        .hintColor
+                                        .withOpacity(0.3),
+                                    fontSize: 9.sp,
+                                  ),
+                        )
+                      else
+                        SizedX.zero,
                       Text(
-                        'AI Assistant • ',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
+                        chatMessage.createdAt
+                            .toLocal()
+                            .add(const Duration(hours: 3))
+                            .toCustomChatAndNotificationsDate,
+                        textAlign: TextAlign.end,
                         style: Theme.of(context).textTheme.bodySmall!.copyWith(
                               color:
                                   Theme.of(context).hintColor.withOpacity(0.3),
                               fontSize: 9.sp,
                             ),
-                      )
-                    else
-                      SizedX.zero,
-                    Text(
-                      chatMessage.createdAt
-                          .toLocal()
-                          .toCustomChatAndNotificationsDate,
-                      textAlign: TextAlign.end,
-                      style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                            color: Theme.of(context).hintColor.withOpacity(0.3),
-                            fontSize: 9.sp,
-                          ),
-                    ),
-                  ],
-                ),
+                      ),
+                    ],
+                  ),
               ],
             ),
           ),
