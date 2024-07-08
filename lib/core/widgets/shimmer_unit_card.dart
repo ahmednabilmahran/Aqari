@@ -1,12 +1,11 @@
 import 'package:aqari/core/utils/theme_helper.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-/// UnitCard widget to display a unit with details.
-class UnitCard extends StatelessWidget {
+/// ShimmerUnitCard widget to display a unit with details.
+class ShimmerUnitCard extends StatelessWidget {
   /// Constructor
-  const UnitCard({
+  const ShimmerUnitCard({
     required this.imagePath,
     required this.title,
     required this.details,
@@ -40,9 +39,8 @@ class UnitCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CachedNetworkImage(
-            filterQuality: FilterQuality.high,
-            imageUrl: imagePath,
+          Image.asset(
+            imagePath,
             height: 18.75.h,
             width: double.infinity,
             fit: BoxFit.cover,

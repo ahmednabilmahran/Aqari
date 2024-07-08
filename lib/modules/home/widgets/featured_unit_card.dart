@@ -1,5 +1,6 @@
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -43,8 +44,9 @@ class FeaturedUnitCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            imagePath,
+          CachedNetworkImage(
+            filterQuality: FilterQuality.high,
+            imageUrl: imagePath,
             height: 18.75.h,
             width: double.infinity,
             fit: BoxFit.cover,

@@ -5,7 +5,6 @@ import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/core/widgets/custom_search_field.dart';
 import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/modules/app_layout/controllers/app_layout_cubit.dart';
-import 'package:aqari/modules/home/screens/home_screen.dart';
 import 'package:aqari/modules/search/controllers/custom_filter/custom_filter_cubit.dart';
 import 'package:aqari/modules/search/widgets/custom_filter.dart';
 import 'package:aqari/modules/search/widgets/search_result_header.dart';
@@ -129,4 +128,16 @@ class SearchScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+/// House
+class House {
+  /// Constructor
+  House({required this.image, required this.location});
+
+  /// image
+  final String image;
+
+  /// location
+  final String location;
 }

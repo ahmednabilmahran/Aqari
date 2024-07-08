@@ -21,7 +21,7 @@ class AppLayoutScreen extends StatelessWidget {
     ThemeHelper.changeSystemUiOverlayStyle(context);
 
     final screens = <Widget>[
-      HomeScreen(),
+      const HomeScreen(),
       SearchScreen(),
       const AiCenterScreen(),
       const ProfileScreen(),

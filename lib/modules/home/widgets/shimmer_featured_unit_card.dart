@@ -1,12 +1,12 @@
+import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
-/// UnitCard widget to display a unit with details.
-class UnitCard extends StatelessWidget {
+/// ShimmerFeaturedUnitCard widget to display a unit with details.
+class ShimmerFeaturedUnitCard extends StatelessWidget {
   /// Constructor
-  const UnitCard({
+  const ShimmerFeaturedUnitCard({
     required this.imagePath,
     required this.title,
     required this.details,
@@ -25,11 +25,14 @@ class UnitCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 53.w,
+      width: 62.5.w,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(4.sp),
+        border: Border.all(
+          color: Theme.of(context).primaryColor,
+        ),
         boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3),
@@ -40,31 +43,30 @@ class UnitCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CachedNetworkImage(
-            filterQuality: FilterQuality.high,
-            imageUrl: imagePath,
+          Image.asset(
+            imagePath,
             height: 18.75.h,
             width: double.infinity,
             fit: BoxFit.cover,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.symmetric(horizontal: 2.5.w, vertical: 1.2.h),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
                   style: Theme.of(context).textTheme.bodySmall!.copyWith(
-                        fontSize: 9.sp,
-                        fontWeight: FontWeight.w600,
+                        fontSize: 10.sp,
+                        fontWeight: FontWeight.w400,
                         color: ThemeHelper.appColors.black,
                       ),
                 ),
-                const SizedBox(height: 4),
+                SizedX.h0p5,
                 Text(
                   details,
                   style: Theme.of(context).textTheme.labelSmall!.copyWith(
-                        fontSize: 8.sp,
+                        fontSize: 8.5.sp,
                         fontWeight: FontWeight.w300,
                         color: ThemeHelper.appColors.black,
                         letterSpacing: 0,

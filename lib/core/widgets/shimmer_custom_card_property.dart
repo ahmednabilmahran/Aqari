@@ -1,16 +1,14 @@
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
 
 /// PropertyCard is used to manage the property card
-class PropertyCard extends StatelessWidget {
+class ShimmerPropertyCard extends StatelessWidget {
   /// Constructor
-  const PropertyCard({
-    required this.imagePath,
+  const ShimmerPropertyCard({
     required this.title,
     required this.location,
     required this.area,
@@ -18,9 +16,6 @@ class PropertyCard extends StatelessWidget {
     required this.bathrooms,
     super.key,
   });
-
-  /// Image URL
-  final String imagePath;
 
   /// Title
   final String title;
@@ -58,10 +53,8 @@ class PropertyCard extends StatelessWidget {
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(8.sp),
-            child: CachedNetworkImage(
-              imageUrl: imagePath,
-              placeholder: (context, url) => const CircularProgressIndicator(),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+            child: Image.asset(
+              Assets.genImagesTest1,
               height: double.infinity,
               width: 23.5.w,
               fit: BoxFit.cover,

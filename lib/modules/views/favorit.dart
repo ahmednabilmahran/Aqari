@@ -1,7 +1,7 @@
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
-import 'package:aqari/core/widgets/custom_card_property.dart';
+import 'package:aqari/core/widgets/shimmer_custom_card_property.dart';
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
@@ -68,7 +68,13 @@ class _FavoritesScreenState extends State<FavoritesScreen> {
               ListView.separated(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                itemBuilder: (context, index) => const PropertyCard(),
+                itemBuilder: (context, index) => const ShimmerPropertyCard(
+                  title: 'Title',
+                  location: 'Location',
+                  area: 'Area',
+                  bedrooms: 'Bedrooms',
+                  bathrooms: 'Bathrooms',
+                ),
                 separatorBuilder: (context, index) => SizedX.h2p5,
                 itemCount: 10,
               ), //Listview of  PropertyCard(),
