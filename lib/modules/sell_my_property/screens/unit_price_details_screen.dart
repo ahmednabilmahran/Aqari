@@ -1,4 +1,5 @@
-import 'package:aqari/apis/chat_api.dart';
+import 'package:aqari/apis/recommendation_api.dart';
+import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/excel_sheets_handler.dart';
 import 'package:aqari/core/utils/sized_x.dart';
@@ -78,7 +79,8 @@ class _UnitPriceDetailsScreenState extends State<UnitPriceDetailsScreen> {
       final referenceData = await ExcelSheetsHandler.readExcelData(
         'assets/data/ministry_buildings.xls',
       );
-      final recommendedPrice = await ChatApi().getRecommendedPrice(
+      final recommendedPrice =
+          await getIt<RecommendationApi>().getRecommendedPrice(
         unitDetailsPrompt,
         referenceData,
       );

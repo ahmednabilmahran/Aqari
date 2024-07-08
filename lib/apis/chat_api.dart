@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:aqari/main.dart';
 import 'package:aqari/models/chat_message_model.dart';
@@ -14,17 +13,6 @@ class ChatApi {
   /// [openAiApiKey] variable
   String openAiApiKey =
       'sk-proj-wVyvXST4h2uUvuF6GVilT3BlbkFJDfbkfZW5cXu8Tn50xZpw';
-
-  /// [createChatSession] method to create chat session
-  Future<void> createChatSession({
-    required String userId,
-    required String title,
-  }) async {
-    await supabaseClient.from('chat_sessions').insert({
-      'user_id': userId,
-      'title': title,
-    });
-  }
 
   /// [getAllChats] method to get all chats
   Future<List<ChatSession>> getAllChats(String userId) async {
@@ -74,38 +62,6 @@ class ChatApi {
     }
   }
 
-  /// [createNewChatSession] method to create new chat session
-  Future<void> createNewChatSession(String userId, String message) async {
-    final openAiResponse =
-        await sendMessageToOpenAi(message, requestTitle: true);
-    // ignore: avoid_dynamic_calls
-    final assistantMessage = openAiResponse['choices'][0]['message']['content'];
-    // ignore: avoid_dynamic_calls
-    final title = openAiResponse['choices'][1]['message']['content'];
-
-    final chatSessionResponse =
-        await supabaseClient.from('chat_sessions').insert({
-      'user_id': userId,
-      'last_message_content': assistantMessage,
-      'title': title,
-    }).select();
-
-    final sessionId = chatSessionResponse[0]['session_id'];
-
-    await supabaseClient.from('chat_messages').insert([
-      {
-        'session_id': sessionId,
-        'sender': 'user',
-        'message': message,
-      },
-      {
-        'session_id': sessionId,
-        'sender': 'assistant',
-        'message': assistantMessage,
-      },
-    ]);
-  }
-
   /// [sendMessage] method to send message
   Future<void> sendMessage(int sessionId, String userMessage) async {
     final openAiResponse = await sendMessageToOpenAi(userMessage);
@@ -142,65 +98,5 @@ class ChatApi {
 
     final data = response;
     return data.map<ChatMessage>(ChatMessage.fromMap).toList();
-  }
-
-  /// [truncatePrompt] method to truncate prompt
-  String truncatePrompt(String prompt, int maxLength) {
-    if (prompt.length > maxLength) {
-      return '${prompt.substring(0, maxLength)}...';
-    }
-    return prompt;
-  }
-
-  /// [getRecommendedPrice] method to get recommended price
-  Future<double> getRecommendedPrice(
-    String unitDetailsPrompt,
-    List<Map<String, dynamic>> referenceData,
-  ) async {
-    const maxPromptLength = 35000;
-    const maxReferenceDataEntries = 50;
-
-    final truncatedPrompt = truncatePrompt(unitDetailsPrompt, maxPromptLength);
-    final limitedReferenceData =
-        referenceData.take(maxReferenceDataEntries).toList();
-
-    final response = await http.post(
-      Uri.parse('https://api.openai.com/v1/chat/completions'),
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer $openAiApiKey',
-      },
-      body: jsonEncode({
-        'model': 'gpt-4o',
-        'messages': [
-          {
-            'role': 'system',
-            'content':
-                // ignore: lines_longer_than_80_chars
-                'You are an AI model that recommends real estate prices based on unit details and market data. Only respond with a number representing the recommended price and nothing else.',
-          },
-          {
-            'role': 'user',
-            'content':
-                // ignore: lines_longer_than_80_chars
-                '$truncatedPrompt Based on the following reference data, recommend a price: ${jsonEncode(limitedReferenceData)}',
-          },
-        ],
-        'max_tokens': 50,
-        'temperature': 0.0,
-      }),
-    );
-
-    if (response.statusCode == 200) {
-      final result = jsonDecode(response.body) as Map<String, dynamic>;
-      log('Recommended price response: $result');
-      final priceString =
-          // ignore: avoid_dynamic_calls
-          (result['choices'][0]['message']['content'] as String).trim();
-      final recommendedPrice = double.parse(priceString);
-      return recommendedPrice;
-    } else {
-      throw Exception('Failed to get recommended price: ${response.body}');
-    }
   }
 }
