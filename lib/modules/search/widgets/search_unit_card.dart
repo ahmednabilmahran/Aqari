@@ -1,6 +1,7 @@
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
@@ -11,7 +12,9 @@ class SearchUnitCard extends StatelessWidget {
   const SearchUnitCard({
     required this.imagePath,
     required this.title,
-    required this.details,
+    required this.location,
+    required this.areaMeter,
+    required this.rooms,
     super.key,
   });
 
@@ -21,8 +24,14 @@ class SearchUnitCard extends StatelessWidget {
   /// title
   final String title;
 
-  /// details
-  final String details;
+  /// location
+  final String location;
+
+  /// areaMeter
+  final num areaMeter;
+
+  /// rooms
+  final int rooms;
 
   @override
   Widget build(BuildContext context) {
@@ -42,11 +51,13 @@ class SearchUnitCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset(
-            imagePath,
+          CachedNetworkImage(
+            imageUrl: imagePath,
             height: 14.75.h,
             width: double.infinity,
             fit: BoxFit.cover,
+            memCacheHeight: 300,
+            memCacheWidth: 300,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
@@ -71,7 +82,7 @@ class SearchUnitCard extends StatelessWidget {
                     ),
                     SizedX.w1,
                     Text(
-                      '113 m²',
+                      '$areaMeter m²',
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 7.75.sp,
                             fontWeight: FontWeight.w500,
@@ -86,7 +97,7 @@ class SearchUnitCard extends StatelessWidget {
                     ),
                     SizedX.w1,
                     Text(
-                      '3',
+                      rooms.toString(),
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 7.75.sp,
                             fontWeight: FontWeight.w500,
@@ -105,7 +116,7 @@ class SearchUnitCard extends StatelessWidget {
                     ),
                     SizedX.w1,
                     Text(
-                      'New Cairo',
+                      location,
                       style: Theme.of(context).textTheme.titleSmall!.copyWith(
                             fontSize: 7.sp,
                             fontWeight: FontWeight.w300,

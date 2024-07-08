@@ -13,22 +13,20 @@ class StartSearchSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      heightFactor: 0.4.h,
-      child: Column(
-        children: [
-          SvgPicture.asset(Assets.genIconsStartSearch),
-          SizedX.h1,
-          Text(
-            S.of(context).initiatePropertySearch,
-            style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                  fontWeight: FontWeight.w400,
-                  fontSize: 12.sp,
-                  color: ThemeHelper.appColors.black,
-                ),
-          ),
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        SvgPicture.asset(Assets.genIconsStartSearch),
+        SizedX.h1,
+        Text(
+          S.of(context).initiatePropertySearch,
+          style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                fontWeight: FontWeight.w400,
+                fontSize: 12.sp,
+                color: ThemeHelper.appColors.black,
+              ),
+        ),
+      ],
     );
   }
 }

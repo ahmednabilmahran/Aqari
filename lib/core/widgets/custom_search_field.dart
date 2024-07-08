@@ -31,6 +31,7 @@ class CustomSearchField extends StatelessWidget {
     this.onTapOutside,
     this.autofillHints,
     this.hintStyle,
+    this.onFieldSubmitted,
   });
   final TextEditingController controller;
   final FocusNode? focusNode;
@@ -51,6 +52,8 @@ class CustomSearchField extends StatelessWidget {
   final void Function(PointerDownEvent)? onTapOutside;
   final Iterable<String>? autofillHints;
   final TextStyle? hintStyle;
+  // ignore: inference_failure_on_function_return_type
+  final Function(String)? onFieldSubmitted;
 
   @override
   Widget build(BuildContext context) {
@@ -67,6 +70,7 @@ class CustomSearchField extends StatelessWidget {
               },
           enabled: enabled,
           autofillHints: autofillHints,
+          onFieldSubmitted: onFieldSubmitted,
           validator: validator,
           focusNode: focusNode,
           autocorrect: false,

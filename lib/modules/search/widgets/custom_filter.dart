@@ -5,20 +5,29 @@ import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/core/widgets/custom_text_field.dart';
 import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/modules/search/controllers/custom_filter/custom_filter_cubit.dart';
+import 'package:aqari/modules/search/controllers/search/search_cubit.dart';
 import 'package:aqari/modules/search/widgets/custom_filter_radio_buttons.dart';
 import 'package:aqari/modules/search/widgets/custom_filter_static_section.dart';
 import 'package:aqari/modules/search/widgets/floor_selection_dropdown.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sizer/sizer.dart';
 
 /// CustomFilter
 class CustomFilter extends StatelessWidget {
   /// Constructor
-  const CustomFilter({required this.filterCubit, super.key});
+  const CustomFilter({
+    required this.filterCubit,
+    required this.searchCubit,
+    super.key,
+  });
 
   /// filterCubit
   final CustomFilterCubit filterCubit;
+
+  /// searchCubit
+  final SearchCubit searchCubit;
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +48,15 @@ class CustomFilter extends StatelessWidget {
               ),
               context: context,
               builder: (context) {
-                return BlocProvider.value(
-                  value: filterCubit,
+                return MultiBlocProvider(
+                  providers: [
+                    BlocProvider.value(
+                      value: filterCubit,
+                    ),
+                    BlocProvider.value(
+                      value: searchCubit,
+                    ),
+                  ],
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -50,7 +66,7 @@ class CustomFilter extends StatelessWidget {
                         height: 0.6.h,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Theme.of(context).primaryColor,
+                          color: const Color(0XFFDBDBDB),
                         ),
                       ),
                       SizedX.h2,
@@ -141,6 +157,11 @@ class CustomFilter extends StatelessWidget {
                                           filterCubit.updateMinArea(value);
                                           return null;
                                         },
+                                        keyboardType: TextInputType.number,
+                                        inputFormatters: [
+                                          FilteringTextInputFormatter
+                                              .digitsOnly,
+                                        ],
                                       );
                                     },
                                   ),
@@ -170,6 +191,11 @@ class CustomFilter extends StatelessWidget {
                                           filterCubit.updateMaxArea(value);
                                           return null;
                                         },
+                                        keyboardType: TextInputType.number,
+                                        inputFormatters: [
+                                          FilteringTextInputFormatter
+                                              .digitsOnly,
+                                        ],
                                       );
                                     },
                                   ),
@@ -195,7 +221,18 @@ class CustomFilter extends StatelessWidget {
                                           color: ThemeHelper.appColors.black,
                                         ),
                                     buttonText: S.of(context).reset,
-                                    onPressed: filterCubit.resetFilters,
+                                    onPressed: () async {
+                                      filterCubit.resetFilters();
+                                      final filterState = filterCubit.state;
+                                      await searchCubit.searchUnits(
+                                        searchCubit.searchController.text,
+                                        filterState,
+                                      );
+                                      Navigator.pop(
+                                        // ignore: use_build_context_synchronously
+                                        context,
+                                      );
+                                    },
                                   ),
                                 ),
                                 SizedX.w5,
@@ -213,6 +250,11 @@ class CustomFilter extends StatelessWidget {
                                         ),
                                     onPressed: () {
                                       filterCubit.applyFilters();
+                                      final filterState = filterCubit.state;
+                                      searchCubit.searchUnits(
+                                        searchCubit.searchController.text,
+                                        filterState,
+                                      );
                                       Navigator.pop(
                                         context,
                                       );
