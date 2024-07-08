@@ -13,22 +13,22 @@ class PropertyDetails extends StatelessWidget {
   /// PropertyDetails widget to manage the property details
   final unitProperties = [
     const CustomContainerDetailsProperty(
-      image: 'assets/gen/images/area.svg',
+      image: Assets.genIconsArea,
       title: '120',
       subTitle: 'M2',
     ),
     const CustomContainerDetailsProperty(
-      image: 'assets/gen/images/bed.svg',
+      image: Assets.genIconsBed,
       title: '3',
       subTitle: 'Bedrooms',
     ),
     const CustomContainerDetailsProperty(
-      image: 'assets/gen/images/bathtub.svg',
+      image: Assets.genIconsBathtub,
       title: '1',
       subTitle: 'Bathrooms',
     ),
     const CustomContainerDetailsProperty(
-      image: 'assets/gen/images/steair.svg',
+      image: Assets.genIconsSteair,
       title: '4',
       subTitle: 'Floors',
     ),
@@ -36,35 +36,35 @@ class PropertyDetails extends StatelessWidget {
   // ignore: public_member_api_docs
   final facilities = const [
     CustomContainerDetailsProperty(
-      image: 'assets/gen/images/car.svg',
+      image: Assets.genIconsCar,
       subTitle: 'car',
     ),
     CustomContainerDetailsProperty(
-      image: 'assets/gen/images/swim.svg',
+      image: Assets.genIconsSwim,
       subTitle: 'swimming',
     ),
     CustomContainerDetailsProperty(
-      image: 'assets/gen/images/exercise.svg',
+      image: Assets.genIconsExercise,
       subTitle: 'Gym & Fit',
     ),
     CustomContainerDetailsProperty(
-      image: 'assets/gen/images/restaurant.svg',
+      image: Assets.genIconsRestaurant,
       subTitle: 'resturant',
     ),
     CustomContainerDetailsProperty(
-      image: 'assets/gen/images/wifi.svg',
+      image: Assets.genIconsWifi,
       subTitle: 'Wi-Fi',
     ),
     CustomContainerDetailsProperty(
-      image: 'assets/gen/images/pets.svg',
+      image: Assets.genIconsPets,
       subTitle: 'pet center',
     ),
     CustomContainerDetailsProperty(
-      image: 'assets/gen/images/running.svg',
+      image: Assets.genIconsRunning,
       subTitle: 'Running',
     ),
     CustomContainerDetailsProperty(
-      image: 'assets/gen/images/laundry.svg',
+      image: Assets.genIconsLaundry,
       subTitle: 'laundry',
     ),
   ];
