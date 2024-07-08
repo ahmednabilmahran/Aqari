@@ -124,10 +124,16 @@ class _AiConversationScreenState extends State<AiConversationScreen> {
                   Expanded(
                     child: InkWell(
                       onTap: () {
-                        if (widget.isNewChat && _currentChatSession == null) {
-                          createNewChatSession(context);
-                        } else {
-                          sendMessageOnTab(context);
+                        if (context
+                            .read<SendMessageCubit>()
+                            .messageController
+                            .text
+                            .isNotEmpty) {
+                          if (widget.isNewChat && _currentChatSession == null) {
+                            createNewChatSession(context);
+                          } else {
+                            sendMessageOnTab(context);
+                          }
                         }
                       },
                       splashColor: Colors.transparent,
