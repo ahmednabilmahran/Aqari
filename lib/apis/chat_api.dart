@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:aqari/main.dart';
 import 'package:aqari/models/chat_message_model.dart';
@@ -56,7 +57,10 @@ class ChatApi {
     );
 
     if (response.statusCode == 200) {
-      return jsonDecode(response.body) as Map<String, dynamic>;
+      // Decode the response body to ensure proper encoding
+      final responseBody = utf8.decode(response.bodyBytes);
+      log(responseBody);
+      return jsonDecode(responseBody) as Map<String, dynamic>;
     } else {
       throw Exception('Failed to send message to OpenAI');
     }

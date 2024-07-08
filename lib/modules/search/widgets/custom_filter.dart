@@ -221,15 +221,17 @@ class CustomFilter extends StatelessWidget {
                                           color: ThemeHelper.appColors.black,
                                         ),
                                     buttonText: S.of(context).reset,
-                                    onPressed: () async {
-                                      filterCubit.resetFilters();
+                                    onPressed: () {
+                                      filterCubit
+                                        ..resetFilters()
+                                        ..updatePropertyType('');
                                       final filterState = filterCubit.state;
-                                      await searchCubit.searchUnits(
+
+                                      searchCubit.searchUnits(
                                         searchCubit.searchController.text,
                                         filterState,
                                       );
                                       Navigator.pop(
-                                        // ignore: use_build_context_synchronously
                                         context,
                                       );
                                     },
