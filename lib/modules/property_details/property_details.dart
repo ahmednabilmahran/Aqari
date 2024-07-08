@@ -1,11 +1,9 @@
+import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_button.dart';
 import 'package:aqari/modules/property_details/widget/custom_container_details_property.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../core/utils/assets.dart';
 
 /// PropertyDetails widget to manage the property details
 class PropertyDetails extends StatelessWidget {
@@ -13,28 +11,29 @@ class PropertyDetails extends StatelessWidget {
   PropertyDetails({super.key});
 
   /// PropertyDetails widget to manage the property details
-  final unitProperties = const [
-    CustomContainerDetailsProperty(
+  final unitProperties = [
+    const CustomContainerDetailsProperty(
       image: 'assets/gen/images/area.svg',
       title: '120',
       subTitle: 'M2',
     ),
-    CustomContainerDetailsProperty(
+    const CustomContainerDetailsProperty(
       image: 'assets/gen/images/bed.svg',
       title: '3',
       subTitle: 'Bedrooms',
     ),
-    CustomContainerDetailsProperty(
+    const CustomContainerDetailsProperty(
       image: 'assets/gen/images/bathtub.svg',
       title: '1',
       subTitle: 'Bathrooms',
     ),
-    CustomContainerDetailsProperty(
+    const CustomContainerDetailsProperty(
       image: 'assets/gen/images/steair.svg',
       title: '4',
       subTitle: 'Floors',
     ),
   ];
+  // ignore: public_member_api_docs
   final facilities = const [
     CustomContainerDetailsProperty(
       image: 'assets/gen/images/car.svg',
@@ -127,9 +126,7 @@ class PropertyDetails extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const Spacer(
-                        flex: 1,
-                      ),
+                      const Spacer(),
                       Align(
                         alignment: Alignment.topRight,
                         child: Container(
@@ -152,7 +149,7 @@ class PropertyDetails extends StatelessWidget {
                       ),
                     ],
                   ),
-                )
+                ),
               ],
             ),
             ListTile(
@@ -209,7 +206,8 @@ class PropertyDetails extends StatelessWidget {
                           child: ListView.separated(
                             shrinkWrap: true,
                             scrollDirection: Axis.horizontal,
-                            separatorBuilder: (ctx, _) => const SizedBox(width: 8),
+                            separatorBuilder: (ctx, _) =>
+                                const SizedBox(width: 8),
                             itemCount: unitProperties.length,
                             itemBuilder: (ctx, i) => unitProperties[i],
                           ),
@@ -232,7 +230,8 @@ class PropertyDetails extends StatelessWidget {
                           height: 200,
                           child: GridView.builder(
                             shrinkWrap: true,
-                            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
                               crossAxisCount: 2,
                               crossAxisSpacing: 8,
                               mainAxisSpacing: 4,
@@ -253,7 +252,8 @@ class PropertyDetails extends StatelessWidget {
                           child: Card(
                             elevation: 4,
                             child: Padding(
-                              padding: const EdgeInsets.symmetric(horizontal: 24),
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 24),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
@@ -302,20 +302,30 @@ class PropertyDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const SizedBox(height: 16),
-                          const Text('Gallery(6)', style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold)),
-                          Container(
+                          const Text(
+                            'Gallery(6)',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          SizedBox(
                             height: 300,
                             width: MediaQuery.of(context).size.width,
                             child: GridView.builder(
                               padding: EdgeInsets.zero,
                               shrinkWrap: true,
-                              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                              gridDelegate:
+                                  // ignore: lines_longer_than_80_chars
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
                                 crossAxisCount: 2,
                                 crossAxisSpacing: 8,
                                 mainAxisSpacing: 4,
                               ),
                               itemCount: 6,
-                              itemBuilder: (ctx, i) => Image.asset('assets/gen/images/test1.jpeg'),
+                              itemBuilder: (ctx, i) =>
+                                  Image.asset('assets/gen/images/test1.jpeg'),
                             ),
                           ),
                           const SizedBox(height: 16),
@@ -327,7 +337,8 @@ class PropertyDetails extends StatelessWidget {
                             child: Card(
                               elevation: 4,
                               child: Padding(
-                                padding: const EdgeInsets.symmetric(horizontal: 24),
+                                padding:
+                                    const EdgeInsets.symmetric(horizontal: 24),
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -346,18 +357,14 @@ class PropertyDetails extends StatelessWidget {
                                       height: 10,
                                     ),
                                     CustomButton(
-                                      onPressed: () {
-
-                                      },
+                                      onPressed: () {},
                                       buttonText: 'Chat With Us',
                                     ),
                                     const SizedBox(
                                       height: 10,
                                     ),
                                     CustomButton(
-                                      onPressed: () {
-
-                                      },
+                                      onPressed: () {},
                                       buttonText: 'Call Us',
                                       fillBackgroundColor: Colors.white54,
                                       fillTextColor: Colors.black,
@@ -373,7 +380,7 @@ class PropertyDetails extends StatelessWidget {
                         ],
                       ),
                     ),
-                  )
+                  ),
                 ],
               ),
             ),

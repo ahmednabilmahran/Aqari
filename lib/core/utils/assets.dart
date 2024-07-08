@@ -25,6 +25,22 @@ class Assets {
   /// assets/gen/icons/all_set.svg
   static const String genIconsAllSet = "assets/gen/icons/all_set.svg";
 
+  /// Assets for genIconsArea
+  /// assets/gen/icons/area.svg
+  static const String genIconsArea = "assets/gen/icons/area.svg";
+
+  /// Assets for genIconsBathtub
+  /// assets/gen/icons/bathtub.svg
+  static const String genIconsBathtub = "assets/gen/icons/bathtub.svg";
+
+  /// Assets for genIconsBed
+  /// assets/gen/icons/bed.svg
+  static const String genIconsBed = "assets/gen/icons/bed.svg";
+
+  /// Assets for genIconsCar
+  /// assets/gen/icons/car.svg
+  static const String genIconsCar = "assets/gen/icons/car.svg";
+
   /// Assets for genIconsDarkUnvalidatedTextIcon
   /// assets/gen/icons/dark_unvalidated_text_icon.svg
   static const String genIconsDarkUnvalidatedTextIcon = "assets/gen/icons/dark_unvalidated_text_icon.svg";
@@ -36,6 +52,10 @@ class Assets {
   /// Assets for genIconsDone
   /// assets/gen/icons/done.svg
   static const String genIconsDone = "assets/gen/icons/done.svg";
+
+  /// Assets for genIconsExercise
+  /// assets/gen/icons/exercise.svg
+  static const String genIconsExercise = "assets/gen/icons/exercise.svg";
 
   /// Assets for genIconsExplore
   /// assets/gen/icons/explore.svg
@@ -72,6 +92,10 @@ class Assets {
   /// Assets for genIconsIconGoogle
   /// assets/gen/icons/iconGoogle.svg
   static const String genIconsIconGoogle = "assets/gen/icons/iconGoogle.svg";
+
+  /// Assets for genIconsLaundry
+  /// assets/gen/icons/laundry.svg
+  static const String genIconsLaundry = "assets/gen/icons/laundry.svg";
 
   /// Assets for genIconsLocationPin
   /// assets/gen/icons/location_pin.svg
@@ -113,13 +137,25 @@ class Assets {
   /// assets/gen/icons/outlined_location_pin.svg
   static const String genIconsOutlinedLocationPin = "assets/gen/icons/outlined_location_pin.svg";
 
+  /// Assets for genIconsPets
+  /// assets/gen/icons/pets.svg
+  static const String genIconsPets = "assets/gen/icons/pets.svg";
+
   /// Assets for genIconsProfile
   /// assets/gen/icons/profile.svg
   static const String genIconsProfile = "assets/gen/icons/profile.svg";
 
+  /// Assets for genIconsRestaurant
+  /// assets/gen/icons/restaurant.svg
+  static const String genIconsRestaurant = "assets/gen/icons/restaurant.svg";
+
   /// Assets for genIconsRooms
   /// assets/gen/icons/rooms.svg
   static const String genIconsRooms = "assets/gen/icons/rooms.svg";
+
+  /// Assets for genIconsRunning
+  /// assets/gen/icons/running.svg
+  static const String genIconsRunning = "assets/gen/icons/running.svg";
 
   /// Assets for genIconsSearch
   /// assets/gen/icons/search.svg
@@ -144,6 +180,14 @@ class Assets {
   /// Assets for genIconsStartSearch
   /// assets/gen/icons/start_search.svg
   static const String genIconsStartSearch = "assets/gen/icons/start_search.svg";
+
+  /// Assets for genIconsSteair
+  /// assets/gen/icons/steair.svg
+  static const String genIconsSteair = "assets/gen/icons/steair.svg";
+
+  /// Assets for genIconsSwim
+  /// assets/gen/icons/swim.svg
+  static const String genIconsSwim = "assets/gen/icons/swim.svg";
 
   /// Assets for genIconsUnshowPasswordIcon
   /// assets/gen/icons/unshow_password_icon.svg
@@ -173,6 +217,10 @@ class Assets {
   /// assets/gen/icons/very_low_gauge.svg
   static const String genIconsVeryLowGauge = "assets/gen/icons/very_low_gauge.svg";
 
+  /// Assets for genIconsWifi
+  /// assets/gen/icons/wifi.svg
+  static const String genIconsWifi = "assets/gen/icons/wifi.svg";
+
   /// Assets for genIllustrationsTyping
   /// assets/gen/illustrations/typing.json
   static const String genIllustrationsTyping = "assets/gen/illustrations/typing.json";
@@ -188,6 +236,18 @@ class Assets {
   /// Assets for genImagesAiRecommendationSystem
   /// assets/gen/images/ai_recommendation_system.png
   static const String genImagesAiRecommendationSystem = "assets/gen/images/ai_recommendation_system.png";
+
+  /// Assets for genImagesAreaIcon
+  /// assets/gen/images/area_icon.png
+  static const String genImagesAreaIcon = "assets/gen/images/area_icon.png";
+
+  /// Assets for genImagesBathtub
+  /// assets/gen/images/bathtub.png
+  static const String genImagesBathtub = "assets/gen/images/bathtub.png";
+
+  /// Assets for genImagesBed
+  /// assets/gen/images/bed.png
+  static const String genImagesBed = "assets/gen/images/bed.png";
 
   /// Assets for genImagesFinishAddStateImage
   /// assets/gen/images/finish-add-state_image.png
@@ -256,6 +316,10 @@ class Assets {
   /// Assets for genImagesThankIdVerfication
   /// assets/gen/images/thank_id_verfication.png
   static const String genImagesThankIdVerfication = "assets/gen/images/thank_id_verfication.png";
+
+  /// Assets for genImagesVector
+  /// assets/gen/images/Vector.png
+  static const String genImagesVector = "assets/gen/images/Vector.png";
 
   /// Assets for genLottieLoading
   /// assets/gen/lottie/loading.json

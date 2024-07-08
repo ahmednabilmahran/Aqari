@@ -46,6 +46,8 @@ class UnitCard extends StatelessWidget {
             height: 18.75.h,
             width: double.infinity,
             fit: BoxFit.cover,
+            memCacheHeight: 300,
+            memCacheWidth: 300,
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),

@@ -1,8 +1,10 @@
+import 'package:aqari/apis/units_api.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/modules/ai_center/screens/ai_center_screen.dart';
 import 'package:aqari/modules/app_layout/controllers/app_layout_cubit.dart';
+import 'package:aqari/modules/home/controllers/units/units_cubit.dart';
 import 'package:aqari/modules/home/screens/home_screen.dart';
 import 'package:aqari/modules/profile/screens/profile_screen.dart';
 import 'package:aqari/modules/search/screens/search_screen.dart';
@@ -27,8 +29,17 @@ class AppLayoutScreen extends StatelessWidget {
       const ProfileScreen(),
     ];
 
-    return BlocProvider(
-      create: (context) => AppLayoutCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AppLayoutCubit(),
+        ),
+        BlocProvider(
+          create: (context) => UnitsCubit(
+            UnitsApi(),
+          )..fetchUnits(),
+        ),
+      ],
       child: BlocBuilder<AppLayoutCubit, int>(
         builder: (context, state) {
           return Scaffold(

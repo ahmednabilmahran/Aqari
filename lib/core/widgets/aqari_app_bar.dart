@@ -2,13 +2,11 @@ import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/app_values.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/main.dart';
-import 'package:aqari/modules/views/favorit.dart';
+import 'package:aqari/modules/property_details/property_details.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../modules/property_details/property_details.dart';
 
 /// this class is the custom app bar
 
@@ -48,7 +46,7 @@ class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute<void>(
-                builder: (context) =>  PropertyDetails(),
+                builder: (context) => PropertyDetails(),
               ),
             );
           },

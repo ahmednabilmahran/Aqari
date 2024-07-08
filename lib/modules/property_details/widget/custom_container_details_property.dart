@@ -12,8 +12,13 @@ class CustomContainerDetailsProperty extends StatelessWidget {
     this.subTitle,
   });
 
+  /// Image URL
   final String? image;
+
+  /// Title
   final String? title;
+
+  /// Subtitle
   final String? subTitle;
 
   @override

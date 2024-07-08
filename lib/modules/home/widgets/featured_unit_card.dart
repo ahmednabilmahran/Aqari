@@ -50,6 +50,8 @@ class FeaturedUnitCard extends StatelessWidget {
             height: 18.75.h,
             width: double.infinity,
             fit: BoxFit.cover,
+            memCacheHeight: 300,
+            memCacheWidth: 300,
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 2.5.w, vertical: 1.2.h),
