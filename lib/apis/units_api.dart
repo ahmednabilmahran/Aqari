@@ -86,4 +86,24 @@ class UnitsApi {
 
     return response.map<UnitModel>(UnitModel.fromJson).toList();
   }
+
+  /// getFavoriteUnits method
+  Future<List<UnitModel>> getFavoriteUnits(String userId) async {
+    // Step 1: Fetch Favorite Unit IDs
+    final unitIdResponse = await supabaseClient
+        .from('favorites')
+        .select('unit_id')
+        .eq('user_id', userId);
+
+    // Extract the unit IDs
+    final unitIds = unitIdResponse.map((e) => e['unit_id']).toList();
+
+    // Step 2: Use Unit IDs to Fetch Units
+    final unitResponse = await supabaseClient
+        .from('units')
+        .select()
+        .inFilter('unit_id', unitIds);
+
+    return unitResponse.map<UnitModel>(UnitModel.fromJson).toList();
+  }
 }

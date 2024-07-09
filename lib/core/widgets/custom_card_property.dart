@@ -114,7 +114,7 @@ class PropertyCard extends StatelessWidget {
                       ),
                       SizedX.w1,
                       Text(
-                        area,
+                        '$area m²',
                         style: Theme.of(context).textTheme.titleSmall!.copyWith(
                               fontSize: 8.5.sp,
                               fontWeight: FontWeight.w500,
@@ -147,64 +147,3 @@ class PropertyCard extends StatelessWidget {
     );
   }
 }
-
-
-//  Align(
-//                       alignment: Alignment.topRight,
-//                       child: Container(
-//                         height: 30.sp,
-//                         width: 30.sp,
-//                         decoration: BoxDecoration(
-//                           borderRadius: BorderRadius.circular(300.sp),
-//                           color: Colors.white,
-
-//                         ),
-//                         child: IconButton(
-//                           onPressed: () {}, *//* {
-//                             showModalBottomSheet(
-//                               backgroundColor: Colors.white,
-//                               context: context,
-//                               builder: (context) {
-//                                 return Padding(
-//        padding: const EdgeInsets.symmetric(vertical: 16,horizontal: 32),
-//                                   child: Column(
-//                                     mainAxisSize: MainAxisSize.min,
-//                                     children: [
-//                                       const Text(
-//                                         'Remove Property',
-//                                         style: TextStyle(
-//                                           fontSize: 20,
-//                                           fontWeight: FontWeight.bold,
-//                                         ),
-//                                       ),
-//                                       SizedX.h2,
-//                                       const PropertyCard(),
-//                                       SizedX.h2,
-//                                       CustomButton(
-//                                         buttonText: 'Yes, Remove',
-//                                         onPressed: () {
-//                                         },
-//                                       ),
-//                                       SizedX.h2,
-//                                       CustomButton(
-//                                         buttonText: 'No, Cancel',
-//                                         fillTextColor: Colors.black,
-//                                         fillBackgroundColor: Colors.white,
-//                                         onPressed: () {
-//                                           Navigator.pop(context);
-//                                         },
-//                                       ),
-//                                       SizedX.h2,
-//                                     ],
-//                                   ),
-//                                 );
-//                               },
-//                             );
-//                           },*//*
-//                           icon: Icon(
-//                             Icons.favorite,
-//                             color: Theme.of(context).primaryColor,
-//                           ),
-//                         ),
-//                       ),
-//                 ),

@@ -2,7 +2,7 @@ import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/app_values.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/main.dart';
-import 'package:aqari/modules/property_details/property_details.dart';
+import 'package:aqari/modules/favorites/screens/favorites_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
@@ -46,7 +46,7 @@ class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
           onPressed: () {
             Navigator.of(context).push(
               MaterialPageRoute<void>(
-                builder: (context) => PropertyDetails(),
+                builder: (context) => const FavoritesScreen(),
               ),
             );
           },
