@@ -1,9 +1,11 @@
 import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/app_strings.dart';
 import 'package:aqari/models/chat_session_model.dart';
+import 'package:aqari/models/unit_model.dart';
 import 'package:aqari/modules/ai_center/screens/ai_chat_screen.dart';
 import 'package:aqari/modules/ai_center/screens/ai_conversation_screen.dart';
 import 'package:aqari/modules/app_layout/screens/app_layout_screen.dart';
+import 'package:aqari/modules/explore_more_units/explore_more_units_screen.dart';
 import 'package:aqari/modules/identity_verification/screens/identity_verification_screen.dart';
 import 'package:aqari/modules/login/screens/login_screen.dart';
 import 'package:aqari/modules/notifications/screens/notification_screen.dart';
@@ -186,6 +188,16 @@ class AppRoutes {
             );
           },
           settings: const RouteSettings(name: Routes.aiConversationRoute),
+        );
+
+      case Routes.exploreUnits:
+        return MaterialPageRoute(
+          builder: (context) {
+            return ExploreMoreUnitsScreen(
+              units: routeSettings.arguments! as List<UnitModel>,
+            );
+          },
+          settings: const RouteSettings(name: Routes.exploreUnits),
         );
 
       default:

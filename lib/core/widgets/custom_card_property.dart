@@ -60,7 +60,8 @@ class PropertyCard extends StatelessWidget {
             borderRadius: BorderRadius.circular(8.sp),
             child: CachedNetworkImage(
               imageUrl: imagePath,
-              placeholder: (context, url) => const CircularProgressIndicator(),
+              placeholder: (context, url) =>
+                  const CircularProgressIndicator.adaptive(),
               errorWidget: (context, url, error) => const Icon(Icons.error),
               height: double.infinity,
               width: 23.5.w,

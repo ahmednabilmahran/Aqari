@@ -1,7 +1,9 @@
 import 'package:aqari/apis/recommendation_api.dart';
+import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/excel_sheets_handler.dart';
+import 'package:aqari/core/utils/loading.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/snack_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
@@ -143,6 +145,8 @@ class _UnitPriceDetailsScreenState extends State<UnitPriceDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final dialogContext = context;
+
     return BlocProvider.value(
       value: widget.unitDetailsCubit,
       child: Scaffold(
@@ -151,169 +155,190 @@ class _UnitPriceDetailsScreenState extends State<UnitPriceDetailsScreen> {
           leading: CancelButton(),
         ),
         backgroundColor: Theme.of(context).splashColor,
-        body: Column(
+        body: Stack(
           children: [
-            Divider(
-              color: ThemeHelper.appColors.black.withOpacity(0.1),
-              thickness: 1,
-            ),
-            Expanded(
-              child: SingleChildScrollView(
-                child: CustomPadding(
-                  child: BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
-                    builder: (context, state) {
-                      return Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            S.of(context).almostFinishedCompleteTheListing,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleLarge!
-                                .copyWith(
-                                  color: ThemeHelper.appColors.black,
-                                  fontSize: 21.sp,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 0,
-                                ),
-                            maxLines: 3,
-                          ),
-                          SizedX.h3,
-                          CustomTextField(
-                            controller: state.sellPriceController,
-                            contentPaddingVertical: 1.75.h,
-                            hintText: S.of(context).ex100000,
-                            label: S.of(context).sellPrice,
-                            labelTextStyle: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                  color: ThemeHelper.appColors.black,
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 0.5,
-                                ),
-                            suffixWidget: Text(
-                              S.of(context).egp,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headlineMedium!
-                                  .copyWith(
-                                    fontWeight: FontWeight.w600,
-                                    color: ThemeHelper.appColors.black,
-                                    letterSpacing: 0,
-                                  ),
-                            ),
-                            borderRadius: 13.sp,
-                            fillColor: const Color(0XFFF4F4F4),
-                            hintStyle: Theme.of(context)
-                                .textTheme
-                                .labelMedium!
-                                .copyWith(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 10.sp,
-                                  color: ThemeHelper.appColors.black,
-                                ),
-                            keyboardType: TextInputType.number,
-                            inputFormatters: [
-                              FilteringTextInputFormatter.digitsOnly,
-                              ThousandsSeparatorInputFormatter(),
-                            ],
-                            onChanged: (value) {
-                              _updateGauge();
-                              return null;
-                            },
-                          ),
-                          SizedX.h2,
-                          Text(
-                            S.of(context).aqarisRecommendedPrice,
-                            style: Theme.of(context)
-                                .textTheme
-                                .titleMedium!
-                                .copyWith(
-                                  color: ThemeHelper.appColors.black,
-                                  fontSize: 15.sp,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 0.5,
-                                ),
-                          ),
-                          Text(
-                            S
-                                .of(context)
-                                // ignore: lines_longer_than_80_chars
-                                .automaticallyGeneratedPriceBasedOnYourUnitsSpecificationsUsingAn,
-                            style: Theme.of(context)
-                                .textTheme
-                                .labelMedium!
-                                .copyWith(
-                                  fontWeight: FontWeight.w300,
-                                  fontSize: 10.5.sp,
-                                  color: ThemeHelper.appColors.black,
-                                  letterSpacing: 0,
-                                ),
-                          ),
-                          SizedX.h1,
-                          if (state.isLoading) SizedX.h2 else const SizedBox(),
-                          if (state.isLoading)
-                            const Center(
-                              child: CircularProgressIndicator.adaptive(),
-                            )
-                          else
-                            CustomTextField(
-                              controller: state.recommendedPriceController,
-                              contentPaddingVertical: 1.75.h,
-                              hintText: S.of(context).ex100000,
-                              enabled: false,
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headlineMedium!
-                                  .copyWith(
-                                    color: ThemeHelper.appColors.black
-                                        .withOpacity(0.5),
-                                  ),
-                              suffixWidget: Text(
-                                S.of(context).egp,
+            Column(
+              children: [
+                Divider(
+                  color: ThemeHelper.appColors.black.withOpacity(0.1),
+                  thickness: 1,
+                ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: CustomPadding(
+                      child: BlocBuilder<UnitDetailsCubit, UnitDetailsState>(
+                        builder: (context, state) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                S.of(context).almostFinishedCompleteTheListing,
                                 style: Theme.of(context)
                                     .textTheme
-                                    .headlineMedium!
+                                    .titleLarge!
                                     .copyWith(
+                                      color: ThemeHelper.appColors.black,
+                                      fontSize: 21.sp,
                                       fontWeight: FontWeight.w600,
-                                      color: ThemeHelper.appColors.black
-                                          .withOpacity(0.5),
+                                      letterSpacing: 0,
+                                    ),
+                                maxLines: 3,
+                              ),
+                              SizedX.h3,
+                              CustomTextField(
+                                controller: state.sellPriceController,
+                                contentPaddingVertical: 1.75.h,
+                                hintText: S.of(context).ex100000,
+                                label: S.of(context).sellPrice,
+                                labelTextStyle: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                      color: ThemeHelper.appColors.black,
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 0.5,
+                                    ),
+                                suffixWidget: Text(
+                                  S.of(context).egp,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium!
+                                      .copyWith(
+                                        fontWeight: FontWeight.w600,
+                                        color: ThemeHelper.appColors.black,
+                                        letterSpacing: 0,
+                                      ),
+                                ),
+                                borderRadius: 13.sp,
+                                fillColor: const Color(0XFFF4F4F4),
+                                hintStyle: Theme.of(context)
+                                    .textTheme
+                                    .labelMedium!
+                                    .copyWith(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 10.sp,
+                                      color: ThemeHelper.appColors.black,
+                                    ),
+                                keyboardType: TextInputType.number,
+                                inputFormatters: [
+                                  FilteringTextInputFormatter.digitsOnly,
+                                  ThousandsSeparatorInputFormatter(),
+                                ],
+                                onChanged: (value) {
+                                  _updateGauge();
+                                  return null;
+                                },
+                              ),
+                              SizedX.h2,
+                              Text(
+                                S.of(context).aqarisRecommendedPrice,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium!
+                                    .copyWith(
+                                      color: ThemeHelper.appColors.black,
+                                      fontSize: 15.sp,
+                                      fontWeight: FontWeight.w600,
+                                      letterSpacing: 0.5,
+                                    ),
+                              ),
+                              Text(
+                                S
+                                    .of(context)
+                                    // ignore: lines_longer_than_80_chars
+                                    .automaticallyGeneratedPriceBasedOnYourUnitsSpecificationsUsingAn,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelMedium!
+                                    .copyWith(
+                                      fontWeight: FontWeight.w300,
+                                      fontSize: 10.5.sp,
+                                      color: ThemeHelper.appColors.black,
                                       letterSpacing: 0,
                                     ),
                               ),
-                              borderRadius: 13.sp,
-                              fillColor: const Color(0XFFF4F4F4),
-                              hintStyle: Theme.of(context)
-                                  .textTheme
-                                  .labelMedium!
-                                  .copyWith(
-                                    fontWeight: FontWeight.w300,
-                                    fontSize: 10.sp,
-                                    color: ThemeHelper.appColors.black,
+                              SizedX.h1,
+                              if (state.isLoading)
+                                SizedX.h2
+                              else
+                                const SizedBox(),
+                              if (state.isLoading)
+                                const Center(
+                                  child: CircularProgressIndicator.adaptive(),
+                                )
+                              else
+                                CustomTextField(
+                                  controller: state.recommendedPriceController,
+                                  contentPaddingVertical: 1.75.h,
+                                  hintText: S.of(context).ex100000,
+                                  enabled: false,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineMedium!
+                                      .copyWith(
+                                        color: ThemeHelper.appColors.black
+                                            .withOpacity(0.5),
+                                      ),
+                                  suffixWidget: Text(
+                                    S.of(context).egp,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineMedium!
+                                        .copyWith(
+                                          fontWeight: FontWeight.w600,
+                                          color: ThemeHelper.appColors.black
+                                              .withOpacity(0.5),
+                                          letterSpacing: 0,
+                                        ),
                                   ),
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly,
-                                ThousandsSeparatorInputFormatter(),
-                              ],
-                            ),
-                          SizedX.h2,
-                          if (state.isLoading)
-                            const SizedBox()
-                          else
-                            CustomPriceGauge(
-                              gaugeIcon: _gaugeIcon,
-                              gaugeLabel: _gaugeLabel,
-                            ),
-                          SizedX.h12,
-                        ],
-                      );
-                    },
+                                  borderRadius: 13.sp,
+                                  fillColor: const Color(0XFFF4F4F4),
+                                  hintStyle: Theme.of(context)
+                                      .textTheme
+                                      .labelMedium!
+                                      .copyWith(
+                                        fontWeight: FontWeight.w300,
+                                        fontSize: 10.sp,
+                                        color: ThemeHelper.appColors.black,
+                                      ),
+                                  keyboardType: TextInputType.number,
+                                  inputFormatters: [
+                                    FilteringTextInputFormatter.digitsOnly,
+                                    ThousandsSeparatorInputFormatter(),
+                                  ],
+                                ),
+                              SizedX.h2,
+                              if (state.isLoading)
+                                const SizedBox()
+                              else
+                                CustomPriceGauge(
+                                  gaugeIcon: _gaugeIcon,
+                                  gaugeLabel: _gaugeLabel,
+                                ),
+                              SizedX.h12,
+                            ],
+                          );
+                        },
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
+            ),
+            BlocListener<UnitDetailsCubit, UnitDetailsState>(
+              listener: (context, state) {
+                if (state.isLoading) {
+                  loading(dialogContext);
+                } else if (state.success) {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    Routes.appLayoutRoute,
+                    (route) => false,
+                  );
+                }
+              },
+              child: Container(),
             ),
           ],
         ),
@@ -356,7 +381,21 @@ class _UnitPriceDetailsScreenState extends State<UnitPriceDetailsScreen> {
                     builder: (context, state) {
                       return CustomButton(
                         buttonSize: Size(23.w, 5.25.h),
-                        onPressed: () {},
+                        onPressed: () async {
+                          if (context
+                              .read<UnitDetailsCubit>()
+                              .validatePricingInputs()) {
+                            // Adding the unit
+                            await context
+                                .read<UnitDetailsCubit>()
+                                .createNewUnit();
+                          } else {
+                            // Show error message
+                            SnackX.showSnackBar(
+                              message: S.of(context).pleaseFillAllTheFields,
+                            );
+                          }
+                        },
                         buttonText: S.of(context).next,
                       );
                     },

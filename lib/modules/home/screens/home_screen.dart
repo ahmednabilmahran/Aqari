@@ -298,7 +298,13 @@ class HomeScreen extends StatelessWidget {
                             const Spacer(),
                             CustomButton(
                               buttonSize: Size(22.w, 4.1.h),
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context,
+                                  Routes.exploreUnits,
+                                  arguments: state.allUnits,
+                                );
+                              },
                               buttonText: S.of(context).viewAll,
                               borderRadius: 6.sp,
                               labelText: Theme.of(context)

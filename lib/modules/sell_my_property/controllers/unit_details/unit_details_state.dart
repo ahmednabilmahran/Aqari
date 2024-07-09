@@ -27,6 +27,7 @@ class UnitDetailsState {
     required this.isLoading,
     this.selectedLocation,
     this.selectedLocationMapUrl,
+    this.success = false,
   });
 
   /// Selected Category
@@ -98,6 +99,9 @@ class UnitDetailsState {
   /// Is Loading
   final bool isLoading;
 
+  /// success
+  final bool success;
+
   /// CopyWith method
   UnitDetailsState copyWith({
     String? selectedCategory,
@@ -123,6 +127,7 @@ class UnitDetailsState {
     TextEditingController? recommendedPriceController,
     TextEditingController? areaController,
     bool? isLoading,
+    bool? success,
   }) {
     return UnitDetailsState(
       selectedCategory: selectedCategory ?? this.selectedCategory,
@@ -154,6 +159,7 @@ class UnitDetailsState {
           recommendedPriceController ?? this.recommendedPriceController,
       areaController: areaController ?? this.areaController,
       isLoading: isLoading ?? this.isLoading,
+      success: success ?? this.success,
     );
   }
 }

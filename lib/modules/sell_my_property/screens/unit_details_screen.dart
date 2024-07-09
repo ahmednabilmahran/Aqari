@@ -1,4 +1,6 @@
+import 'package:aqari/apis/units_api.dart';
 import 'package:aqari/config/routes/app_routes.dart';
+import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/utils/snack_x.dart';
 import 'package:aqari/core/utils/theme_helper.dart';
@@ -46,7 +48,9 @@ class UnitDetailsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => UnitDetailsCubit()..getPermissions(),
+      create: (_) => UnitDetailsCubit(
+        getIt<UnitsApi>(),
+      )..getPermissions(),
       child: Scaffold(
         appBar: const CustomAppBar(
           titleText: '',

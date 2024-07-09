@@ -20,4 +20,5 @@ class Routes {
   static const String unitAddressDetails = '/UnitAddressDetails';
   static const String unitGalleryDetails = '/UnitGalleryDetails';
   static const String unitPriceDetails = '/UnitPriceDetails';
+  static const String exploreUnits = '/ExploreUnits';
 }
