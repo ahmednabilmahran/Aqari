@@ -2,6 +2,7 @@ import 'package:aqari/core/utils/sized_x.dart';
 import 'package:aqari/core/widgets/custom_app_bar.dart';
 import 'package:aqari/core/widgets/custom_card_property.dart';
 import 'package:aqari/models/unit_model.dart';
+import 'package:aqari/modules/property_details/property_details.dart';
 import 'package:flutter/material.dart';
 
 /// ExploreMoreUnitsScreen is used to manage the favorites screen
@@ -29,13 +30,25 @@ class ExploreMoreUnitsScreen extends StatelessWidget {
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       final unit = units[index];
-                      return PropertyCard(
-                        imagePath: unit.mainImageUrl,
-                        title: unit.title,
-                        location: unit.city,
-                        area: unit.areaMeter.toString(),
-                        bedrooms: unit.bedrooms.toString(),
-                        bathrooms: unit.bathrooms.toString(),
+                      return InkWell(
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                              builder: (context) => PropertyDetails(
+                                unit: unit,
+                              ),
+                            ),
+                          );
+                        },
+                        child: PropertyCard(
+                          imagePath: unit.mainImageUrl,
+                          title: unit.title,
+                          location: unit.city,
+                          area: unit.areaMeter.toString(),
+                          bedrooms: unit.bedrooms.toString(),
+                          bathrooms: unit.bathrooms.toString(),
+                        ),
                       );
                     },
                     separatorBuilder: (context, index) => SizedX.h2p5,

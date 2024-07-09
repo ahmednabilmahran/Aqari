@@ -13,6 +13,7 @@ import 'package:aqari/modules/app_layout/controllers/app_layout_cubit.dart';
 import 'package:aqari/modules/home/controllers/units/units_cubit.dart';
 import 'package:aqari/modules/home/widgets/featured_unit_card.dart';
 import 'package:aqari/modules/home/widgets/home_screen_shimmer.dart';
+import 'package:aqari/modules/property_details/property_details.dart';
 import 'package:aqari/modules/search/widgets/custom_filter_static_section.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -61,24 +62,38 @@ class HomeScreen extends StatelessWidget {
                                   children: [
                                     Column(
                                       children: [
-                                        Container(
-                                          decoration: BoxDecoration(
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color: Theme.of(context)
-                                                  .primaryColor,
-                                              width: 2,
+                                        InkWell(
+                                          onTap: () {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute<void>(
+                                                builder: (context) =>
+                                                    PropertyDetails(
+                                                  unit: unit,
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              shape: BoxShape.circle,
+                                              border: Border.all(
+                                                color: Theme.of(context)
+                                                    .primaryColor,
+                                                width: 2,
+                                              ),
                                             ),
-                                          ),
-                                          child: ClipOval(
-                                            child: CachedNetworkImage(
-                                              filterQuality: FilterQuality.high,
-                                              imageUrl: unit.mainImageUrl,
-                                              fit: BoxFit.cover,
-                                              width: circleDiameter,
-                                              height: circleDiameter,
-                                              memCacheHeight: 300,
-                                              memCacheWidth: 300,
+                                            child: ClipOval(
+                                              child: CachedNetworkImage(
+                                                filterQuality:
+                                                    FilterQuality.high,
+                                                imageUrl: unit.mainImageUrl,
+                                                fit: BoxFit.cover,
+                                                width: circleDiameter,
+                                                height: circleDiameter,
+                                                memCacheHeight: 300,
+                                                memCacheWidth: 300,
+                                              ),
                                             ),
                                           ),
                                         ),
@@ -253,12 +268,25 @@ class HomeScreen extends StatelessWidget {
                                     padding: EdgeInsets.only(
                                       right: 4.w,
                                     ),
-                                    child: FeaturedUnitCard(
-                                      imagePath: unit.mainImageUrl,
-                                      title: unit.title,
-                                      details:
-                                          // ignore: lines_longer_than_80_chars
-                                          '${unit.bedrooms} Beds | ${unit.bathrooms} Baths | ${unit.areaMeter} sqft',
+                                    child: InkWell(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute<void>(
+                                            builder: (context) =>
+                                                PropertyDetails(
+                                              unit: unit,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                      child: FeaturedUnitCard(
+                                        imagePath: unit.mainImageUrl,
+                                        title: unit.title,
+                                        details:
+                                            // ignore: lines_longer_than_80_chars
+                                            '${unit.bedrooms} Beds | ${unit.bathrooms} Baths | ${unit.areaMeter} sqft',
+                                      ),
                                     ),
                                   ),
                                 )
@@ -330,12 +358,25 @@ class HomeScreen extends StatelessWidget {
                                     padding: EdgeInsets.only(
                                       right: 4.w,
                                     ),
-                                    child: UnitCard(
-                                      imagePath: unit.mainImageUrl,
-                                      title: unit.title,
-                                      details:
-                                          // ignore: lines_longer_than_80_chars
-                                          '${unit.bedrooms} Beds | ${unit.bathrooms} Baths | ${unit.areaMeter} sqft',
+                                    child: InkWell(
+                                      onTap: () {
+                                        Navigator.push(
+                                          context,
+                                          MaterialPageRoute<void>(
+                                            builder: (context) =>
+                                                PropertyDetails(
+                                              unit: unit,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                      child: UnitCard(
+                                        imagePath: unit.mainImageUrl,
+                                        title: unit.title,
+                                        details:
+                                            // ignore: lines_longer_than_80_chars
+                                            '${unit.bedrooms} Beds | ${unit.bathrooms} Baths | ${unit.areaMeter} sqft',
+                                      ),
                                     ),
                                   ),
                                 )

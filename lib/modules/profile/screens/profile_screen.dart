@@ -1,11 +1,12 @@
+import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/assets.dart';
 import 'package:aqari/core/utils/sized_x.dart';
+import 'package:aqari/core/utils/theme_helper.dart';
 import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/core/widgets/unit_card.dart';
+import 'package:aqari/main.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
-import '../../../core/utils/theme_helper.dart';
 
 /// profile data
 final profile = Profile(
@@ -34,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0XFFF1F1F1),
         appBar: AppBar(
           backgroundColor: Colors.white,
           title: const Text(
@@ -58,11 +59,14 @@ class ProfileScreen extends StatelessWidget {
                     radius: 35.sp,
                     backgroundImage: AssetImage(profile.image),
                   ),
-                  title: Text(
-                    '${profile.firstName} ${profile.lastName}',
-                    style: TextStyle(
-                      fontSize: 14.sp,
-                      fontWeight: FontWeight.bold,
+                  title: FittedBox(
+                    child: Text(
+                      // ignore: lines_longer_than_80_chars
+                      '${supabaseClient.auth.currentUser!.userMetadata!['first_name'] as String} ${supabaseClient.auth.currentUser!.userMetadata!['last_name'] as String}',
+                      style: TextStyle(
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   subtitle: Text(
@@ -73,7 +77,9 @@ class ProfileScreen extends StatelessWidget {
                     ),
                   ),
                   trailing: TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, Routes.settingScreen);
+                    },
                     child: Container(
                       padding: EdgeInsets.symmetric(
                         horizontal: 10.sp,
@@ -130,7 +136,8 @@ class ProfileScreen extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Row(
-                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
                                     children: [
                                       const Text(
                                         '2 Listing',
@@ -143,20 +150,24 @@ class ProfileScreen extends StatelessWidget {
                                         height: 40,
                                         width: 40,
                                         decoration: BoxDecoration(
-                                          color: ThemeHelper.appColors.primaryColor,
-                                          borderRadius: BorderRadius.circular(50),
+                                          color: ThemeHelper
+                                              .appColors.primaryColor,
+                                          borderRadius:
+                                              BorderRadius.circular(50),
                                         ),
                                         child: IconButton(
                                           onPressed: () {},
                                           icon: const Icon(
                                             Icons.add,
                                             color: Colors.white,
-                                          )
+                                          ),
                                         ),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: 10,),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
                                   Expanded(
                                     child: SizedBox(
                                       height: 300,
@@ -183,7 +194,9 @@ class ProfileScreen extends StatelessWidget {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                  const SizedBox(height: 10,),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
                                   Expanded(
                                     child: SizedBox(
                                       height: 300,
@@ -199,7 +212,6 @@ class ProfileScreen extends StatelessWidget {
                               ),
                             ),
                           ],
-
                         ),
                       ),
                     ],

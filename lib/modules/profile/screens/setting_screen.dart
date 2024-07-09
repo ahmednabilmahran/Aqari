@@ -16,12 +16,12 @@ class SettingScreen extends StatefulWidget {
 }
 
 class _SettingScreenState extends State<SettingScreen> {
-  bool switchValue = true;
+  bool switchValue = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white70,
+      backgroundColor: const Color(0XFFF1F1F1),
       appBar: const CustomAppBar(
         titleText: 'Settings',
       ),

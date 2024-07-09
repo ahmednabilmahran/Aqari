@@ -6,6 +6,7 @@ import 'package:aqari/core/widgets/custom_padding.dart';
 import 'package:aqari/core/widgets/custom_search_field.dart';
 import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/modules/app_layout/controllers/app_layout_cubit.dart';
+import 'package:aqari/modules/property_details/property_details.dart';
 import 'package:aqari/modules/search/controllers/custom_filter/custom_filter_cubit.dart';
 import 'package:aqari/modules/search/controllers/search/search_cubit.dart';
 import 'package:aqari/modules/search/widgets/custom_filter.dart';
@@ -154,12 +155,24 @@ class SearchScreen extends StatelessWidget {
                               itemCount: state.units.length,
                               itemBuilder: (context, index) {
                                 final unit = state.units[index];
-                                return SearchUnitCard(
-                                  imagePath: unit.mainImageUrl,
-                                  title: unit.title,
-                                  rooms: unit.bedrooms,
-                                  areaMeter: unit.areaMeter,
-                                  location: unit.city,
+                                return InkWell(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute<void>(
+                                        builder: (context) => PropertyDetails(
+                                          unit: unit,
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: SearchUnitCard(
+                                    imagePath: unit.mainImageUrl,
+                                    title: unit.title,
+                                    rooms: unit.bedrooms,
+                                    areaMeter: unit.areaMeter,
+                                    location: unit.city,
+                                  ),
                                 );
                               },
                             );

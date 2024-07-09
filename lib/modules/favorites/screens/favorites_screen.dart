@@ -8,6 +8,7 @@ import 'package:aqari/core/widgets/custom_card_property.dart';
 import 'package:aqari/core/widgets/shimmer_custom_card_property.dart';
 import 'package:aqari/main.dart';
 import 'package:aqari/modules/favorites/controllers/favorites_cubit.dart';
+import 'package:aqari/modules/property_details/property_details.dart';
 import 'package:buttons_tabbar/buttons_tabbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -123,13 +124,26 @@ class FavoritesScreen extends StatelessWidget {
                                     shrinkWrap: true,
                                     itemBuilder: (context, index) {
                                       final unit = state.favorites[index];
-                                      return PropertyCard(
-                                        imagePath: unit.mainImageUrl,
-                                        title: unit.title,
-                                        location: unit.city,
-                                        area: unit.areaMeter.toString(),
-                                        bedrooms: unit.bedrooms.toString(),
-                                        bathrooms: unit.bathrooms.toString(),
+                                      return InkWell(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute<void>(
+                                              builder: (context) =>
+                                                  PropertyDetails(
+                                                unit: unit,
+                                              ),
+                                            ),
+                                          );
+                                        },
+                                        child: PropertyCard(
+                                          imagePath: unit.mainImageUrl,
+                                          title: unit.title,
+                                          location: unit.city,
+                                          area: unit.areaMeter.toString(),
+                                          bedrooms: unit.bedrooms.toString(),
+                                          bathrooms: unit.bathrooms.toString(),
+                                        ),
                                       );
                                     },
                                     separatorBuilder: (context, index) =>
