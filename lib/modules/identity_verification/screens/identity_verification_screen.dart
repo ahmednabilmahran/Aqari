@@ -181,7 +181,17 @@ class _IdentityVerificationScreenState
                                   SizedBox(height: 2.h),
                                   CustomButton(
                                     onPressed: () {
-                                      context.read<StepperCubit>().nextStep();
+                                      if (controller.text.isEmpty  ) {
+                                        ScaffoldMessenger.of(context).showSnackBar(
+                                          const SnackBar(
+                                            content: Text('Please enter your National ID'),
+                                          ),
+                                        );
+                                      }
+                                      else {
+                                        context.read<StepperCubit>().nextStep();
+                                      }
+
                                     },
                                     buttonText: 'Confirm',
                                   ),
