@@ -110,6 +110,8 @@ PODS:
   - flutter_libphonenumber_ios (1.1.4):
     - Flutter
     - PhoneNumberKit/PhoneNumberKitCore (= 3.7.9)
+  - flutter_local_notifications (0.0.1):
+    - Flutter
   - geocoding_ios (1.0.5):
     - Flutter
   - geolocator_apple (1.2.0):
@@ -209,6 +211,7 @@ DEPENDENCIES:
   - firebase_crashlytics (from `.symlinks/plugins/firebase_crashlytics/ios`)
   - Flutter (from `Flutter`)
   - flutter_libphonenumber_ios (from `.symlinks/plugins/flutter_libphonenumber_ios/ios`)
+  - flutter_local_notifications (from `.symlinks/plugins/flutter_local_notifications/ios`)
   - geocoding_ios (from `.symlinks/plugins/geocoding_ios/ios`)
   - geolocator_apple (from `.symlinks/plugins/geolocator_apple/ios`)
   - google_maps_flutter_ios (from `.symlinks/plugins/google_maps_flutter_ios/ios`)
@@ -257,6 +260,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_libphonenumber_ios:
     :path: ".symlinks/plugins/flutter_libphonenumber_ios/ios"
+  flutter_local_notifications:
+    :path: ".symlinks/plugins/flutter_local_notifications/ios"
   geocoding_ios:
     :path: ".symlinks/plugins/geocoding_ios/ios"
   geolocator_apple:
@@ -293,6 +298,7 @@ SPEC CHECKSUMS:
   FirebaseSessions: 20da8500ad66bb12622743e170459bf62a0768e8
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_libphonenumber_ios: eb22e6f6e97c9604805f00bff961ca397071dfdc
+  flutter_local_notifications: 4cde75091f6327eb8517fa068a0a5950212d2086
   geocoding_ios: d7460f56e80e118d57678efe5c2cdc888739ff18
   geolocator_apple: 6cbaf322953988e009e5ecb481f07efece75c450
   google_maps_flutter_ios: 5bc2be60ad012e79b182ce0fb0ef5030a50fb03e

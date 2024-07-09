@@ -5,6 +5,7 @@ import 'package:aqari/core/injection_container.dart';
 import 'package:aqari/core/utils/bloc_observer.dart';
 import 'package:aqari/core/utils/countries_helper.dart';
 import 'package:aqari/core/utils/database_manager.dart';
+import 'package:aqari/core/utils/local_notification_helper.dart';
 import 'package:aqari/core/utils/supabase_manager.dart';
 import 'package:aqari/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -43,6 +44,7 @@ Future<void> main() async {
     configureDependencies(),
     DatabaseManager.initHive(),
     CountriesHelper.loadCountriesData(),
+    LocalNotificationService().initializeSettings(),
   ]);
 
   FlutterError.onError = (errorDetails) {

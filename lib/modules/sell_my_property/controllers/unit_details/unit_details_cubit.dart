@@ -1,5 +1,6 @@
 import 'package:aqari/apis/units_api.dart';
 import 'package:aqari/core/utils/countries_helper.dart';
+import 'package:aqari/core/utils/local_notification_helper.dart';
 import 'package:aqari/core/utils/snack_x.dart';
 import 'package:aqari/generated/l10n.dart';
 import 'package:aqari/models/aqari_country_model.dart';
@@ -293,6 +294,12 @@ class UnitDetailsCubit extends Cubit<UnitDetailsState> {
 
       // Call API function to add new unit
       await unitsApi.addNewUnit(unit: unit, imagePaths: state.images);
+
+      // Send local notification
+      await LocalNotificationService().showBasicNotification(
+        title: 'Aqari Application',
+        body: 'Your listing is in review.',
+      );
 
       emit(state.copyWith(isLoading: false, success: true));
     } catch (e) {
