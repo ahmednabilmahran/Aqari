@@ -1,7 +1,6 @@
 import 'package:aqari/config/routes/app_routes.dart';
 import 'package:aqari/core/utils/app_values.dart';
 import 'package:aqari/core/utils/assets.dart';
-import 'package:aqari/main.dart';
 import 'package:aqari/modules/favorites/screens/favorites_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -65,8 +64,8 @@ class AqariAppBar extends StatelessWidget implements PreferredSizeWidget {
           padding: EdgeInsets.zero,
           onPressed: () {
             Navigator.pushNamed(
-              navigatorKey.currentContext!,
-              Routes.settingScreen,
+              context,
+              Routes.notificationsRoute,
             );
           },
           icon: SvgPicture.asset(

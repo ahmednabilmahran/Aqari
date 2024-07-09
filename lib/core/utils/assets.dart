@@ -1,17 +1,20 @@
 class Assets {
   Assets._();
-  
+
   /// Assets for genIconsALittleBitHighGauge
   /// assets/gen/icons/a_little_bit_high_gauge.svg
-  static const String genIconsALittleBitHighGauge = "assets/gen/icons/a_little_bit_high_gauge.svg";
+  static const String genIconsALittleBitHighGauge =
+      "assets/gen/icons/a_little_bit_high_gauge.svg";
 
   /// Assets for genIconsALittleBitLowGauge
   /// assets/gen/icons/a_little_bit_low_gauge.svg
-  static const String genIconsALittleBitLowGauge = "assets/gen/icons/a_little_bit_low_gauge.svg";
+  static const String genIconsALittleBitLowGauge =
+      "assets/gen/icons/a_little_bit_low_gauge.svg";
 
   /// Assets for genIconsAddYourPropertyDetails
   /// assets/gen/icons/add_your_property_details.svg
-  static const String genIconsAddYourPropertyDetails = "assets/gen/icons/add_your_property_details.svg";
+  static const String genIconsAddYourPropertyDetails =
+      "assets/gen/icons/add_your_property_details.svg";
 
   /// Assets for genIconsAiCenter
   /// assets/gen/icons/ai_center.svg
@@ -19,7 +22,8 @@ class Assets {
 
   /// Assets for genIconsAiCenterBackground
   /// assets/gen/icons/ai_center_background.svg
-  static const String genIconsAiCenterBackground = "assets/gen/icons/ai_center_background.svg";
+  static const String genIconsAiCenterBackground =
+      "assets/gen/icons/ai_center_background.svg";
 
   /// Assets for genIconsAllSet
   /// assets/gen/icons/all_set.svg
@@ -43,11 +47,13 @@ class Assets {
 
   /// Assets for genIconsDarkUnvalidatedTextIcon
   /// assets/gen/icons/dark_unvalidated_text_icon.svg
-  static const String genIconsDarkUnvalidatedTextIcon = "assets/gen/icons/dark_unvalidated_text_icon.svg";
+  static const String genIconsDarkUnvalidatedTextIcon =
+      "assets/gen/icons/dark_unvalidated_text_icon.svg";
 
   /// Assets for genIconsDarkValidatedTextIcon
   /// assets/gen/icons/dark_validated_text_icon.svg
-  static const String genIconsDarkValidatedTextIcon = "assets/gen/icons/dark_validated_text_icon.svg";
+  static const String genIconsDarkValidatedTextIcon =
+      "assets/gen/icons/dark_validated_text_icon.svg";
 
   /// Assets for genIconsDone
   /// assets/gen/icons/done.svg
@@ -71,7 +77,8 @@ class Assets {
 
   /// Assets for genIconsFinishUpAndPublish
   /// assets/gen/icons/finish_up_and_publish.svg
-  static const String genIconsFinishUpAndPublish = "assets/gen/icons/finish_up_and_publish.svg";
+  static const String genIconsFinishUpAndPublish =
+      "assets/gen/icons/finish_up_and_publish.svg";
 
   /// Assets for genIconsForSale
   /// assets/gen/icons/for_sale.svg
@@ -111,7 +118,8 @@ class Assets {
 
   /// Assets for genIconsMakeItStandOut
   /// assets/gen/icons/make_it_stand_out.svg
-  static const String genIconsMakeItStandOut = "assets/gen/icons/make_it_stand_out.svg";
+  static const String genIconsMakeItStandOut =
+      "assets/gen/icons/make_it_stand_out.svg";
 
   /// Assets for genIconsMapMarker
   /// assets/gen/icons/map_marker.svg
@@ -127,15 +135,18 @@ class Assets {
 
   /// Assets for genIconsNonActiveRadio
   /// assets/gen/icons/non_active_radio.svg
-  static const String genIconsNonActiveRadio = "assets/gen/icons/non_active_radio.svg";
+  static const String genIconsNonActiveRadio =
+      "assets/gen/icons/non_active_radio.svg";
 
   /// Assets for genIconsNotifications
   /// assets/gen/icons/notifications.svg
-  static const String genIconsNotifications = "assets/gen/icons/notifications.svg";
+  static const String genIconsNotifications =
+      "assets/gen/icons/notifications.svg";
 
   /// Assets for genIconsOutlinedLocationPin
   /// assets/gen/icons/outlined_location_pin.svg
-  static const String genIconsOutlinedLocationPin = "assets/gen/icons/outlined_location_pin.svg";
+  static const String genIconsOutlinedLocationPin =
+      "assets/gen/icons/outlined_location_pin.svg";
 
   /// Assets for genIconsPets
   /// assets/gen/icons/pets.svg
@@ -163,7 +174,8 @@ class Assets {
 
   /// Assets for genIconsSearchAddress
   /// assets/gen/icons/search_address.svg
-  static const String genIconsSearchAddress = "assets/gen/icons/search_address.svg";
+  static const String genIconsSearchAddress =
+      "assets/gen/icons/search_address.svg";
 
   /// Assets for genIconsSendMessage
   /// assets/gen/icons/send_message.svg
@@ -171,7 +183,8 @@ class Assets {
 
   /// Assets for genIconsShowPasswordIcon
   /// assets/gen/icons/show_password_icon.svg
-  static const String genIconsShowPasswordIcon = "assets/gen/icons/show_password_icon.svg";
+  static const String genIconsShowPasswordIcon =
+      "assets/gen/icons/show_password_icon.svg";
 
   /// Assets for genIconsSquareFt
   /// assets/gen/icons/square_ft.svg
@@ -191,19 +204,23 @@ class Assets {
 
   /// Assets for genIconsUnshowPasswordIcon
   /// assets/gen/icons/unshow_password_icon.svg
-  static const String genIconsUnshowPasswordIcon = "assets/gen/icons/unshow_password_icon.svg";
+  static const String genIconsUnshowPasswordIcon =
+      "assets/gen/icons/unshow_password_icon.svg";
 
   /// Assets for genIconsUnvalidatedTextIcon
   /// assets/gen/icons/unvalidated_text_icon.svg
-  static const String genIconsUnvalidatedTextIcon = "assets/gen/icons/unvalidated_text_icon.svg";
+  static const String genIconsUnvalidatedTextIcon =
+      "assets/gen/icons/unvalidated_text_icon.svg";
 
   /// Assets for genIconsValidatedTextIcon
   /// assets/gen/icons/validated_text_icon.svg
-  static const String genIconsValidatedTextIcon = "assets/gen/icons/validated_text_icon.svg";
+  static const String genIconsValidatedTextIcon =
+      "assets/gen/icons/validated_text_icon.svg";
 
   /// Assets for genIconsVerifySignUp
   /// assets/gen/icons/verify_sign_up.svg
-  static const String genIconsVerifySignUp = "assets/gen/icons/verify_sign_up.svg";
+  static const String genIconsVerifySignUp =
+      "assets/gen/icons/verify_sign_up.svg";
 
   /// Assets for genIconsVeryGood
   /// assets/gen/icons/very_good.svg
@@ -211,11 +228,13 @@ class Assets {
 
   /// Assets for genIconsVeryHighGauge
   /// assets/gen/icons/very_high_gauge.svg
-  static const String genIconsVeryHighGauge = "assets/gen/icons/very_high_gauge.svg";
+  static const String genIconsVeryHighGauge =
+      "assets/gen/icons/very_high_gauge.svg";
 
   /// Assets for genIconsVeryLowGauge
   /// assets/gen/icons/very_low_gauge.svg
-  static const String genIconsVeryLowGauge = "assets/gen/icons/very_low_gauge.svg";
+  static const String genIconsVeryLowGauge =
+      "assets/gen/icons/very_low_gauge.svg";
 
   /// Assets for genIconsWifi
   /// assets/gen/icons/wifi.svg
@@ -223,11 +242,13 @@ class Assets {
 
   /// Assets for genIllustrationsTyping
   /// assets/gen/illustrations/typing.json
-  static const String genIllustrationsTyping = "assets/gen/illustrations/typing.json";
+  static const String genIllustrationsTyping =
+      "assets/gen/illustrations/typing.json";
 
   /// Assets for genImagesAboutUsCover
   /// assets/gen/images/about_us_cover.jpg
-  static const String genImagesAboutUsCover = "assets/gen/images/about_us_cover.jpg";
+  static const String genImagesAboutUsCover =
+      "assets/gen/images/about_us_cover.jpg";
 
   /// Assets for genImagesAiChatBot
   /// assets/gen/images/ai_chat_bot.png
@@ -235,7 +256,8 @@ class Assets {
 
   /// Assets for genImagesAiRecommendationSystem
   /// assets/gen/images/ai_recommendation_system.png
-  static const String genImagesAiRecommendationSystem = "assets/gen/images/ai_recommendation_system.png";
+  static const String genImagesAiRecommendationSystem =
+      "assets/gen/images/ai_recommendation_system.png";
 
   /// Assets for genImagesAreaIcon
   /// assets/gen/images/area_icon.png
@@ -251,7 +273,8 @@ class Assets {
 
   /// Assets for genImagesFinishAddStateImage
   /// assets/gen/images/finish-add-state_image.png
-  static const String genImagesFinishAddStateImage = "assets/gen/images/finish-add-state_image.png";
+  static const String genImagesFinishAddStateImage =
+      "assets/gen/images/finish-add-state_image.png";
 
   /// Assets for genImagesGoogleicon
   /// assets/gen/images/googleicon.png
@@ -271,15 +294,18 @@ class Assets {
 
   /// Assets for genImagesLockPassword
   /// assets/gen/images/lockPassword.png
-  static const String genImagesLockPassword = "assets/gen/images/lockPassword.png";
+  static const String genImagesLockPassword =
+      "assets/gen/images/lockPassword.png";
 
   /// Assets for genImagesLoginBackground
   /// assets/gen/images/login_background.jpg
-  static const String genImagesLoginBackground = "assets/gen/images/login_background.jpg";
+  static const String genImagesLoginBackground =
+      "assets/gen/images/login_background.jpg";
 
   /// Assets for genImagesMapPlaceholder
   /// assets/gen/images/map_placeholder.png
-  static const String genImagesMapPlaceholder = "assets/gen/images/map_placeholder.png";
+  static const String genImagesMapPlaceholder =
+      "assets/gen/images/map_placeholder.png";
 
   /// Assets for genImagesTest1
   /// assets/gen/images/test1.jpeg
@@ -315,7 +341,8 @@ class Assets {
 
   /// Assets for genImagesThankIdVerfication
   /// assets/gen/images/thank_id_verfication.png
-  static const String genImagesThankIdVerfication = "assets/gen/images/thank_id_verfication.png";
+  static const String genImagesThankIdVerfication =
+      "assets/gen/images/thank_id_verfication.png";
 
   /// Assets for genImagesVector
   /// assets/gen/images/Vector.png
@@ -325,4 +352,3 @@ class Assets {
   /// assets/gen/lottie/loading.json
   static const String genLottieLoading = "assets/gen/lottie/loading.json";
 }
-

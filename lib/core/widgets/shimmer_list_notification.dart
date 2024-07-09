@@ -1,22 +1,17 @@
-import 'package:aqari/core/widgets/custom_notification_item.dart';
-import 'package:aqari/models/notification_model.dart';
+import 'package:aqari/core/widgets/shimmer_custom_notification_item.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
 /// ListNotification is used to manage the list of notifications
-class ListNotification extends StatelessWidget {
-  /// Constructor
-  const ListNotification({
-    required this.notifications,
+class ShimmerListNotification extends StatelessWidget {
+  /// ListNotification constructor
+  const ShimmerListNotification({
     this.day,
     super.key,
   });
 
-  /// Day
+  /// day
   final String? day;
-
-  /// List of notifications
-  final List<NotificationModel> notifications;
 
   @override
   Widget build(BuildContext context) {
@@ -35,11 +30,11 @@ class ListNotification extends StatelessWidget {
           ),
         ),
         ListView.builder(
-          itemCount: notifications.length,
+          itemCount: 3,
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
           itemBuilder: (context, index) {
-            return NotificationItem(notification: notifications[index]);
+            return const ShimmerNotificationItem();
           },
         ),
       ],
