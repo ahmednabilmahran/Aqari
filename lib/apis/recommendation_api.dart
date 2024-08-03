@@ -9,7 +9,7 @@ import 'package:injectable/injectable.dart';
 class RecommendationApi {
   /// [openAiApiKey] variable
   String openAiApiKey =
-      'sk-proj-wVyvXST4h2uUvuF6GVilT3BlbkFJDfbkfZW5cXu8Tn50xZpw';
+      'YOUR_OPENAI';
 
   /// [truncatePrompt] method to truncate prompt
   String truncatePrompt(String prompt, int maxLength) {

@@ -13,7 +13,7 @@ import 'package:injectable/injectable.dart';
 class ChatApi {
   /// [openAiApiKey] variable
   String openAiApiKey =
-      'sk-proj-wVyvXST4h2uUvuF6GVilT3BlbkFJDfbkfZW5cXu8Tn50xZpw';
+      'YOUR_OPENAI';
 
   /// [getAllChats] method to get all chats
   Future<List<ChatSession>> getAllChats(String userId) async {
